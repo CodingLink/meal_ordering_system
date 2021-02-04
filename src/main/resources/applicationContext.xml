@@ -40,7 +40,7 @@
         <!--将SqlSessionFactory对象进行注入-->
         <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
         <!--配置DAO接口的扫描基础路径-->
-        <property name="basePackage" value="com.isoftstone.dao.**"/>
+        <property name="basePackage" value="com.example.meal_ordering_system.dao.**"/>
     </bean>
 
     <!--加载事务管理器-->
