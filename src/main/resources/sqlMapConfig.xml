@@ -6,6 +6,6 @@
     <!--别名命名-->
     <typeAliases>
         <!--包扫描方式实现-->
-        <package name="com/example/meal_ordering_system/entity"/>
+        <package name="com.example.meal_ordering_system.dao"/>
     </typeAliases>
 </configuration>

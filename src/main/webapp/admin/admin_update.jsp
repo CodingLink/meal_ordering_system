@@ -1,4 +1,4 @@
-<%@page import="com.apsfc.po.Admin"%>
+<%@page import="com.example.meal_ordering_system.entity.Admin"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
 <head>

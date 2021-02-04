@@ -2,7 +2,7 @@
 <html>
 <head>
 <title>网上订餐后台- 管理页面</title>
-<meta http-equiv=Content-Type content=text/html;charset=gb2312>
+<meta http-equiv=Content-Type content=text/html;charset=utf-8>
 </head>
 <frameset rows="64,*"  frameborder="0" border="0" framespacing="0">
   <frame src="admin_top.jsp" noresize="noresize" frameborder="0" name="topFrame" scrolling="no" marginwidth="0" marginheight="0" target="main" />

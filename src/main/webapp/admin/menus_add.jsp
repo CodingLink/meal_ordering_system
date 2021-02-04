@@ -1,5 +1,5 @@
-<%@page import="com.apsfc.po.Type"%>
-<%@page import="com.apsfc.dao.TypeDao"%>
+<%@page import="com.example.meal_ordering_system.entity.Types"%>
+<%@ page import="com.example.meal_ordering_system.dao.TypesDao" %>
 <%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
 <html>
 <head>
@@ -111,8 +111,8 @@
 									name="typeid">
 
 										<%
-											TypeDao tdao = new TypeDao();
-											List<Type> typelist = tdao.select();
+											TypesDao tdao = new TypesDao();
+											List<Types> typelist = tdao.select();
 											for (int i = 0; i < typelist.size(); i++) {
 												Type type = new Type();
 												type = typelist.get(i);

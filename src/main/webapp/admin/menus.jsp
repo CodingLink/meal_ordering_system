@@ -1,5 +1,5 @@
-<%@page import="com.apsfc.po.Menus"%>
-<%@page import="com.apsfc.dao.MenusDao"%>
+<%@page import="com.example.meal_ordering_system.entity.Menus"%>
+<%@page import="com.example.meal_ordering_system.dao.MenusDao"%>
 <%@page import="java.util.*"%>
 <%@ page language="java"  pageEncoding="utf-8"%>
 <html>
