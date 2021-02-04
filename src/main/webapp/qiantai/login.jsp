@@ -74,7 +74,7 @@
                     </tr>
                     <tr>
                       <td height="40"><input name="act" type="hidden" id="act" value="memberlogin" /></td>
-                      <td height="40" ><input name="imageField" type="image" src="images/denglu.gif"  border="0" />
+                      <td height="40" ><input name="imageField" type="image" src="images/denglu.gif" border="0" />
                         <a href="reg.jsp" style="padding-left:1px"><img src="images/zhuce.gif" alt="" width="40" height="19" border="0" /></a></td>
                     </tr>
                   </table>

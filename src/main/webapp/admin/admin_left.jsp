@@ -21,12 +21,12 @@
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td><img src="images/menu_topline.gif" width="182"
-									height="5" /></td>
+                                         height="5" /></td>
 							</tr>
 						</table>
 						<ul class="MM">
-							<li><a href="../admin/menus_add.jsp" target="main">添加新菜单</a></li>
-							<li><a href="../admin/menus.jsp" target="main">菜单信息列表</a></li>
+							<li><a href="menus_add.jsp" target="main">添加新菜单</a></li>
+							<li><a href="menus.jsp" target="main">菜单信息列表</a></li>
 						</ul>
 					</div>
 					<h1 class="type">
@@ -36,13 +36,13 @@
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td><img src="images/menu_topline.gif" width="182"
-									height="5" /></td>
+                                         height="5" /></td>
 							</tr>
 						</table>
 						<ul class="MM">
 
-							<li><a href="../admin/type_add.jsp" target="main">添加新类别</a></li>
-							<li><a href="../admin/type.jsp" target="main">类别信息列表</a></li>
+							<li><a href="type_add.jsp" target="main">添加新类别</a></li>
+							<li><a href="type.jsp" target="main">类别信息列表</a></li>
 
 						</ul>
 					</div>
@@ -53,12 +53,12 @@
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td><img src="images/menu_topline.gif" width="182"
-									height="5" /></td>
+                                         height="5" /></td>
 							</tr>
 						</table>
 						<ul class="MM">
-							<li><a href="../admin/notice_add.jsp" target="main">添加新通告</a></li>
-							<li><a href="../admin/notice.jsp" target="main">通告信息列表</a></li>
+							<li><a href="notice_add.jsp" target="main">添加新通告</a></li>
+							<li><a href="notice.jsp" target="main">通告信息列表</a></li>
 						</ul>
 					</div>
 					<h1 class="type">
@@ -68,12 +68,12 @@
 						<table width="100%" border="0" cellspacing="0" cellpadding="0">
 							<tr>
 								<td><img src="images/menu_topline.gif" width="182"
-									height="5" /></td>
+                                         height="5" /></td>
 							</tr>
 						</table>
 						<ul class="MM">
-							<li><a href="../admin/order.jsp" target="main">销售订单信息列表</a></li>
-							<li><a href="../admin/order_search.jsp" target="main">销售订单查询</a></li>
+							<li><a href="order.jsp" target="main">销售订单信息列表</a></li>
+							<li><a href="order_search.jsp" target="main">销售订单查询</a></li>
 							<li><a href="../OrderServlet?&reqtype=statistic"
 								target="main">本日销售额统计</a></li>
 						</ul>
@@ -81,7 +81,7 @@
 				</div>
 
 				<h1 class="type">
-					<a href="../admin/admin_update.jsp" target="main">系统用户管理</a>
+					<a href="admin_update.jsp" target="main">系统用户管理</a>
 				</h1>
 				<h1 class="type">
 					<a href="../AdminServlet" target="main">注销退出</a>

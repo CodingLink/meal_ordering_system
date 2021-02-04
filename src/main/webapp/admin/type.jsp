@@ -12,7 +12,7 @@
 		cellspacing="0">
 		<tr>
 			<td width="17" valign="top" background="images/mail_leftbg.gif"><img
-				src="images/left-top-right.gif" width="17" height="29" /></td>
+                    src="images/left-top-right.gif" width="17" height="29" /></td>
 			<td valign="top" background="images/content-bg.gif"><table
 					width="100%" height="31" border="0" cellpadding="0" cellspacing="0"
 					class="left_topbg" id="table2">
@@ -21,7 +21,7 @@
 					</tr>
 				</table></td>
 			<td width="16" valign="top" background="images/mail_rightbg.gif"><img
-				src="images/nav-right-bg.gif" width="16" height="29" /></td>
+                    src="images/nav-right-bg.gif" width="16" height="29" /></td>
 		</tr>
 		<tr>
 			<td valign="middle" background="images/mail_leftbg.gif">&nbsp;</td>
@@ -61,7 +61,7 @@
 								<td class="line_table" align="center" width="30%"><span
 									class="left_txt"><%=type.getName()%></span></td>
 								<td class="line_table" align="center" width="20%"><a
-									href="type_update.jsp?id=<%=type.getId()%>" target="main">修改</a></td>
+                                        href="type_update.jsp?id=<%=type.getId()%>" target="main">修改</a></td>
 								<td class="line_table" align="center" width="20%"><a
 									href="../servlet/TypeDelServlet?id=<%=type.getId()%>" target="main">删除</a></td>
 							</tr>
@@ -79,11 +79,11 @@
 		</tr>
 		<tr>
 			<td valign="bottom" background="images/mail_leftbg.gif"><img
-				src="images/buttom_left2.gif" width="17" height="17" /></td>
+                    src="images/buttom_left2.gif" width="17" height="17" /></td>
 			<td background="images/buttom_bgs.gif"><img
-				src="images/buttom_bgs.gif" width="17" height="17"></td>
+                    src="images/buttom_bgs.gif" width="17" height="17"></td>
 			<td valign="bottom" background="images/mail_rightbg.gif"><img
-				src="images/buttom_right2.gif" width="16" height="17" /></td>
+                    src="images/buttom_right2.gif" width="16" height="17" /></td>
 		</tr>
 	</table>
 </body>

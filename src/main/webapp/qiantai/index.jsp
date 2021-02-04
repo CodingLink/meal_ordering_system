@@ -53,7 +53,7 @@
               </div>-->
 										<div style="padding: 0px">
 											<link href="css/dingcanall.css" rel="stylesheet"
-												type="text/css" />
+                                                  type="text/css" />
 											<script src="js/dingcanall.js" type="text/javascript"></script>
 
 											<div id="dingcanall2">
@@ -124,7 +124,7 @@
 																			<tr>
 																				<td colspan="2" style="height: 40px;"><a
 																					href="../ShoppingServlet?menuId=<%=menus.getId()%>"><img
-																						src="images/cart.png" border="0" alt="" /></a></td>
+                                                                                        src="images/cart.png" border="0" alt="" /></a></td>
 																				<td></td>
 																			</tr>
 																		</table>
@@ -184,7 +184,7 @@
 														</div>
 														<div style="margin: 0px 3px; padding: 10px;" align="left">
 															<link href="css/newslist_time2.css" rel="stylesheet"
-																type="text/css" />
+                                                                  type="text/css" />
 
 															<ul class="newslist_time2">
 																<%
@@ -239,7 +239,7 @@
 													</div>
 													<div style="padding: 0px">
 														<link href="css/dingcanche.css" rel="stylesheet"
-															type="text/css" />
+                                                              type="text/css" />
 														<script src="js/dingcanall.js" type="text/javascript"></script>
 														<script src="js/dingcansubmit.js" type="text/javascript"></script>
 														<div id="dingcanche">
@@ -306,10 +306,10 @@
 																			<td align="center" width="40%"></td>
 																			<td align="center" width="40%"><a
 																				href="../UserOrderingServlet"><img
-																					src="images/canche_submit.gif" border="0" /></a></td>
+                                                                                    src="images/canche_submit.gif" border="0" /></a></td>
 																			<td align="center" width="40%"><a
 																				href="../ShoppingServlet?remove=1"><img
-																					src="images/quxiao2.gif" border="0" /></a></td>
+                                                                                    src="images/quxiao2.gif" border="0" /></a></td>
 																		</tr>
 																	</table>
 
@@ -356,7 +356,7 @@
 													</div>
 													<div style="padding: 0px">
 														<link href="css/dingcanweekmenu.css" rel="stylesheet"
-															type="text/css" />
+                                                              type="text/css" />
 														<div id="dingcanweekmenu">
 															<div id="dingcanweekmenu2">
 																<div id="dingcanweekmenu_top">
@@ -366,7 +366,7 @@
 																<div style="padding: px;">
 																	<div class="dingcanweekmenuinfo" align="left">
 																		<link href="css/newslist_time2.css" rel="stylesheet"
-																			type="text/css" />
+                                                                              type="text/css" />
 
 
 																		<%
