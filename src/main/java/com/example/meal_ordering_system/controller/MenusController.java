@@ -2,6 +2,7 @@ package com.example.meal_ordering_system.controller;
 
 import com.example.meal_ordering_system.entity.Menus;
 import com.example.meal_ordering_system.service.MenusService;
+import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 

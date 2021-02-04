@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xmlns:tx="http://www.springframework.org/schema/tx"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/schema/context/spring-context.xsd
+        http://www.springframework.org/schema/aop
+        http://www.springframework.org/schema/aop/spring-aop.xsd
+        http://www.springframework.org/schema/tx
+        http://www.springframework.org/schema/tx/spring-tx.xsd">
+    <!--开启Spring的注解-->
+    <context:annotation-config/>
+    <!--Spring的注解扫描包路径-->
+    <context:component-scan base-package="com.example"/>
+
+    <!--加载数据源连接池-->
+    <bean name="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
+        <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1/test"/>
+        <property name="username" value="root"/>
+        <property name="password" value="root"/>
+    </bean>
+
+    <!--创建SqlSessionFactory对象-->
+    <bean name="sqlSessionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
+        <!--注入数据源连接池-->
+        <property name="dataSource" ref="druidDataSource"/>
+        <!--注入Mybatis的主配置文件-->
+        <property name="configLocation" value="classpath:sqlMapConfig.xml"/>
+        <!--配置DAO的映射文件扫描路径-->
+        <property name="mapperLocations" value="classpath:mapper/*.xml"/>
+    </bean>
+
+    <!--加载DAO接口扫描-->
+    <bean class="org.mybatis.spring.mapper.MapperScannerConfigurer">
+        <!--将SqlSessionFactory对象进行注入-->
+        <property name="sqlSessionFactoryBeanName" value="sqlSessionFactory"/>
+        <!--配置DAO接口的扫描基础路径-->
+        <property name="basePackage" value="com.isoftstone.dao.**"/>
+    </bean>
+
+    <!--加载事务管理器-->
+    <bean name="transactionManager" class="org.springframework.jdbc.datasource.DataSourceTransactionManager">
+        <!--加载数据源连接池-->
+        <property name="dataSource" ref="druidDataSource"/>
+    </bean>
+
+    <!--配置事务增强通知-->
+    <!--transaction-manager加载指定的事务管理器-->
+    <tx:advice id="txAdvice" transaction-manager="transactionManager">
+        <!--事务规则列表-->
+        <tx:attributes>
+            <!--propagation定义动作的规则-->
+            <!--REQUIRED阻断操作-->
+            <!--NOT_SUPPORTED非阻断操作-->
+            <!--对新增数据操作的规则定义-->
+            <tx:method name="insert*" propagation="REQUIRED"/>
+            <tx:method name="add*" propagation="REQUIRED"/>
+            <!--对修改数据操作的规则定义-->
+            <tx:method name="update*" propagation="REQUIRED"/>
+            <tx:method name="edit*" propagation="REQUIRED"/>
+            <!--对删除数据操作的规则定义-->
+            <tx:method name="delete*" propagation="REQUIRED"/>
+            <!--对查询数据操作的规则定义-->
+            <tx:method name="get*" propagation="NOT_SUPPORTED"/>
+            <tx:method name="select*" propagation="NOT_SUPPORTED"/>
+            <tx:method name="query*" propagation="NOT_SUPPORTED"/>
+        </tx:attributes>
+    </tx:advice>
+
+    <!--托管通知工具类-->
+    <bean name="advice" class="com.example.meal_ordering_system.util.AdviceUtil"/>
+
+    <!--切面的配置-->
+    <aop:config>
+        <!--切面定义在Service层-->
+        <aop:pointcut id="pointCut" expression="execution(* com.example.meal_ordering_system.service..*(..))"/>
+        <!--将事务增强通知与切面进行绑定-->
+        <aop:advisor advice-ref="txAdvice" pointcut-ref="pointCut"/>
+        <!--切面织入-->
+        <aop:aspect ref="advice">
+            <aop:before method="before" pointcut-ref="pointCut"/>
+            <aop:after method="after" pointcut-ref="pointCut"/>
+            <aop:around method="around" pointcut-ref="pointCut"/>
+            <aop:after-throwing method="exception" pointcut-ref="pointCut"/>
+        </aop:aspect>
+    </aop:config>
+</beans>

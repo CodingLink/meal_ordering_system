@@ -1,0 +1,158 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.meal_ordering_system.dao.MenusDao">
+
+    <resultMap type="com.example.meal_ordering_system.entity.Menus" id="MenusMap">
+        <result property="id" column="id" jdbcType="OTHER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="typeid" column="typeid" jdbcType="OTHER"/>
+        <result property="burden" column="burden" jdbcType="VARCHAR"/>
+        <result property="brief" column="brief" jdbcType="VARCHAR"/>
+        <result property="price" column="price" jdbcType="OTHER"/>
+        <result property="sums" column="sums" jdbcType="OTHER"/>
+        <result property="price1" column="price1" jdbcType="OTHER"/>
+        <result property="sums1" column="sums1" jdbcType="OTHER"/>
+        <result property="imgpath" column="imgpath" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <!--查询单个-->
+    <select id="queryById" resultMap="MenusMap">
+        select id,
+               name,
+               typeid,
+               burden,
+               brief,
+               price,
+               sums,
+               price1,
+               sums1,
+               imgpath
+        from apsfc.menus
+        where id = #{id}
+    </select>
+
+    <!--查询指定行数据-->
+    <select id="queryAllByLimit" resultMap="MenusMap">
+        select id,
+               name,
+               typeid,
+               burden,
+               brief,
+               price,
+               sums,
+               price1,
+               sums1,
+               imgpath
+        from apsfc.menus limit #{offset}, #{limit}
+    </select>
+
+    <!--通过实体作为筛选条件查询-->
+    <select id="queryAll" resultMap="MenusMap">
+        select
+        id, name, typeid, burden, brief, price, sums, price1, sums1, imgpath
+        from apsfc.menus
+        <where>
+            <if test="id != null">
+                and id = #{id}
+            </if>
+            <if test="name != null and name != ''">
+                and name = #{name}
+            </if>
+            <if test="typeid != null">
+                and typeid = #{typeid}
+            </if>
+            <if test="burden != null and burden != ''">
+                and burden = #{burden}
+            </if>
+            <if test="brief != null and brief != ''">
+                and brief = #{brief}
+            </if>
+            <if test="price != null">
+                and price = #{price}
+            </if>
+            <if test="sums != null">
+                and sums = #{sums}
+            </if>
+            <if test="price1 != null">
+                and price1 = #{price1}
+            </if>
+            <if test="sums1 != null">
+                and sums1 = #{sums1}
+            </if>
+            <if test="imgpath != null and imgpath != ''">
+                and imgpath = #{imgpath}
+            </if>
+        </where>
+    </select>
+
+    <!--新增所有列-->
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into apsfc.menus(name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
+        values (#{name}, #{typeid}, #{burden}, #{brief}, #{price}, #{sums}, #{price1}, #{sums1}, #{imgpath})
+    </insert>
+
+    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into apsfc.menus(name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.typeid}, #{entity.burden}, #{entity.brief}, #{entity.price}, #{entity.sums},
+            #{entity.price1}, #{entity.sums1}, #{entity.imgpath})
+        </foreach>
+    </insert>
+
+    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
+        insert into apsfc.menus(name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
+        values
+        <foreach collection="entities" item="entity" separator=",">
+            (#{entity.name}, #{entity.typeid}, #{entity.burden}, #{entity.brief}, #{entity.price}, #{entity.sums},
+            #{entity.price1}, #{entity.sums1}, #{entity.imgpath})
+        </foreach>
+        on duplicate key update
+        name = values(name) , typeid = values(typeid) , burden = values(burden) , brief = values(brief) , price =
+        values(price) , sums = values(sums) , price1 = values(price1) , sums1 = values(sums1) , imgpath =
+        values(imgpath)
+    </insert>
+
+    <!--通过主键修改数据-->
+    <update id="update">
+        update apsfc.menus
+        <set>
+            <if test="name != null and name != ''">
+                name = #{name},
+            </if>
+            <if test="typeid != null">
+                typeid = #{typeid},
+            </if>
+            <if test="burden != null and burden != ''">
+                burden = #{burden},
+            </if>
+            <if test="brief != null and brief != ''">
+                brief = #{brief},
+            </if>
+            <if test="price != null">
+                price = #{price},
+            </if>
+            <if test="sums != null">
+                sums = #{sums},
+            </if>
+            <if test="price1 != null">
+                price1 = #{price1},
+            </if>
+            <if test="sums1 != null">
+                sums1 = #{sums1},
+            </if>
+            <if test="imgpath != null and imgpath != ''">
+                imgpath = #{imgpath},
+            </if>
+        </set>
+        where id = #{id}
+    </update>
+
+    <!--通过主键删除-->
+    <delete id="deleteById">
+        delete
+        from apsfc.menus
+        where id = #{id}
+    </delete>
+
+</mapper>
