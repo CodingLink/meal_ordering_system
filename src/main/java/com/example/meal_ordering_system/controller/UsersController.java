@@ -2,6 +2,7 @@ package com.example.meal_ordering_system.controller;
 
 import com.example.meal_ordering_system.entity.Users;
 import com.example.meal_ordering_system.service.UsersService;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
@@ -14,7 +15,7 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2021-02-04 12:51:21
  */
-@RestController
+@Controller
 @RequestMapping("users")
 public class UsersController {
     /**

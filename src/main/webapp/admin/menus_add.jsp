@@ -114,7 +114,7 @@
 											TypesDao tdao = new TypesDao();
 											List<Types> typelist = tdao.select();
 											for (int i = 0; i < typelist.size(); i++) {
-												Type type = new Type();
+												Types type = new Types();
 												type = typelist.get(i);
 										%>
 										<option value="<%=type.getId()%>"><%=type.getName()%></option>
