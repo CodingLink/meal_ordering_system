@@ -1,4 +1,4 @@
-package com.example.meal_ordering_system;
+package com.example.meal_ordering_system.controller;
 
 import java.io.*;
 import javax.servlet.http.*;
