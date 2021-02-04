@@ -1,0 +1,138 @@
+table.startorder{
+border:1px #def solid;
+}
+
+table.startorder td.cap{
+background:#f7fbfe;
+border-bottom:1px #def solid;
+}
+
+td.startordertitle{
+height:27px;
+background:url(../images/cartnow1.gif) left center no-repeat;
+padding:8px 0px 0px 50px;
+font:12px/18px Verdana, Arial, Helvetica, sans-serif;
+color:#ffffff;
+}
+
+td.startordersel{
+height:27px;
+background:url(../images/cartnow2.gif) left center no-repeat;
+padding:8px 0px 0px 50px;
+font:12px/18px Verdana, Arial, Helvetica, sans-serif;
+color:#ffffff;
+}
+
+div#notLogin{
+display:block;
+line-height:26px;
+margin-top:10px;
+}
+
+div#isLogin{
+display:block;
+line-height:26px;
+margin-top:10px;
+}
+
+div#notLogin .loginlink{
+cursor:pointer;
+text-decoration: underline
+}
+
+div#isLogin .logoutlink{
+cursor:pointer;
+text-decoration: underline
+}
+
+div.orderform{
+border:1px #def solid;
+padding:0px;
+margin:15px 0px;
+}
+
+div.orderform td.biaoti{
+padding:5px 43px;
+font:bold 14px/18px Verdana, Arial, Helvetica, sans-serif;
+border-bottom:1px #def solid;
+background:#f7fbfe url(../images/78.gif) 25px center no-repeat;
+}
+
+div.orderform td.biaoti1{
+padding:5px 43px;
+font:bold 14px/18px Verdana, Arial, Helvetica, sans-serif;
+border-bottom:1px #def solid;
+border-top:1px #def solid;
+background:#f7fbfe url(../images/78.gif) 25px center no-repeat;
+}
+
+#tr_yunmethod,#tr_yunintro,#subzone{
+display:none;
+}
+
+td.yunfeitd{
+
+}
+
+div#yunintro{
+margin:5px 0px;
+width:480px;
+padding:5px 5px 10px 10px;
+border:1px #fdd0a8 solid;
+background:#FFFDF4;
+}
+
+div#yunintro_text{
+clear:both;
+font:12px/18px Verdana, Arial, Helvetica, sans-serif;
+padding:3px 5px;
+}
+
+div#yunintro_t{
+font:bold 12px/18px Verdana, Arial, Helvetica, sans-serif;
+height:17px;
+background:url(../images/cateitems.gif) 5px center no-repeat;
+padding:5px 0px 5px 23px;
+}
+
+div#yunintro_close{
+float:right;
+cursor:pointer;
+width:30px;
+height:18px;
+background:url(../images/closeme.gif) right top no-repeat;
+}
+
+span#span_tjine,span#span_yunfei,span#span_baofei,span#ordertotal,span#memberaccount,span#allnums{
+color:#ff6600;
+font:bold 12px/20px Verdana, Arial, Helvetica, sans-serif;
+}
+
+
+div#payintro{
+margin:10px 0px;
+width:480px;
+padding:5px 5px 10px 10px;
+border:1px #fdd0a8 solid;
+background:#FFFDF4;
+}
+
+div#payintro_text{
+font:12px/21px Verdana, Arial, Helvetica, sans-serif;
+padding:8px 5px 3px 5px;
+}
+
+div#payintro_t{
+font:12px/22px Verdana, Arial, Helvetica, sans-serif;
+height:17px;
+padding:5px 0px 5px 5px;
+}
+
+
+div#payintro_close{
+float:right;
+cursor:pointer;
+width:30px;
+height:18px;
+background:url(../images/closeme.gif) right top no-repeat;
+}

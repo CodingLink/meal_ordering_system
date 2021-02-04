@@ -1,0 +1,95 @@
+table.ordergl{ 
+border:1px #ffd2a3 solid;
+}
+
+
+td.biaoti{ 
+background-color: #fbf5e9; 
+border-bottom:1px #ffd2a3 solid;
+}
+
+td.hang{
+border-bottom:1px #ffd2a3 solid;
+}
+
+img.paystat{
+cursor:pointer;
+}
+
+table.ordersearch{
+margin:0px 0px 5px 0px;
+border:1px #ffd2a3 solid;
+background-color: #fbf5e9; 
+}
+
+
+/* ============·­Ò³============== */
+
+div#showpages {
+clear:both;
+padding:0px;
+margin:20px 0px;
+width:100%;
+height:30px;
+white-space: nowrap;
+}
+
+div#pagesinfo {
+float:left;
+padding:3px 8px;
+white-space: nowrap;
+}
+
+div#pages {
+float:right;
+padding-right:8px;
+white-space: nowrap;
+}
+
+div#pages ul{
+margin:0;
+padding:0;
+}
+
+div#pages a:link,div#pages a:visited,div#pages a:active{
+color:#505050;
+text-decoration: none;
+}
+
+div#pages a:hover{
+color:#ff0000;
+text-decoration: none;
+}
+
+div#pages li{
+margin:3px;
+padding:2px 5px;
+list-style-type: none;
+float:left;
+background:#fff;
+color:#505050;
+border:1px #ffd2a3 solid;
+white-space: nowrap;
+}
+
+div#pages li.pagesnow{
+color:#505050;
+background-color:#fbf5e9;
+white-space: nowrap;
+border:1px #ffd2a3 solid;
+}
+
+div#pages li.pbutton{
+color:#505050;
+background-color:#fbf5e9;
+padding:3px 5px 1px 5px;
+white-space: nowrap;
+border:1px #ffd2a3 solid;
+}
+
+div#pages li.opt{
+color:#505050;
+padding:0px 2px;
+white-space: nowrap;
+border:0px;
+}

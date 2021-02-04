@@ -1,0 +1,79 @@
+/*=========½Å×¢²Ëµ¥===========*/
+div#bottommenu{
+	margin: 0;
+	padding:0;
+	border: 0;
+	height: 35px;
+	line-height:35px;
+	color:#474747;
+	text-align:center;
+	background: url(../images/bottommenu_bg.jpg) repeat-x;
+}
+
+
+div#bottommenu a:link,div#bottommenu a:visited,div#bottommenu a:active{
+	margin:0 5px;
+	color:#474747;
+	text-decoration: none;
+}
+
+div#bottommenu a:hover{
+	margin:0 5px;
+	color:#ffcc00;
+	text-decoration: none;
+}
+
+
+/*=========À¸Ä¿²Ëµ¥===========*/
+
+div#menu	{
+    width:100%;
+	height:41px;
+    margin:0px;
+	padding:0px;
+}
+
+div#mainmenu	{
+	margin:0;
+	padding-left:219px;
+    background:url(../images/menu_bg.jpg) 0px 0px repeat-x;
+}
+
+div#mainmenu ul {
+    height:41px;
+    line-height:41px;
+    overflow:hidden;
+    margin:0px; 
+}
+
+div#mainmenu li{
+    float:left;
+    display:inline;
+    margin:0px;
+    padding:0px;
+    background:url(../images/menu.jpg) 0px 0px no-repeat;
+}
+
+div#mainmenu a{
+    display:block;
+    width:93px;
+    text-align:center;
+    font:bold 14px/41px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+}
+
+div#mainmenu a:link,div#mainmenu a:visited{
+    color:#ffffff;
+	text-decoration:none;
+}
+
+div#mainmenu a:hover,div#mainmenu a:active{
+    color:#ffffff;
+    background:url(../images/menu_hover.jpg) 0px 0px no-repeat;
+	text-decoration:none;
+}
+
+div#mainmenu a.current{
+    color:#ffffff;
+    background:url(../images/menu_hover.jpg) 0px 0px no-repeat;
+	text-decoration:none;
+}

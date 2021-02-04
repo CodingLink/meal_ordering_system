@@ -1,0 +1,33 @@
+/* ============ËÑË÷±íµ¥============== */
+div.ordersearchform{
+	width:682px;
+	height:318px;
+	background:url(../images/orderquery.jpg) no-repeat;
+} 
+
+div.ordersearchform div.searchform{
+	padding-top:70px;
+	padding-left:190px;
+	line-height:24px;
+	font-size:14px;
+}
+
+div.ordersearchform div.searchform2{
+	padding-top:10px;
+	padding-left:190px;
+	line-height:24px;
+	font-size:14px;
+}
+
+div.ordersearchform div.searchform3{
+	padding-top:10px;
+	padding-left:246px;
+}
+
+div.ordersearchform div.searchform .input{
+	border:1px #ddd solid;
+	height:18px;
+	line-height:18px;
+	padding:0px 3px;
+	background:#fbfbfb
+}

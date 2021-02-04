@@ -1,0 +1,32 @@
+/* ============公告列表============== */
+
+ul.ntclist{
+margin:0px;
+padding:0px;
+}
+
+li.ntclist {
+clear:both;
+margin:0;
+padding:3px 0px;
+padding-left:16px;
+list-style-type: none;
+font: 12px Verdana, Arial, Helvetica, sans-serif;
+font-weight:100;
+color:#505050;
+background: transparent url(../images/articleitems.gif) left no-repeat;
+}
+
+a.ntclist:link,a.ntclist:visited,a.ntclist:active{
+color:#505050;
+text-decoration: none;
+font: 12px Verdana, Arial, Helvetica, sans-serif;
+}
+
+a.ntclist:hover{
+color:#ff0000;
+text-decoration: underline;
+font: 12px Verdana, Arial, Helvetica, sans-serif;
+}
+
+

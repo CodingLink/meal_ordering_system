@@ -1,0 +1,59 @@
+.arrowlistmenu{
+width: 160px; /*width of accordion menu*/
+}
+
+.arrowlistmenu .menuheader{ 
+height:30px;
+font:14px/28px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+color: #fff;
+background:url(../images/mvmenu_off.gif) 0px -180px no-repeat;
+margin-bottom: 1px; /*bottom spacing between header and rest of content*/
+text-transform: uppercase;
+text-align:center; 
+cursor: pointer;
+}
+
+.arrowlistmenu .openheader{ /*CSS class to apply to expandable header when it's expanded*/
+background:url(../images/mvmenu_off.gif) 0px -180px no-repeat;
+}
+
+.arrowlistmenu ul{ /*CSS for UL of each sub menu*/
+list-style-type: none;
+padding: 0;
+margin-bottom: 0px;  /*bottom spacing between each UL and rest of content*/
+}
+
+.arrowlistmenu ul li{
+height:30px;
+padding-bottom: 0px; /*bottom spacing between menu items*/
+margin-bottom:1px;
+background:url(../images/mvmenu_on.gif) 0px -180px no-repeat;
+}
+
+.arrowlistmenu ul li .opensubheader{ /*Open state CSS for sub menu header*/
+background: lightblue !important;
+}
+
+.arrowlistmenu ul li .closedsubheader{ /*Closed state CSS for sub menu header*/
+background: lightgreen !important;
+}
+
+.arrowlistmenu ul li a{
+color: #505050;
+display: block;
+font:14px/30px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+
+text-align:center;  
+text-decoration: none;
+}
+
+.arrowlistmenu ul li a:visited{
+color: #505050;
+}
+
+.arrowlistmenu ul li a:hover{ /*hover state CSS*/
+color: #ff6600;
+}
+
+.arrowlistmenu ul li a.subexpandable:hover{ /*hover state CSS for sub menu header*/
+}

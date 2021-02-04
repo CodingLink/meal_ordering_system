@@ -1,0 +1,39 @@
+
+/* ==表单样式== */
+
+form{margin:0;padding:0}
+
+.formgroup{
+margin-bottom:10px;
+height:28px;
+border-bottom:1px #def solid;
+background:url(../images/icon1.gif) left no-repeat;
+font: 14px/28px Verdana, Arial, Helvetica, sans-serif;
+padding-left:22px;
+font-weight:bold;
+}
+
+
+.formintro{
+border:1px #def solid;
+margin:10px 0px 20px 0px;
+padding:10px;
+background:#f7fbfe;
+}
+
+.formborder{
+margin:0px;
+margin-top:-1px;
+border:1px #e8e8e8 solid;
+padding:12px;
+}
+
+
+.input{border:1px #ddd solid;height:20px;line-height:20px;padding:0px 3px;color:#555;background:#fbfbfb}
+.textarea{border:1px #ddd solid;font-size:12px;padding:3px;color:#555;background:#fbfbfb}
+.button{border:1px #ddd solid;font: 12px Verdana, Arial, Helvetica, sans-serif;height:22px;line-height:20px;padding:0px 3px;background:#f7f7f7;}
+.submit{border:1px #ddd solid;font: 12px Verdana, Arial, Helvetica, sans-serif;height:22px;line-height:20px;padding:0px 3px;background:#f7f7f7;}
+.mustfill{color:#ff0000}
+
+.loginlink{cursor:pointer;text-decoration: underline}
+.logoutlink{cursor:pointer;text-decoration: underline}

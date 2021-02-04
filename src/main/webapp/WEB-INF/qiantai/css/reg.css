@@ -1,0 +1,16 @@
+/*=============×¢²á±íµ¥===========*/
+
+div#reg {border:1px #f59d5e solid;padding:0;text-align:left;line-height:28px}
+div#reg .zone{border-top:1px #f59d5e solid;padding:30px;margin:0px;line-height:25px;}
+div#reg .stepname{background:#fdebd5;padding:0;height:30px;}
+div#reg .stepname ul{margin:0;padding:0;}
+div#reg .stepname li.step{float:left;list-style-type:none;background:#fdebd5 url(../images/regstep.png) 10px no-repeat;font:12px/30px simsun;padding:0px 12px 0px 28px;}
+div#reg .stepname li.stepnow{float:left;list-style-type:none;border-left:1px #f59d5e solid;border-top:1px #f59d5e solid;border-right:1px #f59d5e solid;margin:-5px 0px 0px -1px;background:#ffffff url(../images/regstepnow.png) 10px no-repeat;font:12px/36px simsun;padding:0px 12px 0px 28px;}
+div#reg .tit{border:1px #d2d2d2 dotted;padding:3px 12px;margin:15px 0px;line-height:25px;}
+div#reg .row{width:100%;clear:both;}
+div#reg .left{width:96px;padding:3px;float:left;text-align:right;font-size:14px;line-height:25px}
+div#reg .mustfill{width:12px;float:left;color:#ff0000}
+div#reg .con{float:left;line-height:25px;}
+div#reg .selface{cursor:pointer}
+
+

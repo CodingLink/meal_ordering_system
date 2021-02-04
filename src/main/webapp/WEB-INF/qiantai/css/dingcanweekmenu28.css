@@ -1,0 +1,74 @@
+
+/* ============订餐时间等信息============== */
+
+div#dingcanweekmenu{
+	border:0px;
+	height:100%;
+	padding:0;
+	margin:0;
+	background:url(../images/dingcanweekmenu_leftline.jpg) repeat-y;
+}
+
+div#dingcanweekmenu2{
+	height:100%;
+	background:url(../images/dingcanweekmenu_rightline.jpg) right repeat-y ;
+}
+
+div#dingcanweekmenu_top{
+	width:100%;
+	height:43px;
+	background:url(../images/dingcanweekmenu.jpg) 0px 0px no-repeat;
+}
+
+div#dingcanweekmenu_top_left{
+	float:left;
+	height:43px;
+	line-height:43px;
+	padding-left:50px;
+	font-size:16px;
+	font-weight:bold;
+	color:#feab43;
+}
+
+div#dingcanweekmenu_top_right{
+	float:right;
+	width:10px;
+	height:43px;
+	background:url(../images/dingcanweekmenu.jpg) -890px 0px no-repeat;
+}
+
+div#dingcanweekmenu_bottom_left{
+	margin-top:-10px;
+	height:10px;
+	line-height:10px;
+	background:url(../images/dingcanweekmenu.jpg) 0px -220px no-repeat;
+}
+
+div#dingcanweekmenu_bottom_right{
+	float:right;
+	margin-top:-10px;
+	width:10px;
+	height:10px;
+	line-height:10px;
+	background:url(../images/dingcanweekmenu.jpg) -890px -220px no-repeat;
+}
+
+div.dingcanweekmenuinfo{
+	margin:6px 6px 10px 6px;
+	background:#fffbef;
+}
+
+.riqi {
+	cursor:pointer;
+}
+
+a.nowriqiclass:link, a.nowriqiclass:visited, a.nowriqiclass:active{
+	color:#f89c47;
+	font-weight:bold;
+	text-decoration:underline;
+}
+
+.puriqiclass{
+	
+}
+

@@ -1,0 +1,5 @@
+
+/* ==提示样式== */
+
+.noticediv{display:none;border:1px #fc5959 solid;background:#FFFDF4 url(../images/chk_error.gif) 10px no-repeat;padding-left:33px;line-height:25px;margin:3px 0px}
+.okdiv{display:none;border:1px #fc5959 solid;background:#FFFDF4 url(../images/chk_right.gif) 10px no-repeat;padding-left:33px;line-height:25px;margin:3px 0px}

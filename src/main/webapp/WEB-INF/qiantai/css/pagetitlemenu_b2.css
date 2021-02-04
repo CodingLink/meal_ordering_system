@@ -1,0 +1,26 @@
+div.titlemenu_b2{
+margin:0;
+padding:0;
+}
+
+div.titlemenu_b2 a.titlemenu_b2:link,div.titlemenu_b2 a.titlemenu_b2:visited,div.titlemenu_b2 a.titlemenu_b2:active{
+display:block;
+color: #505050; 
+text-decoration: none;
+font:14px/30px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+text-align:center;
+background:#fbe5ce;
+margin-bottom:3px;
+border:1px #fecf9b solid;
+}
+
+div.titlemenu_b2 a.titlemenu_b2:hover{
+display:block;
+color: #ffffff; 
+text-decoration: none;
+font:14px/32px 'Microsoft YaHei','SimSun',Arial,Sans-Serif;
+text-align:center;
+background:#f59d5e;
+margin-bottom:3px;
+border:0px #fecf9b solid;
+}

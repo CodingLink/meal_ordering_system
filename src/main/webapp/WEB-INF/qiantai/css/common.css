@@ -1,0 +1,82 @@
+/* ============容器============== */
+body{
+	margin:0;
+	padding:0;
+	border:0;
+	height:auto;
+	text-align:left
+} 
+#contain{position: relative;height:100%;padding:10px;margin:10px auto;border:0;}
+#content {
+	position:absolute;
+	margin:10px auto 10px auto;
+	left: 45px;
+	top: -41px;
+} 
+#bottom {position: relative;margin:0px auto} 
+#top {position:relative;margin:0px auto;z-index:99} 
+#bodyex {position: absolute;left:0;top:0px;margin:0} 
+
+
+/*===插件分离层===*/
+
+.pdv_class{
+	position:relative;
+	border:0px;
+	height: auto;
+}
+
+
+/* ==常用== */
+
+div,li,td,p,select,input,textarea,a,button,input{
+	font:12px Verdana, Arial, Helvetica, sans-serif;
+	color:#505050;
+	text-decoration: none;
+	overflow: visible;
+	top: 0px;
+}
+ul{margin:0px;padding:0px;}
+a:link,a:visited,a:active{color:#505050;text-decoration: none;}
+a.nomal:link,a.nomal:visited,a.nomal:active{color:#505050;text-decoration: underline;}
+a:hover{color:#ff0000;text-decoration: underline;}
+
+/* ============表单============== */
+form{margin:0;padding:0}
+.input{border:1px #ddd solid;height:20px;line-height:20px;padding:0px 3px;color:#555;background:#f7f7f7}
+.textarea{border:1px #ddd solid;font-size:12px;padding:3px;background:#f7f7f7}
+.button{border:1px #c0c0c0 solid;height:22px;line-height:20px;padding:0px 3px;background:#e8e8e8;}
+.submit{border:1px #c0c0c0 solid;height:22px;line-height:20px;padding:0px 3px;background:#e8e8e8;}
+.mustfill{color:#ff0000}
+select{font:12px Verdana, Arial, Helvetica, sans-serif;color:#505050;}
+
+
+/* ==提示样式== */
+
+.msgdiv {color:#336699;padding-left:53px;background:url(../images/chk_msg.gif) 30px no-repeat;}
+.errdiv {color:#FF0000;padding-left:53px;background:url(../images/chk_error.gif) 30px no-repeat;}
+.rightdiv {color:#505050;padding-left:53px;background:url(../images/chk_right.gif) 30px no-repeat;}
+.noticediv{display:none;border:1px #fc5959 solid;background:#FFFDF4 url(../images/chk_error.gif) 10px no-repeat;padding-left:33px;line-height:25px;margin:3px 0px}
+.okdiv{display:none;border:1px #fc5959 solid;background:#FFFDF4 url(../images/chk_right.gif) 10px no-repeat;padding-left:33px;line-height:25px;margin:3px 0px}
+.securenotice{line-height:100px;color:#FF0000;text-align:center;}
+
+
+/* ============提示信息窗口============== */
+div#alert {display:none;cursor:default;}
+div#alert .border{border:1px #97A0AA solid;}
+div#alert .ntc{padding:30px;text-align:left;background:#fff;font: 14px/1.6 Verdana, Arial, Helvetica, sans-serif;}
+div#alert .buttonzone{padding:15px;text-align:center;background:#f7f7f7;}
+div#alert .topBar{height:20px;line-height:20px;background:#cbddef;text-align:left;padding:0px 0px 5px 5px ;font-size:12px;}
+div#alert .topBar .pwClose{position: absolute;top:0px;right:8px;width:45px;height:18px;background:url(../images/pwin3.gif) no-repeat;cursor:pointer}
+div#alert .button{border:1px #97A0AA solid;height:22px;line-height:20px;padding:0px 5px;background:#eee}
+
+
+/* ============弹出frame/或大窗口层============== */
+#frmWindow {display:none;cursor:default;}
+#frmWindow .border{border:1px #97A0AA solid;}
+#frmWindow .ntc{padding:30px;text-align:left;background:#fff;font: 12px/1.6 Verdana, Arial, Helvetica, sans-serif;}
+#frmWindow .buttonzone{padding:15px;text-align:center;padding-top:10px;background:#f7f7f7;}
+#frmWindow .Frm{width:100%;height:500px;border:0}
+#frmWindow .windowcontent{width:100%;height:380px;overflow:auto;background:#fff;border:0}
+#frmWindow .topBar{height:20px;line-height:20px;background:#cbddef;text-align:left;padding:0px 0px 5px 5px ;font-size:12px;}
+#frmWindow .topBar .pwClose{position: absolute;top:0px;right:8px;width:45px;height:18px;background:url(../images/pwin3.gif) no-repeat;cursor:pointer}

@@ -1,0 +1,23 @@
+
+/* ==表单样式== */
+
+form{margin:0;padding:0}
+
+.input{border:1px #ddd solid;width:200px;height:20px;line-height:20px;padding:0px 3px;color:#555;background:#fbfbfb;}
+.textarea{border:1px #ddd solid;font-size:12px;padding:3px;color:#555;background:#fbfbfb;overflow:auto;}
+.button{border:1px #ddd solid;font: 12px Verdana, Arial, Helvetica, sans-serif;height:22px;line-height:20px;padding:0px 3px;background:#f7f7f7;}
+.submit{border:1px #ddd solid;font: 12px Verdana, Arial, Helvetica, sans-serif;height:22px;line-height:20px;padding:0px 3px;background:#f7f7f7;cursor:pointer;}
+.mustfill{color:#ff0000}
+
+.loginlink{cursor:pointer;text-decoration: underline}
+.logoutlink{cursor:pointer;text-decoration: underline}
+
+ul.mood{
+	overflow: hidden;
+	height:25px;
+	padding-top:3px;
+}
+
+ul.mood li{
+	float:left;
+}
