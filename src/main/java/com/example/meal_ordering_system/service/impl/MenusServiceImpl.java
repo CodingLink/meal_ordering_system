@@ -3,6 +3,7 @@ package com.example.meal_ordering_system.service.impl;
 import com.example.meal_ordering_system.dao.MenusDao;
 import com.example.meal_ordering_system.entity.Menus;
 import com.example.meal_ordering_system.service.MenusService;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -17,6 +18,7 @@ import java.util.List;
 @Service("menusService")
 public class MenusServiceImpl implements MenusService {
     @Resource
+    @Qualifier
     private MenusDao menusDao;
 
     /**
