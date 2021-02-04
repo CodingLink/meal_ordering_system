@@ -3,9 +3,8 @@
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
-    <!--别名命名-->
-    <typeAliases>
+    <mappers>
         <!--包扫描方式实现-->
         <package name="com.example.meal_ordering_system.dao"/>
-    </typeAliases>
+    </mappers>
 </configuration>
