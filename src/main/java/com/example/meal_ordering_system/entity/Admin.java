@@ -1,13 +1,15 @@
 package com.example.meal_ordering_system.entity;
 
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * (Admin)实体类
- *
- * @author makejava
- * @since 2021-02-04 12:05:55
- */
+
+
+
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
 public class Admin  {
 
     private Integer id;
@@ -19,36 +21,6 @@ public class Admin  {
     private String authority;
 
 
-    public Integer getId() {
-        return id;
-    }
 
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getPwd() {
-        return pwd;
-    }
-
-    public void setPwd(String pwd) {
-        this.pwd = pwd;
-    }
-
-    public String getAuthority() {
-        return authority;
-    }
-
-    public void setAuthority(String authority) {
-        this.authority = authority;
-    }
 
 }

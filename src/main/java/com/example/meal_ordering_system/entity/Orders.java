@@ -1,14 +1,13 @@
 package com.example.meal_ordering_system.entity;
 
-import java.io.Serializable;
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
 
-/**
- * (Orders)实体类
- *
- * @author makejava
- * @since 2021-02-04 12:05:57
- */
-public class Orders implements Serializable {
+@Data
+@NoArgsConstructor
+@AllArgsConstructor
+public class Orders  {
 
     private Integer id;
 
@@ -23,52 +22,5 @@ public class Orders implements Serializable {
     private Object delivery;
 
 
-    public Integer getId() {
-        return id;
-    }
-
-    public void setId(Integer id) {
-        this.id = id;
-    }
-
-    public Object getUserid() {
-        return userid;
-    }
-
-    public void setUserid(Object userid) {
-        this.userid = userid;
-    }
-
-    public Object getMenuid() {
-        return menuid;
-    }
-
-    public void setMenuid(Object menuid) {
-        this.menuid = menuid;
-    }
-
-    public Object getMenusum() {
-        return menusum;
-    }
-
-    public void setMenusum(Object menusum) {
-        this.menusum = menusum;
-    }
-
-    public String getTimes() {
-        return times;
-    }
-
-    public void setTimes(String times) {
-        this.times = times;
-    }
-
-    public Object getDelivery() {
-        return delivery;
-    }
-
-    public void setDelivery(Object delivery) {
-        this.delivery = delivery;
-    }
 
 }
