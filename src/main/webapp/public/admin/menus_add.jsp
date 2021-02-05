@@ -1,8 +1,10 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.example.meal_ordering_system.entity.Types"%>
 <%@ page import="com.example.meal_ordering_system.dao.TypesDao" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <%@ page import="com.example.meal_ordering_system.service.TypesService" %>
 <%@ page import="com.example.meal_ordering_system.service.impl.TypesServiceImpl" %>
+<%@ page import="com.example.meal_ordering_system.controller.TypesController" %>
 <html>
 <head>
 <link href="../public/admin/css/skin.css" rel="stylesheet" type="text/css" />
@@ -69,7 +71,7 @@
 
 				<div align="center">
 
-					<form action="/menus/update" method="post" name="form1"
+					<form action="/menus/insert" method="post" name="form1"
 						onSubmit="return check11()" enctype="multipart/form-data">
 
 
@@ -109,21 +111,11 @@
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
 									class="left_bt2">菜品类别：</span></td>
-								<td class="line_table" height="25" width="80%"><select
-									name="typeid">
-
-										<%
-											TypesService ts = new TypesServiceImpl();
-											List<Types> tl = ts.queryAll();
-											System.out.println(tl);
-//											for (int i = 0; i < tl.size(); i++) {
-//												Types type=new Types();
-//												type = tl.get(i);
-										%>
-<%--										<option value="<%=type.getId()%>"><%=type.getName()%></option>--%>
-										<%
-//											}
-										%>
+								<td class="line_table" height="25" width="80%">
+									<select name="typeid">
+										<c:forEach items="${typesList}" var="t">
+											<option value="${t.id}">${t.name}</option>
+										</c:forEach>
 								</select></td>
 							</tr>
 

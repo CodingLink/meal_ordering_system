@@ -1,8 +1,11 @@
-<%@page import="com.apsfc.dao.TypeDao"%>
-<%@page import="com.apsfc.po.Type"%>
-<%@page import="com.apsfc.po.Menus"%>
-<%@page import="com.apsfc.dao.MenusDao"%>
+<%@page import="com.example.meal_ordering_system.dao.TypesDao"%>
+<%@page import="com.example.meal_ordering_system.entity.Types"%>
+<%@page import="com.example.meal_ordering_system.entity.Menus"%>
+<%@ page import="com.example.meal_ordering_system.dao.MenusDao" %>
 <%@page import="java.util.*"%>
+<%@ page import="com.example.meal_ordering_system.controller.MenusController" %>
+<%@ page import="com.example.meal_ordering_system.service.MenusService" %>
+<%@ page import="com.example.meal_ordering_system.service.impl.MenusServiceImpl" %>
 <%@ page language="java" pageEncoding="utf-8"%>
 <html>
 <head>
@@ -49,9 +52,9 @@ body {
 							cellPadding="0">
 							<%
 							int id =Integer.parseInt(request.getParameter("id"));
-							MenusDao mdao=new MenusDao();
-							Menus menus=new Menus();
-							menus=mdao.getMenusById(id);
+								MenusService menusService = new MenusServiceImpl();
+								Menus menus=new Menus();
+							menus=menusService.queryById(id);
 						    if (menus!= null) {
 							%>
 							<tr>
@@ -92,13 +95,13 @@ body {
 								<td class="line_table" height="25" width="80%"><select
 									name="typeid">
 										<%
-											TypeDao tdao = new TypeDao();
-											List<Type> typelist = tdao.select();
-											for (int i = 0; i < typelist.size(); i++){
-												Type type = new Type();
-												type = typelist.get(i);
+//											TypeDao tdao = new TypeDao();
+//											List<Type> typelist = tdao.select();
+//											for (int i = 0; i < typelist.size(); i++){
+//												Type type = new Type();
+//												type = typelist.get(i);
 										%>
-										<option value="<%=type.getId()%>"><%=type.getName()%></option>
+<%--										<option value="<%=type.getId()%>"><%=type.getName()%></option>--%>
 										<%
 											}
 										%>

@@ -17,7 +17,7 @@
                     src="images/left-top-right.gif" width="17" height="29" /></td>
 			<td valign="top" background="images/content-bg.gif"><table
 					width="100%" height="31" border="0" cellpadding="0" cellspacing="0"
-					class="left_topbg" id="table2">
+					class="left_topbg" id="table_2">
 					<tr>
 						<td height="31"><div class="titlebt">菜单信息</div></td>
 					</tr>
