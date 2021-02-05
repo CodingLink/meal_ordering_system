@@ -12,8 +12,8 @@ public class AdviceUtil {
     }
 
     public Object around(ProceedingJoinPoint proceedingJoinPoint) throws Throwable {
-        Joinpoint pjp = null;
-        return pjp.proceed();
+
+        return proceedingJoinPoint.proceed();
     }
 
     public void exception(JoinPoint joinPoint) throws Throwable {
