@@ -46,23 +46,29 @@ public class MenusController {
 //    查询全部菜单,并且返回到菜单信息页面
     @RequestMapping("/allMenus")
     public String  list(Model model ){
-        List<Menus> list = menusService.queryAllByLimit(1, 5);
+        List<Menus> list = menusService.queryAllByLimit(1, 10);
         model.addAttribute("list",list);
         return "/admin/menus";
     }
 // 插入一个菜单信息到数据库
     @RequestMapping("/insert")
     public String  insert(Menus menus){
-        System.out.println("insertBook"+menus);
         menusService.insert(menus);
         return "/admin/menus_add";
     }
-
+    //菜单信息修改
     @RequestMapping("/update")
-        public ModelAndView update( ){
-            ModelAndView modelAndView =new ModelAndView("/admin/menus_update");
-            return modelAndView;
-        }
+    public String delete(Menus menus){
+        menusService.update(menus);
+        return "/admin/menus";
+    }
+
+    //菜单信息删除
+    @RequestMapping("/delete")
+    public String delete(Integer id){
+       menusService.deleteById(id);
+        return "/admin/menus";
+    }
 
 
 
@@ -72,6 +78,7 @@ public class MenusController {
      * @param id 主键
      * @return 单条数据
      */
+
     @GetMapping("selectOne")
     public Menus selectOne(Object id) {
         return this.menusService.queryById(id);
