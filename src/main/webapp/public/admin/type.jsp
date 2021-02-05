@@ -1,10 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@page import="com.example.meal_ordering_system.*"%>
-<%@page import="com.example.meal_ordering_system.dao.*"%>
-<%@ page import="com.example.meal_ordering_system.service.impl.TypesServiceImpl" %>
-<%@ page import="java.lang.reflect.Type" %>
-<%@ page import="com.example.meal_ordering_system.entity.Types" %>
-<%@ page import="com.example.meal_ordering_system.controller.TypesController" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
@@ -59,7 +53,7 @@
 								<td class="line_table" align="center" width="30%"><span
 									class="left_txt">${t.name}</span></td>
 								<td class="line_table" align="center" width="20%"><a
-                                        href="type_update.jsp?id=${t.id}" target="main">修改</a></td>
+                                        href="<c:url value="/types/queryById?id=${t.id}"/>" target="main">修改</a></td>
 								<td class="line_table" align="center" width="20%"><a
 									href="<c:url value="/types/delete?id=${t.id}"/>" target="main">删除</a></td>
 							</tr>

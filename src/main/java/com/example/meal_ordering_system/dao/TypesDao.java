@@ -21,7 +21,31 @@ public interface TypesDao {
      */
     List<Types> queryAll();
 
+    /**
+     * 修改菜单类别
+     * @param type
+     * @return
+     */
     int update(Types type);
 
+    /**
+     * 删除菜单类别
+     * @param id
+     * @return
+     */
     int delete(int id);
+
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    Types queryById(int id);
+
+    /**
+     * 插入元素
+     * @param types
+     * @return
+     */
+    int insert(Types types);
 }
