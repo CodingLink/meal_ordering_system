@@ -58,6 +58,8 @@ public class MenusController {
     public String  list(Model model ){
         List<Menus> list = menusService.queryAllByLimit(1, 10);
         model.addAttribute("list",list);
+        List<Types> typesList=typesService.queryAll();
+        model.addAttribute("typesList",typesList);
         return "/admin/menus";
     }
 // 插入一个菜单信息到数据库

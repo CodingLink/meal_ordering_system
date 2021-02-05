@@ -74,7 +74,7 @@
 <%--							    for(int i=0;i<list.size();i++){--%>
 <%--									Menus menus=list.get(i);--%>
 <%--							%>--%>
-							<c:forEach items="${list}" var="l">
+							<c:forEach items="${list}" var="l" varStatus="loop">
 							<tr>
 								<td class="line_table" align="center"><a
 									href="menus_update.jsp?id=${l.id}}">${l.name}</a></td>
@@ -84,7 +84,7 @@
 								<td class="line_table" align="center"><span
 									class="left_txt">${l.burden}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt">${l.typeid}</span></td>
+									class="left_txt">${typesList[loop.count-1].name}</span></td>
 								<td class="line_table" align="center"><span
 									class="left_txt">${l.brief}</span></td>
 								<td class="line_table" align="center"><span
