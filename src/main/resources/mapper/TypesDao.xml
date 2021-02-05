@@ -13,6 +13,13 @@
         from apsfc.types
     </select>
 
+    <!--根据id删除数据-->
+    <delete id="delete">
+        delete from types where id=#{id,jdbcType=INTEGER}
+    </delete>
 
-
+    <!--修改数据-->
+    <update id="update" parameterType="com.example.meal_ordering_system.entity.Types">
+        update types set name=#{name} where id=#{id}
+    </update>
 </mapper>

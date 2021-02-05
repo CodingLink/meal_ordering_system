@@ -29,4 +29,20 @@ public class TypesServiceImpl implements TypesService {
     public List<Types> queryAll() {
         return this.typesDao.queryAll();
     }
+
+    @Override
+    public int update(Types type) {
+        typesDao.update(type);
+        return 0;
+    }
+
+    /**
+     * 删除元素
+     * @param id
+     * @return
+     */
+    @Override
+    public int delete(int id) {
+        return typesDao.delete(id);
+    }
 }

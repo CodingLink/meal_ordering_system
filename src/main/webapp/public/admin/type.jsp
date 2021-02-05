@@ -61,7 +61,7 @@
 								<td class="line_table" align="center" width="20%"><a
                                         href="type_update.jsp?id=${t.id}" target="main">修改</a></td>
 								<td class="line_table" align="center" width="20%"><a
-									href="../servlet/TypeDelServlet?id=${t.id}" target="main">删除</a></td>
+									href="<c:url value="/types/delete?id=${t.id}"/>" target="main">删除</a></td>
 							</tr>
 							</c:forEach>
 						
