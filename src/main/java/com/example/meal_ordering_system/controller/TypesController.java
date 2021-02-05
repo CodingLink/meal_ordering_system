@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Type;
 import java.util.List;
 
 /**
@@ -35,8 +36,10 @@ public class TypesController {
         model.addAttribute("types",types);
         return "admin/type";
     }
-    @RequestMapping("test")
-    public String testTypes(){
-        return "admin/type";
+
+    @RequestMapping("getall")
+    public List<Types> queryall()
+    {
+        return this.typesService.queryAll();
     }
 }
