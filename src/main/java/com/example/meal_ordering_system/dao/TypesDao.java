@@ -21,4 +21,7 @@ public interface TypesDao {
      */
     List<Types> queryAll();
 
+    int update(Types type);
+
+    int delete(int id);
 }

@@ -19,4 +19,13 @@ public interface TypesService {
      */
     List<Types> queryAll();
 
+    int update(Types type);
+
+    /**
+     * 删除元素
+     * @param id
+     * @return
+     */
+    int delete(int id);
+
 }
