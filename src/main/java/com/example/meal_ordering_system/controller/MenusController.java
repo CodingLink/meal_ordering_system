@@ -36,12 +36,22 @@ public class MenusController {
     @Qualifier("typesService")
     private TypesService typesService;
 
-    @RequestMapping("/add")
-    public ModelAndView add(){
+    //跳转至新增页面
+    @RequestMapping("/toAddPage")
+    public ModelAndView toAddPage(){
         ModelAndView modelAndView = new ModelAndView("/admin/menus_add");
         List<Types> typesList=typesService.queryAll();
         modelAndView.addObject("typesList",typesList);
         return modelAndView;
+    }
+//  跳转至修改页面
+    @RequestMapping("/toUpdatePage")
+    public String toUpdatePage(Integer id,Model model){
+        Menus menus = menusService.queryById(id);
+        model.addAttribute("menu",menus);
+        List<Types> typesList=typesService.queryAll();
+        model.addAttribute("typesList",typesList);
+        return "/admin/menus_update";
     }
 //    查询全部菜单,并且返回到菜单信息页面
     @RequestMapping("/allMenus")

@@ -26,7 +26,7 @@
 					</tr>
 				</table>
 				<ul class="MM">
-					<li><a href="<c:url value="/menus/add"/>" target="main">添加新菜单</a></li>
+					<li><a href="<c:url value="/menus/toAddPage"/>" target="main">添加新菜单</a></li>
 					<li><a href="<c:url value="/menus/allMenus"/>" target="main">菜单信息列表</a></li>
 				</ul>
 			</div>

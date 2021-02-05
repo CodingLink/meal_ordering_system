@@ -79,7 +79,7 @@
 								<td class="line_table" align="center"><a
 									href="menus_update.jsp?id=${l.id}}">${l.name}</a></td>
 								<td class="line_table" align="center"><a
-									href="../${l.imgpath}"><img src="../${l.imgpath}"
+									href="../public/${l.imgpath}"><img src="../public/${l.imgpath}"
 										width="30" heigth="30"></a></td>
 								<td class="line_table" align="center"><span
 									class="left_txt">${l.burden}</span></td>
@@ -96,7 +96,7 @@
 								<td class="line_table" align="center"><span
 									class="left_txt">${l.sums1}</span></td>
 								<td class="line_table" align="center"><a
-									href="/menus/update?id=${l.id}">修改</a></td>
+									href="/menus/toUpdatePage?id=${l.id}">修改</a></td>
 								<td class="line_table" align="center"><a
 									href="/menus/delete?id=${l.id}">删除</a></td>
 							</tr>
