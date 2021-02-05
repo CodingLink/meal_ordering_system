@@ -85,33 +85,13 @@
         </where>
     </select>
 
-    <!--新增所有列-->
+    <!--新增-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
         insert into apsfc.menus(name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
         values (#{name}, #{typeid}, #{burden}, #{brief}, #{price}, #{sums}, #{price1}, #{sums1}, #{imgpath})
     </insert>
 
-    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.menus(name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.typeid}, #{entity.burden}, #{entity.brief}, #{entity.price}, #{entity.sums},
-            #{entity.price1}, #{entity.sums1}, #{entity.imgpath})
-        </foreach>
-    </insert>
 
-    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.menus(name, typeid, burden, brief, price, sums, price1, sums1, imgpath)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.typeid}, #{entity.burden}, #{entity.brief}, #{entity.price}, #{entity.sums},
-            #{entity.price1}, #{entity.sums1}, #{entity.imgpath})
-        </foreach>
-        on duplicate key update
-        name = values(name) , typeid = values(typeid) , burden = values(burden) , brief = values(brief) , price =
-        values(price) , sums = values(sums) , price1 = values(price1) , sums1 = values(sums1) , imgpath =
-        values(imgpath)
-    </insert>
 
     <!--通过主键修改数据-->
     <update id="update">

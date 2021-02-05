@@ -1,6 +1,8 @@
 <%@page import="com.example.meal_ordering_system.entity.Menus"%>
 <%@page import="com.example.meal_ordering_system.dao.MenusDao"%>
 <%@page import="java.util.*"%>
+<%@ page import="com.example.meal_ordering_system.service.MenusService" %>
+<%@ page import="com.example.meal_ordering_system.service.impl.MenusServiceImpl" %>
 <%@ page language="java"  pageEncoding="utf-8"%>
 <html>
 <head>
@@ -66,10 +68,10 @@
 								if(str!=null&&str!=""){
 									currentpage=Integer.parseInt(str);
 								}
-							    MenusDao md=new MenusDao();
-							    List<Menus> list=md.pageList(currentpage,5);
+							    MenusService ms=new MenusServiceImpl();
+							    List<Menus> list=ms.queryAllByLimit(currentpage,5);
 							    for(int i=0;i<list.size();i++){
-									Menus menus=list.get(i); 	
+									Menus menus=list.get(i);
 							%>
 							<tr>
 								<td class="line_table" align="center"><a
@@ -80,7 +82,7 @@
 								<td class="line_table" align="center"><span
 									class="left_txt"><%=menus.getBurden()%></span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getTypename()%></span></td>
+									class="left_txt"><%=menus%></span></td>
 								<td class="line_table" align="center"><span
 									class="left_txt"><%=menus.getBrief()%></span></td>
 								<td class="line_table" align="center"><span
@@ -100,16 +102,16 @@
 								}
 							%>
 							<tr>
-								<td class="line_table" align="center" colspan="11" height="20">
-								<span class="left_bt2">第<%=md.getCurrentpage()%>页
-										&nbsp;&nbsp;共<%=md.getTotalpage()%>页
-								</span>&nbsp;&nbsp; 
-								    <a href="?currentpage=0">[首页]</a>
-								    <a href="?currentpage=<%=md.getTotalpage()%>">[尾页]</a>&nbsp;&nbsp; 
-								    <a href="?currentpage=<%=md.getCurrentpage()-1%>">[上一页]</a>
-									<a href="?currentpage=<%=md.getCurrentpage()+1%>">[下一页]</a>
-									
-								</td>
+<%--								<td class="line_table" align="center" colspan="11" height="20">--%>
+<%--								<span class="left_bt2">第<%=ms.getCurrentpage()%>页--%>
+<%--										&nbsp;&nbsp;共<%=ms.getTotalpage()%>页--%>
+<%--								</span>&nbsp;&nbsp; --%>
+<%--								    <a href="?currentpage=0">[首页]</a>--%>
+<%--								    <a href="?currentpage=<%=ms.getTotalpage()%>">[尾页]</a>&nbsp;&nbsp; --%>
+<%--								    <a href="?currentpage=<%=ms.getCurrentpage()-1%>">[上一页]</a>--%>
+<%--									<a href="?currentpage=<%=ms.getCurrentpage()+1%>">[下一页]</a>--%>
+<%--									--%>
+<%--								</td>--%>
 							</tr>
 					</table>
 				</div>

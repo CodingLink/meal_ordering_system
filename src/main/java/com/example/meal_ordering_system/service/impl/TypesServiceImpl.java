@@ -6,8 +6,6 @@ import com.example.meal_ordering_system.service.TypesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
-
-import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -22,7 +20,6 @@ public class TypesServiceImpl implements TypesService {
     @Autowired
     @Qualifier("typesDao")
     private TypesDao typesDao;
-
 
     /**
      * 查询所有元素

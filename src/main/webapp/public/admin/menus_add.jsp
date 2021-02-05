@@ -6,7 +6,7 @@
 <html>
 <head>
 <link href="../public/admin/css/skin.css" rel="stylesheet" type="text/css" />
-<meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <script language="JavaScript">
 	function check11() {
 
@@ -36,11 +36,11 @@
 			return false;
 		}
 
-		if (document.form1.img.value == "") {
-			alert("上传图片不能为空!");
-			document.form1.img.focus();
-			return false;
-		}
+		// if (document.form1.img.value == "") {
+		// 	alert("上传图片不能为空!");
+		// 	document.form1.img.focus();
+		// 	return false;
+		// }
 	}
 </script>
 </head>
@@ -62,14 +62,14 @@
 					src="../public/admin/images/nav-right-bg.gif" width="16" height="29" /></td>
 		</tr>
 		<tr>
-			<td valign="middle" background="images/mail_leftbg.gif">&nbsp;</td>
+			<td valign="middle" background="../public/admin/images/mail_leftbg.gif">&nbsp;</td>
 			<td valign="top" bgcolor="#F7F8F9">
 
 				<p>&nbsp;</p>
 
 				<div align="center">
 
-					<form action="../MenuAddServlet" method="post" name="form1"
+					<form action="/menus/update" method="post" name="form1"
 						onSubmit="return check11()" enctype="multipart/form-data">
 
 
@@ -113,11 +113,12 @@
 									name="typeid">
 
 										<%
-//											TypesService tservice = new TypesServiceImpl();
-//											List<Types> typelist = tservice.select();
-//											for (int i = 0; i < typelist.size(); i++) {
-//												Types type = new Types();
-//												type = typelist.get(i);
+											TypesService ts = new TypesServiceImpl();
+											List<Types> tl = ts.queryAll();
+											System.out.println(tl);
+//											for (int i = 0; i < tl.size(); i++) {
+//												Types type=new Types();
+//												type = tl.get(i);
 										%>
 <%--										<option value="<%=type.getId()%>"><%=type.getName()%></option>--%>
 										<%
