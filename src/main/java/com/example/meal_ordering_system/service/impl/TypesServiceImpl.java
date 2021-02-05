@@ -30,6 +30,11 @@ public class TypesServiceImpl implements TypesService {
         return this.typesDao.queryAll();
     }
 
+    /**
+     * 修改菜单类别
+     * @param type
+     * @return
+     */
     @Override
     public int update(Types type) {
         typesDao.update(type);
@@ -45,4 +50,20 @@ public class TypesServiceImpl implements TypesService {
     public int delete(int id) {
         return typesDao.delete(id);
     }
+
+    /**
+     * 根据id查询
+     * @param id
+     * @return
+     */
+    @Override
+    public Types queryById(int id) {
+        return typesDao.queryById(id);
+    }
+
+    @Override
+    public int insert(Types type) {
+        return typesDao.insert(type);
+    }
+
 }

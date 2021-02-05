@@ -22,4 +22,12 @@
     <update id="update" parameterType="com.example.meal_ordering_system.entity.Types">
         update types set name=#{name} where id=#{id}
     </update>
+
+    <!--根据id查询元素-->
+    <select id="queryById" resultMap="TypesMap">
+        select id,name from apsfc.types where id=#{id,jdbcType=INTEGER}
+    </select>
+    <insert id="insert" parameterType="com.example.meal_ordering_system.entity.Types">
+        insert into types(id, name) values (#{id},#{name})
+    </insert>
 </mapper>

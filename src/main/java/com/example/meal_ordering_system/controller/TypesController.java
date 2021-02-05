@@ -56,4 +56,31 @@ public class TypesController {
         this.typesService.delete(id);
         return queryAll(model);
     }
+
+    /**
+     * 修改菜单类别
+     * @param model
+     * @param id
+     * @return
+     */
+    //函数入口
+    @RequestMapping("update")
+    public String update(Model model,@Param("id") int id,@Param("name") String name) {
+        typesService.update(new Types(id,name));
+        return queryAll(model);
+    }
+
+    @RequestMapping("queryById")
+    public String queryById(Model model,@Param("id") int id){
+        Types type=typesService.queryById(id);
+        model.addAttribute("type",type);
+        return "admin/type_update";
+    }
+
+    @RequestMapping("insert")
+    public String insert(Model model,@Param("name") String name){
+        int id=(int)(System.currentTimeMillis()%100);
+        typesService.insert(new Types(id,name));
+        return queryAll(model);
+    }
 }
