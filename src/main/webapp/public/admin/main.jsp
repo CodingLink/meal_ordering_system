@@ -8,7 +8,7 @@
   <frame src="admin_top.jsp" noresize="noresize" frameborder="0" name="topFrame" scrolling="no" marginwidth="0" marginheight="0" target="main" />
   <frameset cols="200,*" id="frame">
 	<frame src="admin_left.jsp" noresize="noresize" marginwidth="0" marginheight="0" frameborder="0" scrolling="no" target="main" />
-	<frame src="menus.jsp" name="main" marginwidth="0" marginheight="0" frameborder="0" scrolling="auto" target="_self" />
+	<frame src="/menus/allMenus " name="main" marginwidth="0" marginheight="0" frameborder="0" scrolling="auto" target="_self" />
   </frameset>
 </frameset>
 <noframes>
