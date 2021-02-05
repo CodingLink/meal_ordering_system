@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="com.example.meal_ordering_system.entity.Menus"%>
 <%@page import="com.example.meal_ordering_system.dao.MenusDao"%>
 <%@page import="java.util.*"%>
@@ -7,26 +8,26 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-<link href="css/skin.css" rel="stylesheet" type="text/css" />
+<link href="../public/admin/css/skin.css" rel="stylesheet" type="text/css" />
 </head>
 <body class="body">
 	<table width="100%" height="1" border="0" cellpadding="0"
 		cellspacing="0">
 		<tr>
-			<td width="17" valign="top" background="images/mail_leftbg.gif"><img
-                    src="images/left-top-right.gif" width="17" height="29" /></td>
-			<td valign="top" background="images/content-bg.gif"><table
+			<td width="17" valign="top" background="../public/admin/images/mail_leftbg.gif"><img
+                    src="../public/admin/images/left-top-right.gif" width="17" height="29" /></td>
+			<td valign="top" background="../public/admin/images/content-bg.gif"><table
 					width="100%" height="31" border="0" cellpadding="0" cellspacing="0"
-					class="left_topbg" id="table2">
+					class="left_topbg" id="table_2">
 					<tr>
 						<td height="31"><div class="titlebt">菜单信息</div></td>
 					</tr>
 				</table></td>
-			<td width="16" valign="top" background="images/mail_rightbg.gif"><img
-                    src="images/nav-right-bg.gif" width="16" height="29" /></td>
+			<td width="16" valign="top" background="../public/admin/images/mail_rightbg.gif"><img
+                    src="../public/admin/images/nav-right-bg.gif" width="16" height="29" /></td>
 		</tr>
 		<tr>
-			<td valign="middle" background="images/mail_leftbg.gif">&nbsp;</td>
+			<td valign="middle" background="../public/admin/images/mail_leftbg.gif">&nbsp;</td>
 			<td valign="top" bgcolor="#F7F8F9">
 				<div align="center">
 					<table id="table2" class="line_table"
@@ -62,46 +63,45 @@
 									class="left_bt2">&nbsp;</span></td>
 							</tr>
 						
-							<%
-								int currentpage=1;
-								String str=(String)request.getParameter("currentpage");
-								if(str!=null&&str!=""){
-									currentpage=Integer.parseInt(str);
-								}
-							    MenusService ms=new MenusServiceImpl();
-							    List<Menus> list=ms.queryAllByLimit(currentpage,5);
-							    for(int i=0;i<list.size();i++){
-									Menus menus=list.get(i);
-							%>
+<%--							<%--%>
+<%--								int currentpage=1;--%>
+<%--								String str=(String)request.getParameter("currentpage");--%>
+<%--								if(str!=null&&str!=""){--%>
+<%--									currentpage=Integer.parseInt(str);--%>
+<%--								}--%>
+<%--							    MenusService ms=new MenusServiceImpl();--%>
+<%--							    List<Menus> list=ms.queryAllByLimit(currentpage,5);--%>
+<%--							    for(int i=0;i<list.size();i++){--%>
+<%--									Menus menus=list.get(i);--%>
+<%--							%>--%>
+							<c:forEach items="${list}" var="l">
 							<tr>
 								<td class="line_table" align="center"><a
-									href="menus_update.jsp?id=<%=menus.getId()%>"><%=menus.getName()%></a></td>
+									href="menus_update.jsp?id=${l.id}}">${l.name}</a></td>
 								<td class="line_table" align="center"><a
-									href="../<%=menus.getImgpath()%>"><img src="../<%=menus.getImgpath()%>"
+									href="../${l.imgpath}"><img src="../${l.imgpath}"
 										width="30" heigth="30"></a></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getBurden()%></span></td>
+									class="left_txt">${l.burden}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus%></span></td>
+									class="left_txt">${l.typeid}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getBrief()%></span></td>
+									class="left_txt">${l.brief}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getPrice()%></span></td>
+									class="left_txt">${l.price}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getSums()%></span></td>
+									class="left_txt">${l.sums}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getPrice1()%></span></td>
+									class="left_txt">${l.price1}</span></td>
 								<td class="line_table" align="center"><span
-									class="left_txt"><%=menus.getSums1()%></span></td>
+									class="left_txt">${l.sums1}</span></td>
 								<td class="line_table" align="center"><a
-									href="menus_update.jsp?id=<%=menus.getId()%>">修改</a></td>
+									href="/menus/update?id=${l.id}">修改</a></td>
 								<td class="line_table" align="center"><a
-									href="../MenuDelServlet?id=<%=menus.getId()%>">删除</a></td>
+									href="/menus/delete?id=${l.id}">删除</a></td>
 							</tr>
-							<%
-								}
-							%>
-							<tr>
+							</c:forEach>
+<%--							<tr>--%>
 <%--								<td class="line_table" align="center" colspan="11" height="20">--%>
 <%--								<span class="left_bt2">第<%=ms.getCurrentpage()%>页--%>
 <%--										&nbsp;&nbsp;共<%=ms.getTotalpage()%>页--%>
@@ -112,19 +112,19 @@
 <%--									<a href="?currentpage=<%=ms.getCurrentpage()+1%>">[下一页]</a>--%>
 <%--									--%>
 <%--								</td>--%>
-							</tr>
+<%--							</tr>--%>
 					</table>
 				</div>
 			</td>
-			<td background="images/mail_rightbg.gif">&nbsp;</td>
+			<td background="../public/admin/images/mail_rightbg.gif">&nbsp;</td>
 		</tr>
 		<tr>
-			<td valign="bottom" background="images/mail_leftbg.gif"><img
-                    src="images/buttom_left2.gif" width="17" height="17" /></td>
-			<td background="images/buttom_bgs.gif"><img
-                    src="images/buttom_bgs.gif" width="17" height="17"></td>
-			<td valign="bottom" background="images/mail_rightbg.gif"><img
-                    src="images/buttom_right2.gif" width="16" height="17" /></td>
+			<td valign="bottom" background="../public/admin/images/mail_leftbg.gif"><img
+                    src="../public/admin/images/buttom_left2.gif" width="17" height="17" /></td>
+			<td background="../public/admin/images/buttom_bgs.gif"><img
+                    src="../public/admin/images/buttom_bgs.gif" width="17" height="17"></td>
+			<td valign="bottom" background="../public/admin/images/mail_rightbg.gif"><img
+                    src="../public/admin/images/buttom_right2.gif" width="16" height="17" /></td>
 		</tr>
 	</table>
 </body>
