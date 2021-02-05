@@ -1,13 +1,18 @@
 package com.example.meal_ordering_system.controller;
 
 import com.example.meal_ordering_system.entity.Admin;
+import com.example.meal_ordering_system.entity.Menus;
 import com.example.meal_ordering_system.service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import java.util.List;
 
 /**
  * (Admin)表控制层
@@ -21,8 +26,10 @@ public class AdminController {
     /**
      * 服务对象
      */
-    @Resource
+    @Autowired
+    @Qualifier("adminService")
     private AdminService adminService;
+
 
     /**
      * 通过主键查询单条数据
