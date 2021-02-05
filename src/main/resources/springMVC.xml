@@ -11,13 +11,15 @@
         http://www.springframework.org/schema/mvc/spring-mvc.xsd">
     <!--开启springMVC注解-->
     <mvc:annotation-driven/>
+    <!--静态资源访问-->
+    <mvc:resources mapping="/public/**" location="/public/" />
     <!--controller层的扫描-->
     <context:component-scan base-package="com.example.meal_ordering_system.controller"/>
 
     <!--加载视图解析器-->
     <bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <!--设置前缀属性-->
-        <!--<property name="prefix" value="/WEB-INF/"/>-->
+        <property name="prefix" value="/public/"/>
         <!--设置后缀属性-->
         <property name="suffix" value=".jsp"/>
     </bean>

@@ -1,41 +1,43 @@
 <%@page import="com.example.meal_ordering_system.entity.Types"%>
 <%@ page import="com.example.meal_ordering_system.dao.TypesDao" %>
-<%@ page language="java" import="java.util.*" pageEncoding="gb2312"%>
+<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+<%@ page import="com.example.meal_ordering_system.service.TypesService" %>
+<%@ page import="com.example.meal_ordering_system.service.impl.TypesServiceImpl" %>
 <html>
 <head>
-<link href="css/skin.css" rel="stylesheet" type="text/css" />
+<link href="../public/admin/css/skin.css" rel="stylesheet" type="text/css" />
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <script language="JavaScript">
 	function check11() {
 
 		if (document.form1.name.value == "") {
-			alert("²ËÆ·Ãû³Æ²»ÄÜÎª¿Õ!");
+			alert("èœå“åç§°ä¸èƒ½ä¸ºç©º!");
 			document.form1.name.focus();
 			return false;
 		}
 		if (document.form1.author.value == "") {
-			alert("Ô­ÁÏ²»ÄÜÎª¿Õ!");
+			alert("åŸæ–™ä¸èƒ½ä¸ºç©º!");
 			document.form1.author.focus();
 			return false;
 		}
 		if (document.form1.price.value == "") {
-			alert("ÊĞ³¡¼Û¸ñ²»ÄÜÎª¿Õ!");
+			alert("å¸‚åœºä»·æ ¼ä¸èƒ½ä¸ºç©º!");
 			document.form1.price1.focus();
 			return false;
 		}
 		if (document.form1.price1.value == "") {
-			alert("»áÔ±¼Û¸ñ²»ÄÜÎª¿Õ!");
+			alert("ä¼šå‘˜ä»·æ ¼ä¸èƒ½ä¸ºç©º!");
 			document.form1.price1.focus();
 			return false;
 		}
 		if (document.form1.brief.value == "") {
-			alert("ËµÃ÷²»ÄÜÎª¿Õ!");
+			alert("è¯´æ˜ä¸èƒ½ä¸ºç©º!");
 			document.form1.brief.focus();
 			return false;
 		}
 
 		if (document.form1.img.value == "") {
-			alert("ÉÏ´«Í¼Æ¬²»ÄÜÎª¿Õ!");
+			alert("ä¸Šä¼ å›¾ç‰‡ä¸èƒ½ä¸ºç©º!");
 			document.form1.img.focus();
 			return false;
 		}
@@ -47,17 +49,17 @@
 	<table width="100%" height="1" border="0" cellpadding="0"
 		cellspacing="0">
 		<tr>
-			<td width="17" valign="top" background="images/mail_leftbg.gif"><img
-                    src="images/left-top-right.gif" width="17" height="29" /></td>
-			<td valign="top" background="images/content-bg.gif"><table
+			<td width="17" valign="top" background="../public/admin/images/mail_leftbg.gif"><img
+					src="../public/admin/images/left-top-right.gif" width="17" height="29" /></td>
+			<td valign="top" background="../public/admin/images/content-bg.gif"><table
 					width="100%" height="31" border="0" cellpadding="0" cellspacing="0"
 					class="left_topbg" id="table2">
 					<tr>
-						<td height="31"><div class="titlebt">Ìí¼Ó²ËÆ·</div></td>
+						<td height="31"><div class="titlebt">æ·»åŠ èœå“</div></td>
 					</tr>
 				</table></td>
-			<td width="16" valign="top" background="images/mail_rightbg.gif"><img
-                    src="images/nav-right-bg.gif" width="16" height="29" /></td>
+			<td width="16" valign="top" background="../public/admin/images/mail_rightbg.gif"><img
+					src="../public/admin/images/nav-right-bg.gif" width="16" height="29" /></td>
 		</tr>
 		<tr>
 			<td valign="middle" background="images/mail_leftbg.gif">&nbsp;</td>
@@ -76,63 +78,63 @@
 							cellPadding="0">
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">²ËÆ·Ãû³Æ£º</span></td>
+									class="left_bt2">èœå“åç§°ï¼š</span></td>
 								<td class="line_table" height="25" width="80%"><input
 									type="text" name="name" size="45" value=""></td>
 							</tr>
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">Ô­&nbsp;&nbsp;&nbsp; ÁÏ£º</span></td>
+									class="left_bt2">åŸ&nbsp;&nbsp;&nbsp; æ–™ï¼š</span></td>
 								<td class="line_table" height="25" width="80%"><input
 									type="text" name="burden" size="45" value=""></td>
 							</tr>
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">ÊĞ³¡¼Û¸ñ£º</span></td>
+									class="left_bt2">å¸‚åœºä»·æ ¼ï¼š</span></td>
 								<td height="25" width="80%"><input type="text" name="price"
 									size="45" value=""></td>
 							</tr>
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">»áÔ±¼Û¸ñ£º</span></td>
+									class="left_bt2">ä¼šå‘˜ä»·æ ¼ï¼š</span></td>
 								<td height="25" width="80%"><input type="text"
 									name="price1" size="45" value=""></td>
 							</tr>
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">Ëµ&nbsp;&nbsp;&nbsp; Ã÷£º</span></td>
+									class="left_bt2">è¯´&nbsp;&nbsp;&nbsp; æ˜ï¼š</span></td>
 								<td class="line_table" height="25" width="80%"><textarea
 										rows="12" name="brief" cols="100"></textarea></td>
 							</tr>
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">²ËÆ·Àà±ğ£º</span></td>
+									class="left_bt2">èœå“ç±»åˆ«ï¼š</span></td>
 								<td class="line_table" height="25" width="80%"><select
 									name="typeid">
 
 										<%
-											TypesDao tdao = new TypesDao();
-											List<Types> typelist = tdao.select();
-											for (int i = 0; i < typelist.size(); i++) {
-												Types type = new Types();
-												type = typelist.get(i);
+//											TypesService tservice = new TypesServiceImpl();
+//											List<Types> typelist = tservice.select();
+//											for (int i = 0; i < typelist.size(); i++) {
+//												Types type = new Types();
+//												type = typelist.get(i);
 										%>
-										<option value="<%=type.getId()%>"><%=type.getName()%></option>
+<%--										<option value="<%=type.getId()%>"><%=type.getName()%></option>--%>
 										<%
-											}
+//											}
 										%>
 								</select></td>
 							</tr>
 
 							<tr>
 								<td class="line_table" height="25" align="right" width="20%"><span
-									class="left_bt2">ÉÏ´«Í¼Æ¬£º</span></td>
+									class="left_bt2">ä¸Šä¼ å›¾ç‰‡ï¼š</span></td>
 								<td class="line_table" height="25" width="80%"><input
 									type="file" name="img" size="50"></td>
 							</tr>
 							<tr>
 								<td class="line_table" height="25" align="center" colspan="2"><input
-									type="submit" value="Ìí¼Ó"></td>
+									type="submit" value="æ·»åŠ "></td>
 							</tr>
 						</table>
 					</form>
@@ -143,15 +145,15 @@
 
 
 
-			<td background="images/mail_rightbg.gif">&nbsp;</td>
+			<td background="../public/admin/images/mail_rightbg.gif">&nbsp;</td>
 		</tr>
 		<tr>
-			<td valign="bottom" background="images/mail_leftbg.gif"><img
-                    src="images/buttom_left2.gif" width="17" height="17" /></td>
-			<td background="images/buttom_bgs.gif"><img
-                    src="images/buttom_bgs.gif" width="17" height="17"></td>
-			<td valign="bottom" background="images/mail_rightbg.gif"><img
-                    src="images/buttom_right2.gif" width="16" height="17" /></td>
+			<td valign="bottom" background="../public/admin/images/mail_leftbg.gif"><img
+					src="../public/admin/images/buttom_left2.gif" width="17" height="17" /></td>
+			<td background="../public/admin/images/buttom_bgs.gif"><img
+					src="../public/admin/images/buttom_bgs.gif" width="17" height="17"></td>
+			<td valign="bottom" background="../public/admin/images/mail_rightbg.gif"><img
+					src="../public/admin/images/buttom_right2.gif" width="16" height="17" /></td>
 		</tr>
 	</table>
 </body>

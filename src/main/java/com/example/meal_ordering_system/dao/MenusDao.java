@@ -1,7 +1,10 @@
 package com.example.meal_ordering_system.dao;
 
 import com.example.meal_ordering_system.entity.Menus;
+import com.example.meal_ordering_system.entity.Page;
 import org.apache.ibatis.annotations.Param;
+
+
 
 import java.util.List;
 
@@ -20,6 +23,10 @@ public interface MenusDao {
      * @return 实例对象
      */
     Menus queryById(Object id);
+
+    List<Menus> selectAll(Page page);
+
+     long selectCount();
 
     /**
      * 查询指定行数据

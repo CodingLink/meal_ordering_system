@@ -61,7 +61,7 @@ body {
 											</tr>
 											<tr>
 												<td height="80" align="right" valign="top"><img
-													src="images/logo.png" width="279" height="68"></td>
+                                                        src="images/logo.png" width="279" height="68"></td>
 											</tr>
 											<tr>
 												<td height="198" align="right" valign="top"><table
@@ -89,11 +89,11 @@ body {
 														<tr>
 															<td>&nbsp;</td>
 															<td width="30%" height="40"><img
-																src="images/icon-demo.gif" width="16" height="16">
+                                                                    src="images/icon-demo.gif" width="16" height="16">
 																使用说明</td>
 															<td width="35%"><img
-																src="images/icon-login-seaver.gif" width="16"
-																height="16"> 在线客服</td>
+                                                                    src="images/icon-login-seaver.gif" width="16"
+                                                                    height="16"> 在线客服</td>
 														</tr>
 													</table></td>
 											</tr>
@@ -158,7 +158,7 @@ body {
 											</tr>
 											<tr>
 												<td width="433" height="164" align="right" valign="bottom"><img
-													src="images/login-wel.gif" width="242" height="138"></td>
+                                                        src="images/login-wel.gif" width="242" height="138"></td>
 												<td width="57" align="right" valign="bottom">&nbsp;</td>
 											</tr>
 										</table></td>
