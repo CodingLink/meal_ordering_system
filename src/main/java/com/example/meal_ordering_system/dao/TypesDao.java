@@ -2,6 +2,7 @@ package com.example.meal_ordering_system.dao;
 
 import com.example.meal_ordering_system.entity.Types;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,6 +12,7 @@ import java.util.List;
  * @author makejava
  * @since 2021-02-04 12:44:08
  */
+@Repository
 public interface TypesDao {
 
     /**
@@ -34,10 +36,9 @@ public interface TypesDao {
     /**
      * 通过实体作为筛选条件查询
      *
-     * @param types 实例对象
      * @return 对象列表
      */
-    List<Types> queryAll(Types types);
+    List<Types> queryAll();
 
     /**
      * 新增数据

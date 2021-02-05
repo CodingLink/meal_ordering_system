@@ -53,4 +53,10 @@ public interface TypesService {
      */
     boolean deleteById(Integer id);
 
+    /**
+     * 查询所有元素
+     * @return
+     */
+    List<Types> queryAll();
+
 }

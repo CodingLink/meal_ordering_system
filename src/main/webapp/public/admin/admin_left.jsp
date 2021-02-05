@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
 <head>
@@ -42,7 +43,7 @@
 						<ul class="MM">
 
 							<li><a href="type_add.jsp" target="main">添加新类别</a></li>
-							<li><a href="type.jsp" target="main">类别信息列表</a></li>
+							<li><a href="<c:url value="/types/queryAll"/>" target="main">类别信息列表</a></li>
 
 						</ul>
 					</div>

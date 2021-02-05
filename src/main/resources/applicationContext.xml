@@ -20,9 +20,9 @@
     <!--加载数据源连接池-->
     <bean name="druidDataSource" class="com.alibaba.druid.pool.DruidDataSource">
         <property name="driverClassName" value="com.mysql.jdbc.Driver"/>
-        <property name="url" value="jdbc:mysql://127.0.0.1/apsfc"/>
+        <property name="url" value="jdbc:mysql://127.0.0.1/apsfc?serverTimezone=UTC"/>
         <property name="username" value="root"/>
-        <property name="password" value="123456"/>
+        <property name="password" value="371926"/>
     </bean>
 
     <!--创建SqlSessionFactory对象-->

@@ -1,6 +1,11 @@
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
-<%@page import="com.apsfc.po.*"%>
-<%@page import="com.apsfc.dao.*"%>
+<%@page import="com.example.meal_ordering_system.*"%>
+<%@page import="com.example.meal_ordering_system.dao.*"%>
+<%@ page import="com.example.meal_ordering_system.service.impl.TypesServiceImpl" %>
+<%@ page import="java.lang.reflect.Type" %>
+<%@ page import="com.example.meal_ordering_system.entity.Types" %>
+<%@ page import="com.example.meal_ordering_system.controller.TypesController" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <link href="css/skin.css" rel="stylesheet" type="text/css" />
@@ -47,27 +52,18 @@
 								<td class="line_table" align="center" width="20%"></td>
 							</tr>
 
-							<%
-								
-							TypeDao tdao=new TypeDao();
-						    List<Type> typelist=tdao.select();
-						    for(int i=0;i<typelist.size();i++){
-						    	Type type=new Type();
-						    	type=typelist.get(i);
-							%>
+							<c:forEach items="${types}" var="t">
 							<tr>
 								<td class="line_table" align="center" width="30%"><span
-									class="left_txt"><%=type.getId()%></span></td>
+									class="left_txt">${t.id}</span></td>
 								<td class="line_table" align="center" width="30%"><span
-									class="left_txt"><%=type.getName()%></span></td>
+									class="left_txt">${t.name}</span></td>
 								<td class="line_table" align="center" width="20%"><a
-                                        href="type_update.jsp?id=<%=type.getId()%>" target="main">修改</a></td>
+                                        href="type_update.jsp?id=${t.id}" target="main">修改</a></td>
 								<td class="line_table" align="center" width="20%"><a
-									href="../servlet/TypeDelServlet?id=<%=type.getId()%>" target="main">删除</a></td>
+									href="../servlet/TypeDelServlet?id=${t.id}" target="main">删除</a></td>
 							</tr>
-							<%
-								}
-							%>
+							</c:forEach>
 						
 					</table>
 				</div>

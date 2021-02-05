@@ -3,6 +3,8 @@ package com.example.meal_ordering_system.service.impl;
 import com.example.meal_ordering_system.dao.TypesDao;
 import com.example.meal_ordering_system.entity.Types;
 import com.example.meal_ordering_system.service.TypesService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,7 +18,9 @@ import java.util.List;
  */
 @Service("typesService")
 public class TypesServiceImpl implements TypesService {
-    @Resource
+
+    @Autowired
+    @Qualifier("typesDao")
     private TypesDao typesDao;
 
     /**
@@ -75,5 +79,14 @@ public class TypesServiceImpl implements TypesService {
     @Override
     public boolean deleteById(Integer id) {
         return this.typesDao.deleteById(id) > 0;
+    }
+
+    /**
+     * 查询所有元素
+     * @return
+     */
+    @Override
+    public List<Types> queryAll() {
+        return this.typesDao.queryAll();
     }
 }
