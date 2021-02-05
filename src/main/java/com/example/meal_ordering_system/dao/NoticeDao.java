@@ -2,7 +2,9 @@ package com.example.meal_ordering_system.dao;
 
 import com.example.meal_ordering_system.entity.Notice;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
+import javax.annotation.Resource;
 import java.util.List;
 
 /**
@@ -11,6 +13,7 @@ import java.util.List;
  * @author makejava
  * @since 2021-02-04 12:44:07
  */
+@Repository("noticeDao")
 public interface NoticeDao {
 
     /**
@@ -21,23 +24,14 @@ public interface NoticeDao {
      */
     Notice queryById(Integer id);
 
-    /**
-     * 查询指定行数据
-     *
-     * @param offset 查询起始位置
-     * @param limit  查询条数
-     * @return 对象列表
-     */
-    List<Notice> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
 
 
     /**
-     * 通过实体作为筛选条件查询
+     * 查询所有元素
      *
-     * @param notice 实例对象
      * @return 对象列表
      */
-    List<Notice> queryAll(Notice notice);
+    List<Notice> queryAll();
 
     /**
      * 新增数据
@@ -77,6 +71,6 @@ public interface NoticeDao {
      * @param id 主键
      * @return 影响行数
      */
-    int deleteById(Integer id);
+    int delete(Integer id);
 
 }

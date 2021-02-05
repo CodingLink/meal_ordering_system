@@ -61,6 +61,11 @@ public class TypesServiceImpl implements TypesService {
         return typesDao.queryById(id);
     }
 
+    /**
+     * 插入元素
+     * @param type
+     * @return
+     */
     @Override
     public int insert(Types type) {
         return typesDao.insert(type);
