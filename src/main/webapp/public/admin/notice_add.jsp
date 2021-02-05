@@ -1,3 +1,4 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <html>
 <head>
@@ -45,7 +46,7 @@
 
 				<div align="center">
 
-					<form action="../NoticeServlet" method="post"
+					<form action="<c:url value="/notice/insert"/>" method="post"
 						name="form1" onSubmit="return check11()">
 
 

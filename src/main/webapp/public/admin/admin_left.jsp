@@ -59,7 +59,7 @@
 						</table>
 						<ul class="MM">
 							<li><a href="notice_add.jsp" target="main">添加新通告</a></li>
-							<li><a href="notice.jsp" target="main">通告信息列表</a></li>
+							<li><a href="<c:url value="/notice/queryAll"/>" target="main">通告信息列表</a></li>
 						</ul>
 					</div>
 					<h1 class="type">

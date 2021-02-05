@@ -9,6 +9,14 @@
         <result property="times" column="times" jdbcType="VARCHAR"/>
     </resultMap>
 
+    <!--查询所有-->
+    <select id="queryAll" resultMap="NoticeMap">
+        select id,
+               name,
+               content,
+               times
+        from apsfc.notice
+    </select>
     <!--查询单个-->
     <select id="queryById" resultMap="NoticeMap">
         select id,
@@ -19,58 +27,11 @@
         where id = #{id}
     </select>
 
-    <!--查询指定行数据-->
-    <select id="queryAllByLimit" resultMap="NoticeMap">
-        select id,
-               name,
-               content,
-               times
-        from apsfc.notice limit #{offset}, #{limit}
-    </select>
 
-    <!--通过实体作为筛选条件查询-->
-    <select id="queryAll" resultMap="NoticeMap">
-        select
-        id, name, content, times
-        from apsfc.notice
-        <where>
-            <if test="id != null">
-                and id = #{id}
-            </if>
-            <if test="name != null and name != ''">
-                and name = #{name}
-            </if>
-            <if test="content != null and content != ''">
-                and content = #{content}
-            </if>
-            <if test="times != null and times != ''">
-                and times = #{times}
-            </if>
-        </where>
-    </select>
 
     <!--新增所有列-->
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.notice(name, content, times)
-        values (#{name}, #{content}, #{times})
-    </insert>
-
-    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.notice(name, content, times)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.content}, #{entity.times})
-        </foreach>
-    </insert>
-
-    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.notice(name, content, times)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.content}, #{entity.times})
-        </foreach>
-        on duplicate key update
-        name = values(name) , content = values(content) , times = values(times)
+    <insert id="insert" parameterType="com.example.meal_ordering_system.entity.Notice">
+        insert into notice(id, name, content, times) VALUES (#{id},#{name},#{content},#{times})
     </insert>
 
     <!--通过主键修改数据-->
@@ -91,7 +52,7 @@
     </update>
 
     <!--通过主键删除-->
-    <delete id="deleteById">
+    <delete id="delete">
         delete
         from apsfc.notice
         where id = #{id}
