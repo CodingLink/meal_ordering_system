@@ -70,6 +70,12 @@ public class TypesController {
         return queryAll(model);
     }
 
+    /**
+     * 根据id查询元素
+     * @param model
+     * @param id
+     * @return
+     */
     @RequestMapping("queryById")
     public String queryById(Model model,@Param("id") int id){
         Types type=typesService.queryById(id);
@@ -77,6 +83,12 @@ public class TypesController {
         return "admin/type_update";
     }
 
+    /**
+     * 插入元素
+     * @param model
+     * @param name
+     * @return
+     */
     @RequestMapping("insert")
     public String insert(Model model,@Param("name") String name){
         int id=(int)(System.currentTimeMillis()%100);

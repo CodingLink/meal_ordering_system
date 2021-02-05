@@ -3,6 +3,8 @@ package com.example.meal_ordering_system.service.impl;
 import com.example.meal_ordering_system.dao.NoticeDao;
 import com.example.meal_ordering_system.entity.Notice;
 import com.example.meal_ordering_system.service.NoticeService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,7 +18,8 @@ import java.util.List;
  */
 @Service("noticeService")
 public class NoticeServiceImpl implements NoticeService {
-    @Resource
+    @Autowired
+    @Qualifier("noticeDao")
     private NoticeDao noticeDao;
 
     /**
@@ -30,18 +33,10 @@ public class NoticeServiceImpl implements NoticeService {
         return this.noticeDao.queryById(id);
     }
 
-    /**
-     * 查询多条数据
-     *
-     * @param offset 查询起始位置
-     * @param limit  查询条数
-     * @return 对象列表
-     */
     @Override
-    public List<Notice> queryAllByLimit(int offset, int limit) {
-        return this.noticeDao.queryAllByLimit(offset, limit);
+    public List<Notice> queryAll() {
+        return this.noticeDao.queryAll();
     }
-
     /**
      * 新增数据
      *
@@ -73,7 +68,7 @@ public class NoticeServiceImpl implements NoticeService {
      * @return 是否成功
      */
     @Override
-    public boolean deleteById(Integer id) {
-        return this.noticeDao.deleteById(id) > 0;
+    public boolean delete(Integer id) {
+        return this.noticeDao.delete(id) > 0;
     }
 }
