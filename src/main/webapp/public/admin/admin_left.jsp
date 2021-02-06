@@ -73,9 +73,9 @@
 					</tr>
 				</table>
 				<ul class="MM">
-					<li><a href="order.jsp" target="main">销售订单信息列表</a></li>
-					<li><a href="order_search.jsp" target="main">销售订单查询</a></li>
-					<li><a href="../OrderServlet?&reqtype=statistic"
+					<li><a href="<c:url value="/orders/ordergetall"/>" target="main">销售订单信息列表</a></li>
+					<li><a href="<c:url value="/orders/order_search"/>" target="main">销售订单查询</a></li>
+					<li><a href="<c:url value="/orders/order_statistic"/>"
 						   target="main">本日销售额统计</a></li>
 				</ul>
 			</div>

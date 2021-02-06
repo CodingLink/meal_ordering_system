@@ -2,6 +2,7 @@ package com.example.meal_ordering_system.dao;
 
 import com.example.meal_ordering_system.entity.Orders;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,72 +12,29 @@ import java.util.List;
  * @author makejava
  * @since 2021-02-04 12:44:08
  */
+@Repository("ordersDao")
 public interface OrdersDao {
 
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param id 主键
-     * @return 实例对象
-     */
-    Orders queryById(Integer id);
+    //获取全部订单
+    List<Orders> pageList(int a,int b);
 
-    /**
-     * 查询指定行数据
-     *
-     * @param offset 查询起始位置
-     * @param limit  查询条数
-     * @return 对象列表
-     */
-    List<Orders> queryAllByLimit(@Param("offset") int offset, @Param("limit") int limit);
+    //获取全部行数
+    int pageCount();
 
+    //查询全部订单通过id
+    List<Orders> pageListByID(int id);
 
-    /**
-     * 通过实体作为筛选条件查询
-     *
-     * @param orders 实例对象
-     * @return 对象列表
-     */
-    List<Orders> queryAll(Orders orders);
+    //查询全部订单通过日期
+    List<Orders> pageListByDate(String times1,String times2);
 
-    /**
-     * 新增数据
-     *
-     * @param orders 实例对象
-     * @return 影响行数
-     */
-    int insert(Orders orders);
+    //查询全部订单通过menu
+    List<Orders> pageListByMenue(String name);
 
-    /**
-     * 批量新增数据（MyBatis原生foreach方法）
-     *
-     * @param entities List<Orders> 实例对象列表
-     * @return 影响行数
-     */
-    int insertBatch(@Param("entities") List<Orders> entities);
+    //更新delivery
+    int updatedeliveryById(Integer id);
 
-    /**
-     * 批量新增或按主键更新数据（MyBatis原生foreach方法）
-     *
-     * @param entities List<Orders> 实例对象列表
-     * @return 影响行数
-     */
-    int insertOrUpdateBatch(@Param("entities") List<Orders> entities);
-
-    /**
-     * 修改数据
-     *
-     * @param orders 实例对象
-     * @return 影响行数
-     */
-    int update(Orders orders);
-
-    /**
-     * 通过主键删除数据
-     *
-     * @param id 主键
-     * @return 影响行数
-     */
+    //删除订单
     int deleteById(Integer id);
+
 
 }

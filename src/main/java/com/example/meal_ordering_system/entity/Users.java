@@ -19,7 +19,7 @@ public class Users  {
 
     private String sex;
 
-    private Object age;
+    private Integer age;
 
     private String card;
 
@@ -31,7 +31,7 @@ public class Users  {
 
     private String code;
 
-    private Object type;
+    private Integer type;
 
 
 

@@ -11,23 +11,23 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 public class Menus  {
 
-    private Object id;
+    private Integer id;
 
     private String name;
 
-    private Object typeid;
+    private Integer typeid;
 
     private String burden;
 
     private String brief;
 
-    private Object price;
+    private float price;
 
-    private Object sums;
+    private Integer sums;
 
-    private Object price1;
+    private float price1;
 
-    private Object sums1;
+    private Integer sums1;
 
     private String imgpath;
 
