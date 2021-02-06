@@ -1,4 +1,6 @@
-<%@ page language="java" import="java.util.*,java.text.*" pageEncoding="gb2312"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" import="java.util.*,java.text.*" pageEncoding="utf-8" %>
 <%
 String path = request.getContextPath();
 String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -9,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <meta http-equiv="X-UA-Compatible" content="IE=7" />
-<title>ÓÃ»§×¢²á</title>
+<title>ç”¨æˆ·æ³¨å†Œ</title>
 <meta content="" name=keywords />
 <meta content="" name=description />
 <link href="css/common.css" rel="stylesheet" type="text/css" />
@@ -25,67 +27,67 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 				
 				if (document.form1.name.value == "" ) 
 				{
-					alert("ÓÃ»§Ãû²»ÄÜÎª¿Õ!");
+					alert("ç”¨æˆ·åä¸èƒ½ä¸ºç©º!");
 					document.form1.name.focus();
 					return false;
 				}
 				if (document.form1.pwd.value == ""  )  
 				{
-					alert("ÃÜÂë²»ÄÜÎª¿Õ!");
+					alert("å¯†ç ä¸èƒ½ä¸ºç©º!");
 					document.form1.pwd.focus();
 					return false;
 				}
 				if (document.form1.qpwd.value == ""  )  
 				{
-					alert("È·ÈÏÃÜÂë²»ÄÜÎª¿Õ!");
+					alert("ç¡®è®¤å¯†ç ä¸èƒ½ä¸ºç©º!");
 					document.form1.qpwd.focus();
 					return false;
 				}
 				if (document.form1.qpwd.value != document.form1.pwd.value  )  
 				{
-					alert("Á½´ÎÃÜÂë²»Ò»ÖÂ!");
+					alert("ä¸¤æ¬¡å¯†ç ä¸ä¸€è‡´!");
 					document.form1.qpwd.focus();
 					return false;
 				}
 				if (document.form1.realname.value == ""  )  
 				{
-					alert("ÕæÊµĞÕÃû²»ÄÜÎª¿Õ");
+					alert("çœŸå®å§“åä¸èƒ½ä¸ºç©º");
 					document.form1.realname.focus();
 					return false;
 				}
 				if (document.form1.age.value == ""  )  
 				{
-					alert("ÄêÁä²»ÄÜÎª¿Õ!");
+					alert("å¹´é¾„ä¸èƒ½ä¸ºç©º!");
 					document.form1.age.focus();
 					return false;
 				}
 				if (document.form1.card.value == ""  )  
 				{
-					alert("Éí·İÖ¤²»ÄÜÎª¿Õ!");
+					alert("èº«ä»½è¯ä¸èƒ½ä¸ºç©º!");
 					document.form1.card.focus();
 					return false;
 				}
 				if (document.form1.address.value == ""  )  
 				{
-					alert("¼ÒÍ¥×¡Ö·²»ÄÜÎª¿Õ!");
+					alert("å®¶åº­ä½å€ä¸èƒ½ä¸ºç©º!");
 					document.form1.address.focus();
 					return false;
 				}
 				if (document.form1.phone.value == ""  )  
 				{
-					alert("µç»°ºÅÂë²»ÄÜÎª¿Õ!");
+					alert("ç”µè¯å·ç ä¸èƒ½ä¸ºç©º!");
 					document.form1.phone.focus();
 					return false;
 				}
 				if (document.form1.email.value == ""  )  
 				{
-					alert("µç×ÓÓÊÏä²»ÄÜÎª¿Õ!");
+					alert("ç”µå­é‚®ç®±ä¸èƒ½ä¸ºç©º!");
 					document.form1.email.focus();
 					return false;
 				}
 				if (document.form1.code.value == ""  )  
 				{
-					alert("ÓÊÕş±àÂë²»ÄÜÎª¿Õ!");
+					alert("é‚®æ”¿ç¼–ç ä¸èƒ½ä¸ºç©º!");
 					document.form1.code.focus();
 					return false;
 				}
@@ -99,7 +101,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <td align="left" valign="top">
   
     
-  <jsp:include flush="fasle" page="top.jsp"/>
+  <jsp:include flush="false" page="top.jsp"/>
     
     </td>
   </tr>
@@ -111,140 +113,140 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <td align="center" valign="center" height="450">
     
- <form action="../RegServlet" name="form1" method="post" onSubmit="return check11()">
+ <form action="<c:url value="/users/insert"/>" name="form1" method="post" onSubmit="return check11()">
 
   <div align="center"><br>
   <table border="1" cellspacing="0" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" width="700">
 				<tr>
 					<td colspan="3" align="center" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25">
-						<font color="#666666">ÇëÌîĞ´ÓÃ»§ĞÅÏ¢(´ø<font color="red">*</font>Îª±ØÌîÏî)</font>
+						<font color="#666666">è¯·å¡«å†™ç”¨æˆ·ä¿¡æ¯(å¸¦<font color="red">*</font>ä¸ºå¿…å¡«é¡¹)</font>
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">ÓÃ »§ Ãû£º</font>
+						<font color="#996633">ç”¨ æˆ· åï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="name"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left" >
-						<font color="red">&nbsp;* </font>ÄúÓÃÀ´µÇÂ¼µÄÓÃ»§Ãû
+						<font color="red">&nbsp;* </font>æ‚¨ç”¨æ¥ç™»å½•çš„ç”¨æˆ·å
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">ÃÜ&nbsp;&nbsp; &nbsp;Âë£º</font>
+						<font color="#996633">å¯†&nbsp;&nbsp; &nbsp;ç ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="pwd" name="pwd"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>³¤¶È±ØĞë´óÓÚ5¸öĞ¡ÓÚ16¸ö×Ö·û£¬Ö»ÄÜÎªÓ¢Óï×Ö¡¢Êı×Ö
+						<font color="red">&nbsp;* </font>é•¿åº¦å¿…é¡»å¤§äº5ä¸ªå°äº16ä¸ªå­—ç¬¦ï¼Œåªèƒ½ä¸ºè‹±è¯­å­—ã€æ•°å­—
 					</td>
 				</tr>				
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">È·ÈÏÃÜÂë£º</font>
+						<font color="#996633">ç¡®è®¤å¯†ç ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="password" name="qpwd"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>Çë½«ÊäÈëµÄÃÜÂëÔÙ´ÎÊäÈë
+						<font color="red">&nbsp;* </font>è¯·å°†è¾“å…¥çš„å¯†ç å†æ¬¡è¾“å…¥
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">ÕæÊµĞÕÃû£º</font>
+						<font color="#996633">çœŸå®å§“åï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="realname"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÌîĞ´ÄúµÄÕæÊµµÄĞÕÃû
+						<font color="red">&nbsp;* </font>å¡«å†™æ‚¨çš„çœŸå®çš„å§“å
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">ĞÔ&nbsp; &nbsp;&nbsp;±ğ£º</font>
+						<font color="#996633">æ€§&nbsp; &nbsp;&nbsp;åˆ«ï¼š</font>
 					</td>
 					<td  bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<input type="radio" name="sex" checked value="ÄĞ">
-						ÄĞ&nbsp;&nbsp;&nbsp;&nbsp;
-						<input type="radio" name="sex" value="Å®">
-						Å®
+						<input type="radio" name="sex" checked value="ç”·">
+						ç”·&nbsp;&nbsp;&nbsp;&nbsp;
+						<input type="radio" name="sex" value="å¥³">
+						å¥³
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÌîĞ´ÄúµÄÕæÊµĞÅÏ¢
+						<font color="red">&nbsp;* </font>è¯·å¡«å†™æ‚¨çš„çœŸå®ä¿¡æ¯
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">Äê&nbsp;&nbsp; &nbsp;Áä£º</font>
+						<font color="#996633">å¹´&nbsp;&nbsp; &nbsp;é¾„ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="age"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÊäÈëÄúµÄÕæÊµÄêÁä
+						<font color="red">&nbsp;* </font>è¯·è¾“å…¥æ‚¨çš„çœŸå®å¹´é¾„
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">Éí·İÖ¤ºÅ£º</font>
+						<font color="#996633">èº«ä»½è¯å·ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="card"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÌîĞ´ÄúµÄÕæÊµĞÅÏ¢
+						<font color="red">&nbsp;* </font>è¯·å¡«å†™æ‚¨çš„çœŸå®ä¿¡æ¯
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">¼ÒÍ¥×¡Ö·£º</font>
+						<font color="#996633">å®¶åº­ä½å€ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="address"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÌîĞ´ÄúµÄÕæÊµĞÅÏ¢
+						<font color="red">&nbsp;* </font>è¯·å¡«å†™æ‚¨çš„çœŸå®ä¿¡æ¯
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">µç»°ºÅÂë£º</font>
+						<font color="#996633">ç”µè¯å·ç ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="phone"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÌîĞ´ÄúµÄÕæÊµĞÅÏ¢(¸ñÊ½Îª02411111111»ò13911111111) </td>
+						<font color="red">&nbsp;* </font>è¯·å¡«å†™æ‚¨çš„çœŸå®ä¿¡æ¯(æ ¼å¼ä¸º02411111111æˆ–13911111111) </td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">µç×ÓÓÊÏä£º</font>
+						<font color="#996633">ç”µå­é‚®ç®±ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="email"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÌîĞ´ÄúÓĞĞ§µÄÓÊ¼şµØÖ·£¬ÒÔ±ãÓÚÎÒÃÇÎªÄúÌá¹©ÓĞĞ§µÄ·şÎñ¡£
+						<font color="red">&nbsp;* </font>è¯·å¡«å†™æ‚¨æœ‰æ•ˆçš„é‚®ä»¶åœ°å€ï¼Œä»¥ä¾¿äºæˆ‘ä»¬ä¸ºæ‚¨æä¾›æœ‰æ•ˆçš„æœåŠ¡ã€‚
 					</td>
 				</tr>
 				<tr>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="right">
-						<font color="#996633">ÓÊÕş±àÂë£º</font>
+						<font color="#996633">é‚®æ”¿ç¼–ç ï¼š</font>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
 						<input class="input7" type="text" name="code"/>
 					</td>
 					<td bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25" align="left">
-						<font color="red">&nbsp;* </font>ÇëÌîĞ´ÄúµÄÕæÊµĞÅÏ¢(¸ñÊ½Îª111111)</td>
+						<font color="red">&nbsp;* </font>è¯·å¡«å†™æ‚¨çš„çœŸå®ä¿¡æ¯(æ ¼å¼ä¸º111111)</td>
 				</tr>
 				<tr>
 					<td colspan="3" align="center" bordercolorlight="#C0C0C0" bordercolordark="#C0C0C0" height="25">
-						<input type="submit" value="×¢²á" />
+						<input type="submit" value="æ³¨å†Œ" />
 					</td>
 				</tr>
 				
@@ -262,7 +264,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <td height="50" align="center" valign="middle">&nbsp; 
    
-        <jsp:include flush="fasle" page="copyright.jsp"/>
+        <jsp:include flush="false" page="copyright.jsp"/>
     </td>
   </tr>
   

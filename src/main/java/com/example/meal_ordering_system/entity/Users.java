@@ -34,5 +34,17 @@ public class Users  {
     private Integer type;
 
 
-
+    public Users(String name, String pwd, String realname, String sex, Integer age, String card, String address, String phone, String email, String code, Integer type) {
+        this.name = name;
+        this.pwd = pwd;
+        this.realname = realname;
+        this.sex = sex;
+        this.age = age;
+        this.card = card;
+        this.address = address;
+        this.phone = phone;
+        this.email = email;
+        this.code = code;
+        this.type = type;
+    }
 }

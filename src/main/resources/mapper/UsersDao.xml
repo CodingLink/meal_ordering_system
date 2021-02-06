@@ -60,50 +60,7 @@
         from apsfc.users limit #{offset}, #{limit}
     </select>
 
-    <!--通过实体作为筛选条件查询-->
-    <select id="queryAll" resultMap="UsersMap">
-        select
-        id, name, pwd, realname, sex, age, card, address, phone, email, code, type
-        from apsfc.users
-        <where>
-            <if test="id != null">
-                and id = #{id}
-            </if>
-            <if test="name != null and name != ''">
-                and name = #{name}
-            </if>
-            <if test="pwd != null and pwd != ''">
-                and pwd = #{pwd}
-            </if>
-            <if test="realname != null and realname != ''">
-                and realname = #{realname}
-            </if>
-            <if test="sex != null and sex != ''">
-                and sex = #{sex}
-            </if>
-            <if test="age != null">
-                and age = #{age}
-            </if>
-            <if test="card != null and card != ''">
-                and card = #{card}
-            </if>
-            <if test="address != null and address != ''">
-                and address = #{address}
-            </if>
-            <if test="phone != null and phone != ''">
-                and phone = #{phone}
-            </if>
-            <if test="email != null and email != ''">
-                and email = #{email}
-            </if>
-            <if test="code != null and code != ''">
-                and code = #{code}
-            </if>
-            <if test="type != null">
-                and type = #{type}
-            </if>
-        </where>
-    </select>
+
 
     <!--新增所有列-->
     <insert id="insert" keyProperty="id" useGeneratedKeys="true">
@@ -111,27 +68,7 @@
         values (#{name}, #{pwd}, #{realname}, #{sex}, #{age}, #{card}, #{address}, #{phone}, #{email}, #{code}, #{type})
     </insert>
 
-    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.users(name, pwd, realname, sex, age, card, address, phone, email, code, type)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.pwd}, #{entity.realname}, #{entity.sex}, #{entity.age}, #{entity.card},
-            #{entity.address}, #{entity.phone}, #{entity.email}, #{entity.code}, #{entity.type})
-        </foreach>
-    </insert>
 
-    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.users(name, pwd, realname, sex, age, card, address, phone, email, code, type)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.pwd}, #{entity.realname}, #{entity.sex}, #{entity.age}, #{entity.card},
-            #{entity.address}, #{entity.phone}, #{entity.email}, #{entity.code}, #{entity.type})
-        </foreach>
-        on duplicate key update
-        name = values(name) , pwd = values(pwd) , realname = values(realname) , sex = values(sex) , age = values(age) ,
-        card = values(card) , address = values(address) , phone = values(phone) , email = values(email) , code =
-        values(code) , type = values(type)
-    </insert>
 
     <!--通过主键修改数据-->
     <update id="update">

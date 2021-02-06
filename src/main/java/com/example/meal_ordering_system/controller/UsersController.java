@@ -15,6 +15,8 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import java.util.Random;
+import java.util.UUID;
 
 /**
  * (Users)表控制层
@@ -45,6 +47,12 @@ public class UsersController {
     }
 
 
+    /**
+     * 登录方法
+     * @param user
+     * @param request
+     * @return
+     */
     @RequestMapping("login")
     public String login(Users user, HttpServletRequest request){
         boolean loginType=usersService.login(user.getName(), user.getPwd());
@@ -55,6 +63,13 @@ public class UsersController {
             request.setAttribute("message","用户名密码错误");
             return "qiantai/userLoginFail";
         }
+    }
+
+    @RequestMapping("insert")
+    public String insert(@Param("name") String name,@Param("pwd") String pwd,@Param("realname") String realname,@Param("sex") String sex,@Param("age") Integer age,@Param("card") String card,@Param("address") String address,@Param("Phone") String phone,@Param("email")String email,@Param("code")String code,@Param("type")Integer type){
+        Users user=new Users(name,pwd,realname,sex,age,card,address,phone,email,code,type);
+        usersService.insert(user);
+        return "redirect:../public/qiantai/login.jsp";
     }
 
 
