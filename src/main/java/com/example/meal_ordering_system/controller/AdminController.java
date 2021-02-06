@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
@@ -26,20 +27,30 @@ public class AdminController {
     /**
      * 服务对象
      */
+    //自动注入业务层的AdminService类
     @Autowired
     @Qualifier("adminService")
     private AdminService adminService;
 
 
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @GetMapping("selectOne")
-    public Admin selectOne(Integer id) {
-        return this.adminService.queryById(id);
+
+    //login业务的访问位置为/admin/login
+    @RequestMapping("/login")
+    public String login(Admin admin, HttpServletRequest request){
+        //调用login方法来验证是否是注册用户
+        boolean loginType = adminService.login(admin.getName(),admin.getPwd());
+        if(loginType){
+            //如果验证通过,则将用户信息传到前台
+            request.setAttribute("admin",admin);
+            //并跳转到success.jsp页面
+            return "/admin/main";
+        }else{
+            //若不对,则返回
+            request.setAttribute("message","用户名密码错误");
+            return "/admin/index";
+        }
     }
+
+
 
 }
