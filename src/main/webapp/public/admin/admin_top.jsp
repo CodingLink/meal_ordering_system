@@ -9,7 +9,7 @@
 </head>
 <body leftmargin="0" topmargin="0">
 	<%
-		Admin admin = (Admin) session.getAttribute("admin");
+		Admin admin = (Admin) session.getAttribute("admin_session");
 		String name = "";
 		if (admin == null) {
 			name = "匿名";
@@ -20,7 +20,7 @@
 	<div id="maindiv">
 		<div id="logodiv"></div>
 		<div id="exitdiv">
-			<a href="../AdminServlet"><img src="images/out.gif" alt="安全退出" ></a>
+			<a href="/admin/logout"><img src="${pageContext.request.contextPath}/public/admin/images/out.gif" alt="安全退出" ></a>
 		</div>
 		<div id="textdiv">
 			管理员：<strong><%=name%></strong> 您好，感谢登陆使用！

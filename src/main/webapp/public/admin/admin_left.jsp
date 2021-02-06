@@ -3,10 +3,10 @@
 <html>
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-	<script src="js/prototype.lite.js" type="text/javascript"></script>
-	<script src="js/moo.fx.js" type="text/javascript"></script>
-	<script src="js/moo.fx.pack.js" type="text/javascript"></script>
-	<link href="css/left.css" rel="stylesheet" type="text/css" />
+	<script src="${pageContext.request.contextPath}/public/admin/js/prototype.lite.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/public/admin/js/moo.fx.js" type="text/javascript"></script>
+	<script src="${pageContext.request.contextPath}/public/admin/js/moo.fx.pack.js" type="text/javascript"></script>
+	<link href="${pageContext.request.contextPath}/public/admin/css/left.css" rel="stylesheet" type="text/css" />
 </head>
 
 <body>
@@ -21,7 +21,7 @@
 			<div class="content">
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tr>
-						<td><img src="images/menu_topline.gif" width="182"
+						<td><img src="${pageContext.request.contextPath}/public/admin/images/menu_topline.gif" width="182"
 								 height="5" /></td>
 					</tr>
 				</table>
@@ -36,7 +36,7 @@
 			<div class="content">
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tr>
-						<td><img src="images/menu_topline.gif" width="182"
+						<td><img src="${pageContext.request.contextPath}/public/admin/images/menu_topline.gif" width="182"
 								 height="5" /></td>
 					</tr>
 				</table>
@@ -53,12 +53,12 @@
 			<div class="content">
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tr>
-						<td><img src="images/menu_topline.gif" width="182"
+						<td><img src="${pageContext.request.contextPath}/public/admin/images/menu_topline.gif" width="182"
 								 height="5" /></td>
 					</tr>
 				</table>
 				<ul class="MM">
-					<li><a href="notice_add.jsp" target="main">添加新通告</a></li>
+					<li><a href="${pageContext.request.contextPath}/public/admin/notice_add.jsp" target="main">添加新通告</a></li>
 					<li><a href="<c:url value="/notice/queryAll"/>" target="main">通告信息列表</a></li>
 				</ul>
 			</div>
@@ -68,7 +68,7 @@
 			<div class="content">
 				<table width="100%" border="0" cellspacing="0" cellpadding="0">
 					<tr>
-						<td><img src="images/menu_topline.gif" width="182"
+						<td><img src="${pageContext.request.contextPath}/public/admin/images/menu_topline.gif" width="182"
 								 height="5" /></td>
 					</tr>
 				</table>
@@ -82,10 +82,10 @@
 		</div>
 
 			<h1 class="type">
-				<a href="admin_update.jsp" target="main">系统用户管理</a>
+				<a href="${pageContext.request.contextPath}/public/admin/admin_update.jsp" target="main">系统用户管理</a>
 			</h1>
 			<h1 class="type">
-				<a href="../AdminServlet" target="main">注销退出</a>
+				<a href="/admin/logout" target="main">注销退出</a>
 			</h1></td>
 	</tr>
 </table>

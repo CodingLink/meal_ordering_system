@@ -45,7 +45,7 @@
 
 				<div align="center">
 
-					<form name="form1" action="../AdminServlet"
+					<form name="form1" action="/admin/update"
 						method="post" onSubmit="return check11()">
 						<table id="table2" class="line_table"
 							style="width: 100%; margin: 0; padding: 0" cellSpacing="0"
@@ -57,7 +57,7 @@
 									</td>
 								</tr>
 								<%
-									Admin admin = (Admin) session.getAttribute("admin");
+									Admin admin = (Admin) session.getAttribute("admin_session");
 								%>
 								<tr>
 									<td class="line_table" align="right" width="45%"><span

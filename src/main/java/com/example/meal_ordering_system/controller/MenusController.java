@@ -70,7 +70,7 @@ public class MenusController {
     }
     //菜单信息修改
     @RequestMapping("/update")
-    public String delete(Menus menus){
+    public String update(Menus menus){
         menusService.update(menus);
         return "/admin/menus";
     }
