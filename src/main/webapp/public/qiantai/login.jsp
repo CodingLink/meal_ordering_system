@@ -61,7 +61,7 @@
             <link href="../member/templates/css/memberlogin_c.css" rel="stylesheet" type="text/css" />
             <div style="width:600px; height:210px;text-align:left;border:1px #f59d5e solid; background-color:#fdebd5;padding:30px;margin:0px">
               <div style="width:210px;float:left;text-align:left;border:1px #f59d5e solid;padding:20px;background-color:#ffffff;">
-                <form method="post" action="<c:url value="/userLoginServlet"/>" name="form1" onSubmit="return login11()">
+                <form method="post" action="<c:url value="/users/login"/>" name="form1" onSubmit="return login11()">
                   <div  id="notice" class="noticediv"></div>
                   <table width="100%"  border="0" cellspacing="0" cellpadding="3">
                     <tr>

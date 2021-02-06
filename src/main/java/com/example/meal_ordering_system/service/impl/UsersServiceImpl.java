@@ -6,6 +6,7 @@ import com.example.meal_ordering_system.service.UsersService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -18,6 +19,7 @@ import java.util.List;
  * @since 2021-02-04 12:49:15
  */
 @Service("usersService")
+@Scope("prototype")
 public class UsersServiceImpl implements UsersService {
     @Autowired
     @Qualifier("usersDao")

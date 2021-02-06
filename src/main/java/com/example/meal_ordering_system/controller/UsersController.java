@@ -5,6 +5,7 @@ import com.example.meal_ordering_system.service.UsersService;
 import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -12,6 +13,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import javax.annotation.Resource;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 
 /**
  * (Users)表控制层
@@ -21,6 +24,7 @@ import javax.annotation.Resource;
  */
 @Controller("usersController")
 @RequestMapping("users")
+@Scope("prototype")
 public class UsersController {
     /**
      * 服务对象
@@ -40,6 +44,18 @@ public class UsersController {
         return this.usersService.queryById(id);
     }
 
+
+    @RequestMapping("login")
+    public String login(Users user, HttpServletRequest request){
+        boolean loginType=usersService.login(user.getName(), user.getPwd());
+        if(loginType){
+            request.setAttribute("user",user);
+            return "qiantai/index";
+        }else{
+            request.setAttribute("message","用户名密码错误");
+            return "qiantai/userLoginFail";
+        }
+    }
 
 
 }
