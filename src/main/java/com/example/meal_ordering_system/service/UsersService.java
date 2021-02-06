@@ -13,6 +13,15 @@ import java.util.List;
 public interface UsersService {
 
     /**
+     * 登录查询
+     *
+     * @param name 用户名
+     * @param pwd 密码
+     * @return 实例对象
+     */
+    Users queryOne(String name,String pwd);
+
+    /**
      * 通过ID查询单条数据
      *
      * @param id 主键

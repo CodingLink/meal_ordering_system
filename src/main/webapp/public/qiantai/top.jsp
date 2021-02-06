@@ -1,4 +1,4 @@
-<%@page import="com.apsfc.po.User"%>
+<%@page import="com.example.meal_ordering_system.entity.Users"%>
 <%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 
 <html>
@@ -146,7 +146,7 @@
                    
                 
                    if(session.getAttribute("user") != null ){
-                   User ur = (User)session.getAttribute("user");
+                   Users ur = (Users)session.getAttribute("user");
                    String name = "";
                    name=ur.getName();
                    %>

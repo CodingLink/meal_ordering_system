@@ -2,6 +2,7 @@ package com.example.meal_ordering_system.dao;
 
 import com.example.meal_ordering_system.entity.Users;
 import org.apache.ibatis.annotations.Param;
+import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
@@ -11,7 +12,16 @@ import java.util.List;
  * @author makejava
  * @since 2021-02-04 12:44:08
  */
+@Repository("usersDao")
 public interface UsersDao {
+
+    /**
+     * 登录查询
+     *
+     * @param name 用户名
+     * @return 实例对象
+     */
+    Users queryOne(String name,String pwd);
 
     /**
      * 通过ID查询单条数据
@@ -20,7 +30,6 @@ public interface UsersDao {
      * @return 实例对象
      */
     Users queryById(Integer id);
-
     /**
      * 查询指定行数据
      *

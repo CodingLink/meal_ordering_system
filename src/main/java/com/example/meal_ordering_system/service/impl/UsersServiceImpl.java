@@ -3,6 +3,8 @@ package com.example.meal_ordering_system.service.impl;
 import com.example.meal_ordering_system.dao.UsersDao;
 import com.example.meal_ordering_system.entity.Users;
 import com.example.meal_ordering_system.service.UsersService;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -16,8 +18,20 @@ import java.util.List;
  */
 @Service("usersService")
 public class UsersServiceImpl implements UsersService {
-    @Resource
+    @Autowired
+    @Qualifier("usersDao")
     private UsersDao usersDao;
+
+    /**
+     * 通过name查询单条数据
+     *
+     * @param name 用户名
+     * @return 实例对象
+     */
+    @Override
+    public Users queryOne(String name,String pwd) {
+        return this.usersDao.queryOne(name,pwd);
+    }
 
     /**
      * 通过ID查询单条数据
