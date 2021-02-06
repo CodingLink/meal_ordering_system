@@ -1,6 +1,7 @@
 package com.example.meal_ordering_system.service;
 
 import com.example.meal_ordering_system.entity.Admin;
+import com.example.meal_ordering_system.entity.Types;
 
 import java.util.List;
 
@@ -38,6 +39,8 @@ public interface AdminService {
      * @return 实例对象
      */
     Admin insert(Admin admin);
+
+    int update(Admin admin);
 
 
     /**

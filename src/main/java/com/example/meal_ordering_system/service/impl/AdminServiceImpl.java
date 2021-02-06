@@ -54,6 +54,11 @@ public class AdminServiceImpl implements AdminService {
         this.adminDao.insert(admin);
         return admin;
     }
+    @Override
+     public int update(Admin admin){
+        this.adminDao.update(admin);
+        return 0;
+    };
 
     //登录方法的实现,从jsp页面获取username与password
     public boolean login(String name, String pwd) {
