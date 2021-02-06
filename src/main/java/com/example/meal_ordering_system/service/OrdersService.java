@@ -12,45 +12,26 @@ import java.util.List;
  */
 public interface OrdersService {
 
-    /**
-     * 通过ID查询单条数据
-     *
-     * @param id 主键
-     * @return 实例对象
-     */
-    Orders queryById(Integer id);
+    //分页查询销售订单信息
+    List<Orders> pageList(int a,int b);
 
-    /**
-     * 查询多条数据
-     *
-     * @param offset 查询起始位置
-     * @param limit  查询条数
-     * @return 对象列表
-     */
-    List<Orders> queryAllByLimit(int offset, int limit);
+    //返回页面个数
+    int pageCount();
 
-    /**
-     * 新增数据
-     *
-     * @param orders 实例对象
-     * @return 实例对象
-     */
-    Orders insert(Orders orders);
+    //更新delivery
+    int updatedeliveryById(Integer id);
 
-    /**
-     * 修改数据
-     *
-     * @param orders 实例对象
-     * @return 实例对象
-     */
-    Orders update(Orders orders);
+    //删除订单
+    int deleteById(Integer id);
 
-    /**
-     * 通过主键删除数据
-     *
-     * @param id 主键
-     * @return 是否成功
-     */
-    boolean deleteById(Integer id);
+    //查询全部订单通过id
+    List<Orders> pageListByID(int id);
+
+    //查询全部订单通过日期
+    List<Orders> pageListByDate(String times1,String times2);
+
+    //查询全部订单通过menu
+    List<Orders> pageListByMenue(String name);
+
 
 }

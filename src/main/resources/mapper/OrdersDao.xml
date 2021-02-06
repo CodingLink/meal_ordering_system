@@ -2,118 +2,69 @@
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.example.meal_ordering_system.dao.OrdersDao">
 
-    <resultMap type="com.example.meal_ordering_system.entity.Orders" id="OrdersMap">
-        <result property="id" column="id" jdbcType="INTEGER"/>
-        <result property="userid" column="userid" jdbcType="OTHER"/>
-        <result property="menuid" column="menuid" jdbcType="OTHER"/>
-        <result property="menusum" column="menusum" jdbcType="OTHER"/>
-        <result property="times" column="times" jdbcType="VARCHAR"/>
-        <result property="delivery" column="delivery" jdbcType="OTHER"/>
+
+    <resultMap type="Orders" id="pageLists">
+        <id property="id" column="id" javaType="int"/>
+        <result property="userid" column="userid" javaType="int"/>
+        <result property="menusum" column="menusum" javaType="int"/>
+        <result property="times" column="times" javaType="string"/>
+        <result property="delivery" column="delivery" javaType="int"/>
+        <association property="users" javaType="Users">
+            <result property="realname" column="name" javaType="string"/>
+            <result property="phone" column="phone" javaType="string"/>
+            <result property="address" column="address" javaType="string"/>
+        </association>
+        <association property="menus" javaType="Menus">
+            <result column="menuname" property="name" javaType="string"/>
+            <result column="price1" property="price1" javaType="float"/>
+        </association>
+
     </resultMap>
 
-    <!--查询单个-->
-    <select id="queryById" resultMap="OrdersMap">
-        select id,
-               userid,
-               menuid,
-               menusum,
-               times,
-               delivery
-        from apsfc.orders
-        where id = #{id}
+
+    <select id="pageList" resultMap="pageLists">
+        select orders.id,orders.userid,orders.menusum,orders.times,orders.delivery,users.name,users.phone,users.address,menus.name as menuname,menus.price1
+        from orders,users,menus
+        where orders.userid=users.id and orders.menuid=menus.id limit #{0},#{1}
     </select>
 
-    <!--查询指定行数据-->
-    <select id="queryAllByLimit" resultMap="OrdersMap">
-        select id,
-               userid,
-               menuid,
-               menusum,
-               times,
-               delivery
-        from apsfc.orders limit #{offset}, #{limit}
+
+
+    <select id="pageListByID" resultMap="pageLists">
+        select orders.id,orders.userid,orders.menusum,orders.times,orders.delivery,users.name,users.phone,users.address,menus.name as menuname,menus.price1
+        from orders,users,menus
+        where orders.userid=users.id and orders.menuid=menus.id and orders.id=#{id}
     </select>
 
-    <!--通过实体作为筛选条件查询-->
-    <select id="queryAll" resultMap="OrdersMap">
-        select
-        id, userid, menuid, menusum, times, delivery
-        from apsfc.orders
-        <where>
-            <if test="id != null">
-                and id = #{id}
-            </if>
-            <if test="userid != null">
-                and userid = #{userid}
-            </if>
-            <if test="menuid != null">
-                and menuid = #{menuid}
-            </if>
-            <if test="menusum != null">
-                and menusum = #{menusum}
-            </if>
-            <if test="times != null and times != ''">
-                and times = #{times}
-            </if>
-            <if test="delivery != null">
-                and delivery = #{delivery}
-            </if>
-        </where>
+
+    <select id="pageListByDate" resultMap="pageLists">
+        select orders.id,orders.userid,orders.menusum,orders.times,orders.delivery,users.name,users.phone,users.address,menus.name as menuname,menus.price1
+        from orders,users,menus
+        where orders.userid=users.id and orders.menuid=menus.id and orders.times > #{0} and #{1} > orders.times
     </select>
 
-    <!--新增所有列-->
-    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.orders(userid, menuid, menusum, times, delivery)
-        values (#{userid}, #{menuid}, #{menusum}, #{times}, #{delivery})
-    </insert>
 
-    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.orders(userid, menuid, menusum, times, delivery)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.userid}, #{entity.menuid}, #{entity.menusum}, #{entity.times}, #{entity.delivery})
-        </foreach>
-    </insert>
+    <select id="pageListByMenue" resultMap="pageLists">
+        select orders.id,orders.userid,orders.menusum,orders.times,orders.delivery,users.name,users.phone,users.address,menus.name as menuname,menus.price1
+        from orders,users,menus
+        where orders.userid=users.id and orders.menuid=menus.id and menus.name=#{name}
+    </select>
 
-    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.orders(userid, menuid, menusum, times, delivery)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.userid}, #{entity.menuid}, #{entity.menusum}, #{entity.times}, #{entity.delivery})
-        </foreach>
-        on duplicate key update
-        userid = values(userid) , menuid = values(menuid) , menusum = values(menusum) , times = values(times) , delivery
-        = values(delivery)
-    </insert>
 
-    <!--通过主键修改数据-->
-    <update id="update">
-        update apsfc.orders
-        <set>
-            <if test="userid != null">
-                userid = #{userid},
-            </if>
-            <if test="menuid != null">
-                menuid = #{menuid},
-            </if>
-            <if test="menusum != null">
-                menusum = #{menusum},
-            </if>
-            <if test="times != null and times != ''">
-                times = #{times},
-            </if>
-            <if test="delivery != null">
-                delivery = #{delivery},
-            </if>
-        </set>
-        where id = #{id}
+
+    <select id="pageCount" resultType="int">
+        select count(*)
+        from orders,users,menus
+        where orders.userid=users.id and orders.menuid=menus.id
+    </select>
+
+    <update id="updatedeliveryById" parameterType="int">
+        update orders set delivery=1 where id=#{id}
     </update>
 
-    <!--通过主键删除-->
-    <delete id="deleteById">
-        delete
-        from apsfc.orders
-        where id = #{id}
+
+    <delete id="deleteById" parameterType="int">
+        delete from orders where id=#{id}
     </delete>
 
 </mapper>

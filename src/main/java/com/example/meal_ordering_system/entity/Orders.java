@@ -11,15 +11,19 @@ public class Orders  {
 
     private Integer id;
 
-    private Object userid;
+    private Integer userid;
 
-    private Object menuid;
+    private Integer menuid;
 
-    private Object menusum;
+    private Integer menusum;
 
     private String times;
 
-    private Object delivery;
+    private Integer delivery;
+
+    private Users users;
+
+    private Menus menus;
 
 
 
