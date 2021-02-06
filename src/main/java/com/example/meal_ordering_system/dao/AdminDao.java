@@ -16,10 +16,10 @@ public interface AdminDao {
     /**
      * 通过ID查询单条数据
      *
-     * @param id 主键
+     * @param name 用户名
      * @return 实例对象
      */
-    Admin queryById(Integer id);
+    Admin queryByName(String name);
 
     /**
      * 查询指定行数据
@@ -47,21 +47,6 @@ public interface AdminDao {
      */
     int insert(Admin admin);
 
-    /**
-     * 批量新增数据（MyBatis原生foreach方法）
-     *
-     * @param entities List<Admin> 实例对象列表
-     * @return 影响行数
-     */
-    int insertBatch(@Param("entities") List<Admin> entities);
-
-    /**
-     * 批量新增或按主键更新数据（MyBatis原生foreach方法）
-     *
-     * @param entities List<Admin> 实例对象列表
-     * @return 影响行数
-     */
-    int insertOrUpdateBatch(@Param("entities") List<Admin> entities);
 
     /**
      * 修改数据

@@ -3,6 +3,7 @@ package com.example.meal_ordering_system.service.impl;
 import com.example.meal_ordering_system.dao.AdminDao;
 import com.example.meal_ordering_system.entity.Admin;
 import com.example.meal_ordering_system.service.AdminService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
@@ -22,12 +23,12 @@ public class AdminServiceImpl implements AdminService {
     /**
      * 通过ID查询单条数据
      *
-     * @param id 主键
+     * @param name 用户名
      * @return 实例对象
      */
     @Override
-    public Admin queryById(Integer id) {
-        return this.adminDao.queryById(id);
+    public Admin queryByName(String name) {
+        return this.adminDao.queryByName(name);
     }
 
     /**
@@ -54,17 +55,16 @@ public class AdminServiceImpl implements AdminService {
         return admin;
     }
 
-    /**
-     * 修改数据
-     *
-     * @param admin 实例对象
-     * @return 实例对象
-     */
-    @Override
-    public Admin update(Admin admin) {
-        this.adminDao.update(admin);
-        return this.queryById(admin.getId());
+    //登录方法的实现,从jsp页面获取username与password
+    public boolean login(String name, String pwd) {
+        Admin admin = adminDao.queryByName(name);
+        if (admin != null) {
+            if (admin.getName().equals(name) && admin.getPwd().equals(pwd))
+                return true;
+        }
+        return false;
     }
+
 
     /**
      * 通过主键删除数据

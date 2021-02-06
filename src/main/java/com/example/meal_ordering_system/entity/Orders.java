@@ -25,6 +25,4 @@ public class Orders  {
 
     private Menus menus;
 
-
-
 }

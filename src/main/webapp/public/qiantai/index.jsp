@@ -1,12 +1,12 @@
-<%@page import="com.apsfc.po.ShoppingCart"%>
-<%@page import="com.apsfc.po.Notice"%>
-<%@page import="com.apsfc.dao.NoticeDao"%>
+<%@page import="com.example.meal_ordering_system.entity.ShoppingCart"%>
+<%@page import="com.example.meal_ordering_system.entity.Notice"%>
+<%@page import="com.example.meal_ordering_system.dao.NoticeDao"%>
 <%@page import="java.util.Date"%>
 <%@page import="java.text.SimpleDateFormat"%>
 <%@page import="java.util.ArrayList"%>
 <%@page import="java.util.List"%>
-<%@page import="com.apsfc.dao.MenusDao"%>
-<%@page import="com.apsfc.po.Menus"%>
+<%@page import="com.example.meal_ordering_system.dao.MenusDao"%>
+<%@page import="com.example.meal_ordering_system.entity.Menus"%>
 <%@page language="java" pageEncoding="utf-8"%>
 <html>
 <head>

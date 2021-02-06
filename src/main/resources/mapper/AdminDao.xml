@@ -10,13 +10,13 @@
     </resultMap>
 
     <!--查询单个-->
-    <select id="queryById" resultMap="AdminMap">
+    <select id="queryByName" resultMap="AdminMap">
         select id,
                name,
                pwd,
                authority
         from apsfc.admin
-        where id = #{id}
+        where name = #{name}
     </select>
 
     <!--查询指定行数据-->
@@ -55,23 +55,6 @@
         values (#{name}, #{pwd}, #{authority})
     </insert>
 
-    <insert id="insertBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.admin(name, pwd, authority)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.pwd}, #{entity.authority})
-        </foreach>
-    </insert>
-
-    <insert id="insertOrUpdateBatch" keyProperty="id" useGeneratedKeys="true">
-        insert into apsfc.admin(name, pwd, authority)
-        values
-        <foreach collection="entities" item="entity" separator=",">
-            (#{entity.name}, #{entity.pwd}, #{entity.authority})
-        </foreach>
-        on duplicate key update
-        name = values(name) , pwd = values(pwd) , authority = values(authority)
-    </insert>
 
     <!--通过主键修改数据-->
     <update id="update">

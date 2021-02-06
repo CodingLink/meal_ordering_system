@@ -31,7 +31,7 @@ body {
 	}
 </script>
 
-<link href="css/login.css" rel="stylesheet" type="text/css">
+<link href="${pageContext.request.contextPath}/public/admin/css/login.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -70,7 +70,7 @@ body {
 															<td width="35%">&nbsp;</td>
 															<td height="25" colspan="2" class="left_txt"
 																align="center"><p>
-																	<img src="images/icon-mail2.gif" width="16" height="11">
+																	<img src="${pageContext.request.contextPath}/public/images/icon-mail2.gif" width="16" height="11">
 																	客户服务邮箱：admin@apsfc.com
 																</p></td>
 														</tr>
@@ -78,7 +78,7 @@ body {
 															<td>&nbsp;</td>
 															<td height="25" colspan="2" class="left_txt"
 																align="center"><p>
-																	<img src="images/icon-phone.gif" width="17" height="14">
+																	<img src="${pageContext.request.contextPath}/images/icon-phone.gif" width="17" height="14">
 																	官方网站：http://www.apsfc.com
 																</p></td>
 														</tr>
@@ -89,10 +89,10 @@ body {
 														<tr>
 															<td>&nbsp;</td>
 															<td width="30%" height="40"><img
-                                                                    src="images/icon-demo.gif" width="16" height="16">
+                                                                    src="${pageContext.request.contextPath}/images/icon-demo.gif" width="16" height="16">
 																使用说明</td>
 															<td width="35%"><img
-                                                                    src="images/icon-login-seaver.gif" width="16"
+                                                                    src="${pageContext.request.contextPath}/images/icon-login-seaver.gif" width="16"
                                                                     height="16"> 在线客服</td>
 														</tr>
 													</table></td>
@@ -116,7 +116,7 @@ body {
 											<tr>
 												<td height="164" colspan="2" align="middle">
 
-													<form name="form1" action="../AdminLoginServlet"
+													<form name="form1" action="/admin/login"
 														method="post" onSubmit="return login11()">
 														<table cellSpacing="0" cellPadding="0" width="100%"
 															border="0" height="143" id="table212">
@@ -131,7 +131,7 @@ body {
 																	class="login_txt"> 密 码： &nbsp;&nbsp; </span></td>
 																<td height="35" colspan="2" class="top_hui_text"><input
 																	class="pwd" type="password" size="20" name="pwd">
-																	<img src="images/luck.gif" width="19" height="18">
+																	<img src="${pageContext.request.contextPath}/images/luck.gif" width="19" height="18">
 																</td>
 															</tr>
 															<tr>
@@ -158,7 +158,7 @@ body {
 											</tr>
 											<tr>
 												<td width="433" height="164" align="right" valign="bottom"><img
-                                                        src="images/login-wel.gif" width="242" height="138"></td>
+                                                        src="${pageContext.request.contextPath}/images/login-wel.gif" width="242" height="138"></td>
 												<td width="57" align="right" valign="bottom">&nbsp;</td>
 											</tr>
 										</table></td>
