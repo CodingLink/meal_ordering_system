@@ -26,6 +26,8 @@
 
     <!--加载文件解析器-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+        <!--必须和jsp的pageEncoding属性一致，默认为ISO-8859-1-->
+        <property name="defaultEncoding" value="utf-8"/>
         <!-- 文件最大不能超过5兆 -->
         <property name="maxUploadSize" value="5242880"/>
     </bean>
