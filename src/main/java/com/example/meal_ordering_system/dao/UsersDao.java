@@ -21,7 +21,7 @@ public interface UsersDao {
      * @param name 用户名
      * @return 实例对象
      */
-    Users queryOne(String name,String pwd);
+    Users queryOne(@Param("name") String name, @Param("pwd") String pwd);
 
     /**
      * 通过ID查询单条数据

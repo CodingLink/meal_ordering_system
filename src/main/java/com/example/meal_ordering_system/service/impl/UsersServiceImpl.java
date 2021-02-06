@@ -3,6 +3,7 @@ package com.example.meal_ordering_system.service.impl;
 import com.example.meal_ordering_system.dao.UsersDao;
 import com.example.meal_ordering_system.entity.Users;
 import com.example.meal_ordering_system.service.UsersService;
+import org.apache.ibatis.annotations.Param;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.stereotype.Service;
@@ -23,14 +24,16 @@ public class UsersServiceImpl implements UsersService {
     private UsersDao usersDao;
 
     /**
-     * 通过name查询单条数据
-     *
-     * @param name 用户名
-     * @return 实例对象
+     * 登录查询
+     * @param name
+     * @return
      */
-    @Override
-    public Users queryOne(String name,String pwd) {
-        return this.usersDao.queryOne(name,pwd);
+    public boolean login(@Param("name") String name, @Param("pwd") String pwd){
+        Users user= usersDao.queryOne(name,pwd);
+        if(user==null)
+            return false;
+        else
+            return true;
     }
 
     /**

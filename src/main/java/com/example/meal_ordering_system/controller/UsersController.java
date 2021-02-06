@@ -19,7 +19,7 @@ import javax.annotation.Resource;
  * @author makejava
  * @since 2021-02-04 12:51:21
  */
-@Controller
+@Controller("usersController")
 @RequestMapping("users")
 public class UsersController {
     /**
@@ -40,18 +40,6 @@ public class UsersController {
         return this.usersService.queryById(id);
     }
 
-    /**
-     * 登录查询
-     * @param name
-     * @return
-     */
-    public boolean login(String name,String pwd){
-        Users user= usersService.queryOne(name,pwd);
-        if(user==null)
-            return false;
-        else
-            return true;
-    }
 
 
 }

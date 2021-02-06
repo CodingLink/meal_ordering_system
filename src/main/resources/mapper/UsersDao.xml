@@ -18,7 +18,7 @@
     </resultMap>
 
     <!--登录查询-->
-    <select id="queryOne" resultMap="UsersMap" parameterType="com.example.meal_ordering_system.entity.Users">
+    <select id="queryOne" resultMap="UsersMap">
         select name,
                pwd
         from apsfc.users

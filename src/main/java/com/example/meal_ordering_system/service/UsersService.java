@@ -1,6 +1,7 @@
 package com.example.meal_ordering_system.service;
 
 import com.example.meal_ordering_system.entity.Users;
+import org.apache.ibatis.annotations.Param;
 
 import java.util.List;
 
@@ -19,7 +20,7 @@ public interface UsersService {
      * @param pwd 密码
      * @return 实例对象
      */
-    Users queryOne(String name,String pwd);
+    boolean login(@Param("name") String name, @Param("pwd") String pwd);
 
     /**
      * 通过ID查询单条数据
