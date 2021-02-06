@@ -45,6 +45,18 @@ public class NoticeController {
     }
 
     /**
+     * 查询所有公共并传送到前台
+     * @param model
+     * @return
+     */
+    @RequestMapping("queryAlltoQiantai")
+    public String queryAlltoQiantai(Model model){
+        List<Notice> notices=noticeService.queryAll();
+        model.addAttribute("notices",notices);
+        return "qiantai/index";
+    }
+
+    /**
      * 根据id删除元素
      * @param model
      * @param id
@@ -67,6 +79,19 @@ public class NoticeController {
         Notice notice=noticeService.queryById(id);
         model.addAttribute("notice",notice);
         return "admin/notice_update";
+    }
+
+    /**
+     * 根据id查询元素并传输到前台页面
+     * @param model
+     * @param id
+     * @return
+     */
+    @RequestMapping("queryByIdtoQiantai")
+    public String queryByIdtoQiantai(Model model,@Param("id") Integer id){
+        Notice notice=noticeService.queryById(id);
+        model.addAttribute("notice",notice);
+        return "qiantai/notice";
     }
 
     /**

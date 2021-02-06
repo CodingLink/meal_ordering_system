@@ -8,6 +8,7 @@
 <%@page import="com.example.meal_ordering_system.dao.MenusDao"%>
 <%@page import="com.example.meal_ordering_system.entity.Menus"%>
 <%@page language="java" pageEncoding="utf-8"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -170,7 +171,7 @@
 												<div class="pdv_border"
 													style="border: 0px; height: 100%; padding: 0; margin: 0; background: url(base/border/640/images/left.jpg) repeat-y">
 													<div
-														style="height: 100%; background: url(images/right.jpg) right repeat-y">
+														style="height: 100%; background: url(../public/qiantai/images/right.jpg) right repeat-y">
 														<div
 															style="height: 43px; background: url(images/bg.jpg) 0px 0px no-repeat">
 															<div
@@ -187,22 +188,12 @@
                                                                   type="text/css" />
 
 															<ul class="newslist_time2">
-																<%
-																	NoticeDao nd = new NoticeDao();
-																	List<Notice> noticelist = nd.select();
-																	if (noticelist != null) {
-																		for (int i = 0; i < noticelist.size(); i++) {
-																			Notice notice = noticelist.get(i);
-																%>
-																<li class="newslist_time2"><div class="time"><%=notice.getTimes().substring(0, 10)%></div>
+																<c:forEach items="${notices}" var="notice">
+																<li class="newslist_time2"><div class="time">${notice.times}</div>
 																	<a
-																	href="notice.jsp?id=<%=notice.getId()%>"
-																	class="newslist_time2"><%=notice.getName()%></a></li>
-
-																<%
-																	}
-																																																											   }
-																%>
+																	href="<c:url value="/notice/queryByIdtoQiantai?id=${notice.id}"/>"
+																	class="newslist_time2">${notice.name}</a></li>
+																</c:forEach>
 															</ul>
 
 
