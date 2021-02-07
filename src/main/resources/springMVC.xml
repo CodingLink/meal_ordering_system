@@ -13,6 +13,7 @@
     <mvc:annotation-driven/>
     <!--静态资源访问-->
     <mvc:resources mapping="/public/**" location="/public/" />
+
     <!--controller层的扫描-->
     <context:component-scan base-package="com.example.meal_ordering_system.controller"/>
 
@@ -23,6 +24,8 @@
         <!--设置后缀属性-->
         <property name="suffix" value=".jsp"/>
     </bean>
+
+
 
     <!--配置拦截器-->
 <!--    <mvc:interceptors>-->

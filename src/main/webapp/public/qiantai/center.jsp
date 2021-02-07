@@ -1,5 +1,5 @@
-<%@page import="com.apsfc.po.User"%>
 <%@ page language="java" import="java.util.*,java.text.*" pageEncoding="utf-8"%>
+<%@ page import="com.example.meal_ordering_system.entity.Users" %>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -9,12 +9,12 @@
 <title>用户中心</title>
 <meta content="" name=keywords />
 <meta content="" name=description />
-<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/public/qiantai/css/common.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/common.js"></script>
 
    <script language="JavaScript">
 		function check11()
@@ -97,7 +97,7 @@
     <td align="left" valign="top">
   
     
-  <jsp:include flush="fasle" page="top.jsp"/>
+  <jsp:include flush="false" page="top.jsp"/>
     
     </td>
   </tr>
@@ -108,11 +108,13 @@
   
   <tr>
     <td align="center" valign="center" height="450">
+
+		<input type="text" value="${user}">
     
  <form action="../UserModifyServlet" name="form1" method="post" onSubmit="return check11()">
   
 <%
-  	User user = (User)session.getAttribute("user");
+  	Users user = (Users)session.getAttribute("user");
 %>
 
 
