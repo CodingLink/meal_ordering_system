@@ -58,7 +58,7 @@
 									<td class="line_table" align="center" width="40%" ><span class="left_txt"><%=sc.getName() %></span></td>
 									<td class="line_table" align="center" width="20%"><span class="left_txt"><%=sc.getPrice() %></span></td>
 									<td class="line_table" align="center" width="20%"><span class="left_txt"><%=sc.getSums()%></span></td>
-									<td class="line_table" align="center" width="20%"><a href="/orders/order_shoppingcar?del1=<%=i%>">取消</a></td>
+									<td class="line_table" align="center" width="20%"><a href="/orders/order_shoppingcardel?del=<%=i%>">取消</a></td>
 								</tr>
 									<%
 						}
@@ -81,10 +81,10 @@
 								<tr   >
 									<td class="line_table" align="center"  colspan="4" valign="center">
 
-										<a href="../UserOrderingServlet"><img src="${pageContext.request.contextPath}/public/qiantai/images/canche_submit.gif" border="0" /></a>
+										<a href="/orders/order_addshoppingcartoOrder"><img src="${pageContext.request.contextPath}/public/qiantai/images/canche_submit.gif" border="0" /></a>
 										&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 
-										<a href="../ShoppingServlet?remove1=1"><img src="${pageContext.request.contextPath}/public/qiantai/images/quxiao2.gif" border="0" /></a>
+										<a href="/orders/order_addshoppingcartoOrder?remove=1"><img src="${pageContext.request.contextPath}/public/qiantai/images/quxiao2.gif" border="0" /></a>
 
 
 
