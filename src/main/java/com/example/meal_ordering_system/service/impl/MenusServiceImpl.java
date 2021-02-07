@@ -34,8 +34,8 @@ public class MenusServiceImpl implements MenusService {
 
 
 
-    public List<Menus> queryAll(Menus menus){
-        return  this.menusDao.queryAll(menus);
+    public List<Menus> queryAll( ){
+        return  this.menusDao.queryAll();
     };
 
     /**

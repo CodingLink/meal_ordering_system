@@ -62,7 +62,6 @@
 											<div id="dingcanall2">
 
 												<div style="margin-top: 0px; padding: px;">
-
 													<div id="mm_01" class="dingcanall_connow">
 														<table>
 															<%
@@ -73,10 +72,10 @@
 																int currentrs = 0;/*当前记录数*/
 																int rscount = 0;/*实际记录数*/
 																//menuList=queryALL
-																List<Menus>menuList=(List<Menus>)request.getAttribute("menusList");
+																List<Menus>menusList=(List<Menus>)request.getAttribute("menusList");
 
-																if (menuList != null) {
-																	rscount = menuList.size();
+																if (menusList != null) {
+																	rscount = menusList.size();
 																	if (rscount % maxrow == 0) {
 																		rowcount = rscount / maxrow;
 																	} else {
@@ -95,14 +94,14 @@
 
 																			for (currentrs = currentrow * maxrow; currentrs < currentrow
 																					* maxrow + currentrowcount; currentrs++) {
-																				Menus menus = menuList.get(currentrs);
+																				Menus menus = menusList.get(currentrs);
 																%>
 																<td style="margin-top: 10px;">
 																	<div>
 																		<table>
 																			<tr>
 																				<td rowspan="5" class="bookPic"><img
-																					src="../<%=menus.getImgpath()%>"
+																					src="${pageContext.request.contextPath}/public/<%=menus.getImgpath()%>"
 																					style="border: 1px solid #300;" /></td>
 																				<td><span>菜名:</span></td>
 																				<td><span><strong><%=menus.getName()%></strong></span></td>
@@ -126,7 +125,7 @@
 																			<tr>
 																				<td colspan="2" style="height: 40px;"><a
 																					href="../ShoppingServlet?menuId=<%=menus.getId()%>"><img
-                                                                                        src="${pageContext.request.contextPath}/public/qiantaiimages/cart.png" border="0" alt="" /></a></td>
+                                                                                        src="${pageContext.request.contextPath}/public/qiantai/images/cart.png" border="0" alt="" /></a></td>
 																				<td></td>
 																			</tr>
 																		</table>
@@ -362,8 +361,8 @@
 
 
 																		<%
-																			for (int i = 0; i < menuList.size(); i++) {
-																				Menus menus1 = menuList.get(i);
+																			for (int i = 0; i < menusList.size(); i++) {
+																				Menus menus1 = menusList.get(i);
 																				String str = "";
 																				str = "已销售" + menus1.getSums1() + "次";
 																		%>

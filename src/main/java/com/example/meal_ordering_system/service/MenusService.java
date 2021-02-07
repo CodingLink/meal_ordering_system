@@ -21,7 +21,7 @@ public interface MenusService {
     Menus queryById(Object id);
 
 
-    List<Menus> queryAll(Menus menus);
+    List<Menus> queryAll();
 
     /**
      * 查询多条数据

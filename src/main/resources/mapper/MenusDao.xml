@@ -46,43 +46,11 @@
         from apsfc.menus limit #{offset}, #{limit}
     </select>
 
-    <!--通过实体作为筛选条件查询-->
+
     <select id="queryAll" resultMap="MenusMap">
         select
-        id, name, typeid, burden, brief, price, sums, price1, sums1, imgpath
+        *
         from apsfc.menus
-        <where>
-            <if test="id != null">
-                and id = #{id}
-            </if>
-            <if test="name != null and name != ''">
-                and name = #{name}
-            </if>
-            <if test="typeid != null">
-                and typeid = #{typeid}
-            </if>
-            <if test="burden != null and burden != ''">
-                and burden = #{burden}
-            </if>
-            <if test="brief != null and brief != ''">
-                and brief = #{brief}
-            </if>
-            <if test="price != null">
-                and price = #{price}
-            </if>
-            <if test="sums != null">
-                and sums = #{sums}
-            </if>
-            <if test="price1 != null">
-                and price1 = #{price1}
-            </if>
-            <if test="sums1 != null">
-                and sums1 = #{sums1}
-            </if>
-            <if test="imgpath != null and imgpath != ''">
-                and imgpath = #{imgpath}
-            </if>
-        </where>
     </select>
 
     <!--新增-->

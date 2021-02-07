@@ -58,8 +58,7 @@ public class MenusController {
     //    查询全部菜单,前台用
     @RequestMapping("/qiantai/allMenus")
     public String  menusList(Model model ){
-        Menus menus = new Menus();
-        List<Menus> list = menusService.queryAll(menus);
+        List<Menus> list = menusService.queryAll();
         model.addAttribute("menusList",list);
         List<Types> typesList=typesService.queryAll();
         model.addAttribute("typesList",typesList);
