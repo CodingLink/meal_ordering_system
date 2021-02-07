@@ -124,7 +124,7 @@
 																			</tr>
 																			<tr>
 																				<td colspan="2" style="height: 40px;"><a
-																					href="../ShoppingServlet?menuId=<%=menus.getId()%>"><img
+																					href="/orders/order_addshoppingcar?menuId=<%=menus.getId()%>"><img
                                                                                         src="${pageContext.request.contextPath}/public/qiantai/images/cart.png" border="0" alt="" /></a></td>
 																				<td></td>
 																			</tr>
@@ -229,10 +229,10 @@
 														</div>
 													</div>
 													<div style="padding: 0px">
-														<link href="${pageContext.request.contextPath}/public/qiantaicss/dingcanche.css" rel="stylesheet"
+														<link href="${pageContext.request.contextPath}/public/qiantai/css/dingcanche.css" rel="stylesheet"
                                                               type="text/css" />
-														<script src="${pageContext.request.contextPath}/public/qiantaijs/dingcanall.js" type="text/javascript"></script>
-														<script src="${pageContext.request.contextPath}/public/qiantaijs/dingcansubmit.js" type="text/javascript"></script>
+														<script src="${pageContext.request.contextPath}/public/qiantai/js/dingcanall.js" type="text/javascript"></script>
+														<script src="${pageContext.request.contextPath}/public/qiantai/js/dingcansubmit.js" type="text/javascript"></script>
 														<div id="dingcanche">
 															<div id="dingcanche2">
 																<div id="dingcanche_top">
@@ -250,28 +250,28 @@
 																		<td align="center">数量</td>
 																		<td align="center"></td>
 																	</tr>
-<%--																	<%--%>
-<%--																		float sum1 = 0.0f;--%>
-<%--																		int sum2 = 0;--%>
-<%--																		List<ShoppingCart> shoppingcar = (List<ShoppingCart>) session.getAttribute("shoppingcar");--%>
-<%--																		if (shoppingcar!= null) {--%>
-<%--																			for (int i = 0; i < shoppingcar.size(); i++) {--%>
-<%--																				ShoppingCart sc=shoppingcar.get(i);--%>
-<%--																				sum1 = sum1+sc.getPrice();--%>
-<%--																				sum2 = sum2 +sc.getSums();--%>
-<%--																	%>--%>
+																	<%
+																		float sum1 = 0.0f;
+																		int sum2 = 0;
+																		List<ShoppingCart> shoppingcar = (List<ShoppingCart>) session.getAttribute("shoppingcar");
+																		if (shoppingcar!= null) {
+																			for (int i = 0; i < shoppingcar.size(); i++) {
+																				ShoppingCart sc=shoppingcar.get(i);
+																				sum1 = sum1+sc.getPrice();
+																				sum2 = sum2 +sc.getSums();
+																	%>
 
 
-<%--																	<tr>--%>
-<%--																		<td align="center"><%=sc.getName()%></td>--%>
-<%--																		<td align="center"><%=sc.getPrice()%></td>--%>
-<%--																		<td align="center"><%=sc.getSums()%></td>--%>
-<%--																		<td align="center"><a--%>
-<%--																			href="../ShoppingServlet?del=<%=i%>">取消</a></td>--%>
-<%--																	</tr>--%>
-<%--																	<%--%>
-<%--																		}}--%>
-<%--																	%>--%>
+																	<tr>
+																		<td align="center"><%=sc.getName()%></td>
+																		<td align="center"><%=sc.getPrice()%></td>
+																		<td align="center"><%=sc.getSums()%></td>
+																		<td align="center"><a
+																			href="/orders/order_shoppingcardel?del=<%=i%>">取消</a></td>
+																	</tr>
+																	<%
+																		}}
+																	%>
 
 
 
@@ -279,28 +279,28 @@
 
 
 
-<%--																<div style="height: 24px; margin: 5px 3px 1px 3px;">--%>
-<%--																	<div--%>
-<%--																		style="float: left; line-height: 24px; padding-left: 25px;">小&nbsp;&nbsp;计：</div>--%>
-<%--																	<div--%>
-<%--																		style="float: right; line-height: 24px; padding-right: 15px;">--%>
-<%--																		<font id="allnums" style="color: #ff0000;"><%=sum2%></font>份--%>
-<%--																	</div>--%>
-<%--																	<div--%>
-<%--																		style="float: right; line-height: 24px; padding-right: 30px;">--%>
-<%--																		<font id="cpprice" style="color: #ff0000;"><%=sum1%></font>元--%>
-<%--																	</div>--%>
-<%--																</div>--%>
+																<div style="height: 24px; margin: 5px 3px 1px 3px;">
+																	<div
+																		style="float: left; line-height: 24px; padding-left: 25px;">小&nbsp;&nbsp;计：</div>
+																	<div
+																		style="float: right; line-height: 24px; padding-right: 15px;">
+																		<font id="allnums" style="color: #ff0000;"><%=sum2%></font>份
+																	</div>
+																	<div
+																		style="float: right; line-height: 24px; padding-right: 30px;">
+																		<font id="cpprice" style="color: #ff0000;"><%=sum1%></font>元
+																	</div>
+																</div>
 																<div style="height: 30px; margin: 5px 3px 1px 3px;">
 																	<table width="100%" border="0" cellspacing="0">
 																		<tr>
 																			<td align="center" width="40%"></td>
 																			<td align="center" width="40%"><a
-																				href="../UserOrderingServlet"><img
-                                                                                    src="${pageContext.request.contextPath}/public/qiantaiimages/canche_submit.gif" border="0" /></a></td>
+																				href="/orders/order_addshoppingcartoOrder"><img
+                                                                                    src="${pageContext.request.contextPath}/public/qiantai/images/canche_submit.gif" border="0" /></a></td>
 																			<td align="center" width="40%"><a
-																				href="../ShoppingServlet?remove=1"><img
-                                                                                    src="${pageContext.request.contextPath}/public/qiantaiimages/quxiao2.gif" border="0" /></a></td>
+																				href="/orders/order_addshoppingcartoOrder?remove=1"><img
+                                                                                    src="${pageContext.request.contextPath}/public/qiantai/images/quxiao2.gif" border="0" /></a></td>
 																		</tr>
 																	</table>
 

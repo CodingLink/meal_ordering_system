@@ -25,4 +25,12 @@ public class Orders  {
 
     private Menus menus;
 
+    public Orders(Integer id, Integer userid, Integer menuid, Integer menusum, String times, Integer delivery) {
+        this.id = id;
+        this.userid = userid;
+        this.menuid = menuid;
+        this.menusum = menusum;
+        this.times = times;
+        this.delivery = delivery;
+    }
 }

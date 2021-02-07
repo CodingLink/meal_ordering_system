@@ -25,6 +25,11 @@
         where name=#{name} and pwd=#{pwd}
     </select>
 
+    <!--通过名字查id-->
+    <select id="queryByname" resultType="int">
+          select id from apsfc.users where name=#{0}
+    </select>
+
     <!--通过id查询单个-->
     <select id="queryById" resultMap="UsersMap">
         select id,

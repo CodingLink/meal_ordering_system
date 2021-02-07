@@ -59,4 +59,7 @@ public interface UsersDao {
      */
     int deleteById(Integer id);
 
+    //通过用户名查id
+   int queryByname(String name);
+
 }

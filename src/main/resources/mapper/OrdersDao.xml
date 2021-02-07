@@ -50,6 +50,11 @@
         where orders.userid=users.id and orders.menuid=menus.id and menus.name=#{name}
     </select>
 
+    <select id="pageListByDelivery" resultMap="pageLists">
+        select orders.id,orders.userid,orders.menusum,orders.times,orders.delivery,users.name,users.phone,users.address,menus.name as menuname,menus.price1
+        from orders,users,menus
+        where orders.userid=users.id and orders.menuid=menus.id and orders.delivery=#{0}
+    </select>
 
 
     <select id="pageCount" resultType="int">
@@ -67,4 +72,9 @@
         delete from orders where id=#{id}
     </delete>
 
+
+    <insert id="insert" keyProperty="id" useGeneratedKeys="true">
+        insert into apsfc.orders(id,userid,menuid,menusum,times,delivery)
+        values (#{id}, #{userid}, #{menuid}, #{menusum}, #{times}, #{delivery})
+    </insert>
 </mapper>
