@@ -51,7 +51,7 @@
 					if (shoppingcar!= null) {
 						for (int i = 0; i < shoppingcar.size(); i++) {
 							ShoppingCart sc=shoppingcar.get(i);
-							sum1 = sum1+sc.getPrice();
+							sum1 = sum1+sc.getPrice()*sc.getSums();
 							sum2 = sum2 +sc.getSums();
 				  %>
 								<tr>
