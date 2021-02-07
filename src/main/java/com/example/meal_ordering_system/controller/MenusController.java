@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import java.lang.reflect.Method;
 import java.util.List;
 
 
@@ -52,6 +53,17 @@ public class MenusController {
         List<Types> typesList=typesService.queryAll();
         model.addAttribute("typesList",typesList);
         return "/admin/menus_update";
+    }
+
+    //    查询全部菜单,前台用
+    @RequestMapping("/qiantai/allMenus")
+    public String  menusList(Model model ){
+        Menus menus = new Menus();
+        List<Menus> list = menusService.queryAll(menus);
+        model.addAttribute("menusList",list);
+        List<Types> typesList=typesService.queryAll();
+        model.addAttribute("typesList",typesList);
+        return "/qiantai/index";
     }
 //    查询全部菜单,并且返回到菜单信息页面
     @RequestMapping("/allMenus")

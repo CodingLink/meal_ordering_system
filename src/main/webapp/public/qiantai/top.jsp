@@ -5,11 +5,11 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
-<link href="css/common.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/base.js"></script>
-<script type="text/javascript" src="js/common.js"></script>
-<script type="text/javascript" src="js/form.js"></script>
-<script type="text/javascript" src="js/blockui.js"></script>
+<link href=${pageContext.request.contextPath}/public/qiantai/css/common.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/base.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/common.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/form.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/blockui.js"></script>
 
 </head>
 <body style='background:transparent'>
@@ -28,7 +28,7 @@
 	
 <div style="padding:0px">
 
-<link href="css/topmenu_bk.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/public/qiantai/css/topmenu_bk.css" rel="stylesheet" type="text/css" />
 
 <div id="topmenu" >
 
@@ -60,8 +60,8 @@
 	</div>
 <div style="padding:0px">
 
-<link href="css/A.css" rel="stylesheet" type="text/css" />
-<script type="text/javascript" src="js/channelmenu_dc.js"></script>
+<link href="${pageContext.request.contextPath}/public/qiantai/css/A.css" rel="stylesheet" type="text/css" />
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/channelmenu_dc.js"></script>
 
 <div id="menu">
 <div class="mainmenuleft"></div><div class="mainmenuright"></div>
@@ -69,7 +69,7 @@
 <div id="mainmenu">
 <ul>
 
-<li ><a href="index.jsp" target="_self" >首页</a></li> 
+<li ><a href="/menus/qiantai/allMenus" target="_self" >首页</a></li>
 
 <li ><a href="shoppingcar.jsp" target="_self">我的餐车</a></li> 
 
@@ -124,7 +124,7 @@
             <div class="pdv_border" style="margin:0;padding:0;height:100%;border:0px  solid;background:;">
               
               <div style="padding:0px"> 
-              <img src="images/1257477260.gif" alt="" width="100%" border="0"  /> 
+              <img src="${pageContext.request.contextPath}/public/qiantai/images/1257477260.gif" alt="" width="100%" border="0"  />
               </div>
             
               

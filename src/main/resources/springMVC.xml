@@ -25,7 +25,7 @@
     </bean>
 
     <!--配置拦截器-->
-    <mvc:interceptors>
+<!--    <mvc:interceptors>-->
         <!--  <bean class="cn.lzc.interceptor.CustomInterceptor"></bean>--><!--拦截所有请求-->
 
         <!-- <mvc:interceptor>
@@ -40,11 +40,13 @@
         <!--</mvc:interceptor>-->
 
         <!--登录拦截器-->
-        <mvc:interceptor>
-            <mvc:mapping path="/**"/>
-            <bean class="com.example.meal_ordering_system.interceptor.AdminLoginInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+
+<!--        -->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/**"/>-->
+<!--            <bean class="com.example.meal_ordering_system.interceptor.AdminLoginInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+<!--    </mvc:interceptors>-->
 
     <!--加载文件解析器-->
     <bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
