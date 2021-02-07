@@ -32,11 +32,11 @@
 
 <div id="topmenu" >
 
-<a href="login.jsp" target="_self">会员登录</a>|
-<a href="reg.jsp" target="_self" >会员注册</a>|
+<a href="${pageContext.request.contextPath}/public/qiantai/login.jsp" target="_self">会员登录</a>|
+<a href="${pageContext.request.contextPath}/public/qiantai/reg.jsp" target="_self" >会员注册</a>|
 <a href="../UserLoginServlet?reqtype=logout" >注销退出</a>|
-<a href="carry.jsp" target="_self">配送说明</a>|
-<a href="our.jsp" target="_self">关于我们</a>
+<a href="${pageContext.request.contextPath}/public/qiantai/carry.jsp" target="_self">配送说明</a>|
+<a href="${pageContext.request.contextPath}/public/qiantai/our.jsp" target="_self">关于我们</a>
 </div>
 
 </div>
@@ -71,14 +71,14 @@
 
 <li ><a href="/menus/qiantai/allMenus" target="_self" >首页</a></li>
 
-<li ><a href="shoppingcar.jsp" target="_self">我的餐车</a></li> 
+<li ><a href="${pageContext.request.contextPath}/public/qiantai/shoppingcar.jsp" target="_self">我的餐车</a></li>
 
-<li ><a href="order.jsp" target="_self">我的订单</a></li> 
-<li ><a href="center.jsp" target="_self">用户中心</a></li> 
+<li ><a href="${pageContext.request.contextPath}/public/qiantai/order.jsp" target="_self">我的订单</a></li>
+<li ><a href="${pageContext.request.contextPath}/public/qiantai/center.jsp" target="_self">用户中心</a></li>
 
-<li ><a href="carry.jsp" target="_self">配送说明</a></li> 
+<li ><a href="${pageContext.request.contextPath}/public/qiantai/carry.jsp" target="_self">配送说明</a></li>
 
-<li ><a href="our.jsp" target="_self">关于我们</a></li> 
+<li ><a href="${pageContext.request.contextPath}/public/qiantai/our.jsp" target="_self">关于我们</a></li>
 
 <li ><a href="../UserLoginServlet?reqtype=logout" >注销退出</a></li> 
  
