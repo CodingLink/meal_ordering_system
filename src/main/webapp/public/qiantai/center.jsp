@@ -1,5 +1,5 @@
-<%@page import="com.apsfc.po.User"%>
 <%@ page language="java" import="java.util.*,java.text.*" pageEncoding="utf-8"%>
+<%@ page import="com.example.meal_ordering_system.entity.Users" %>
 
 
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
@@ -97,7 +97,7 @@
     <td align="left" valign="top">
   
     
-  <jsp:include flush="fasle" page="top.jsp"/>
+  <jsp:include flush="false" page="top.jsp"/>
     
     </td>
   </tr>
@@ -112,7 +112,7 @@
  <form action="../UserModifyServlet" name="form1" method="post" onSubmit="return check11()">
   
 <%
-  	User user = (User)session.getAttribute("user");
+  	Users user = (Users)session.getAttribute("user");
 %>
 
 

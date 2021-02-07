@@ -356,7 +356,7 @@
 																</div>
 																<div style="padding: px;">
 																	<div class="dingcanweekmenuinfo" align="left">
-																		<link href="css/newslist_time2.css" rel="stylesheet"
+																		<link href="${pageContext.request.contextPath}/public/qiantai/css/newslist_time2.css" rel="stylesheet"
                                                                               type="text/css" />
 
 

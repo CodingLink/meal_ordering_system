@@ -11,7 +11,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
 <meta http-equiv="Content-Type" content="text/html; charset=gb2312" />
 <meta content="" name=keywords />
 <meta content="" name=description />
-<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/public/qiantai/css/common.css" rel="stylesheet" type="text/css" />
 
 </head>
 <body style='background:transparent'>
@@ -31,7 +31,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
               <div style="float:right;width:60px;height:43px;text-align:right;background:url(images/bg.jpg) -840px 0px no-repeat"> <a href="news/class/" style="font:12px/43px simsun;color:#505050;margin-right:12px;display:inline">更多&gt;&gt;</a></div>
             </div>
             <div style="margin:0px 3px;padding:10px;">
-              <link href="css/newslist_time2.css" rel="stylesheet" type="text/css" />
+              <link href="${pageContext.request.contextPath}/public/qiantai/css/newslist_time2.css" rel="stylesheet" type="text/css" />
               <ul class="newslist_time2">
                 <li class="newslist_time2">
                   <div class="time">09/27</div>
@@ -125,7 +125,7 @@ $("div.cpline_d:even").addClass("cpline_s");
             <div style="float:right;margin-right:10px;display:none"> <a href="-1" style="line-height:25px;color:">更多</a></div>
           </div>
           <div style="padding:0px">
-            <link href="css/dingcanweekmenu.css" rel="stylesheet" type="text/css" />
+            <link href="${pageContext.request.contextPath}/public/qiantai/css/dingcanweekmenu.css" rel="stylesheet" type="text/css" />
             <div id="dingcanweekmenu">
               <div id="dingcanweekmenu2">
                 <div id="dingcanweekmenu_top">
@@ -134,7 +134,7 @@ $("div.cpline_d:even").addClass("cpline_s");
                 </div>
                 <div style="padding:px;">
                   <div class="dingcanweekmenuinfo">
-                    <link href="css/newslist_time2.css" rel="stylesheet" type="text/css" />
+                    <link href="${pageContext.request.contextPath}/public/qiantai/css/newslist_time2.css" rel="stylesheet" type="text/css" />
                     <li class="newslist_time2">
                       <div class="time">09/27</div>
                       <a href="news/html/?297.html" target="_self" class="newslist_time2"   >金秋来临，菜品赠品大升级</a></li>
