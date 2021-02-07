@@ -36,5 +36,10 @@ public interface OrdersDao {
     //删除订单
     int deleteById(Integer id);
 
+    //查找所有订单通过delivery
+    List<Orders> pageListByDelivery(Integer delivery);
 
+
+    //增加order
+    int insert(Orders orders);
 }

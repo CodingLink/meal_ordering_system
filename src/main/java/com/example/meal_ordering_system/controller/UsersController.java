@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.RestController;
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 import java.util.Random;
 import java.util.UUID;
 
@@ -56,11 +57,12 @@ public class UsersController {
     @RequestMapping("login")
     public String login(Users user, HttpServletRequest request){
         boolean loginType=usersService.login(user.getName(), user.getPwd());
+        HttpSession session=request.getSession();
         if(loginType){
-            request.setAttribute("user",user);
-            return "qiantai/index";
+            session.setAttribute("user",user);
+            return "redirect:/menus/qiantai/allMenus";
         }else{
-            request.setAttribute("message","用户名密码错误");
+            session.setAttribute("message","用户名密码错误");
             return "qiantai/userLoginFail";
         }
     }

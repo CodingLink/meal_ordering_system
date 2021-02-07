@@ -34,4 +34,9 @@ public interface OrdersService {
     List<Orders> pageListByMenue(String name);
 
 
+    //查找所有订单通过delivery
+    List<Orders> pageListByDelivery(Integer delivery);
+
+    //增加order
+    int insert(Orders orders);
 }

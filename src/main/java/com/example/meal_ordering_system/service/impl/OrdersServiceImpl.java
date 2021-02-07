@@ -65,4 +65,14 @@ public class OrdersServiceImpl implements OrdersService {
         return this.ordersDao.pageListByMenue(name);
     }
 
+    @Override
+    public List<Orders> pageListByDelivery(Integer delivery) {
+        return this.ordersDao.pageListByDelivery(delivery);
+    }
+
+    @Override
+    public int insert(Orders orders) {
+        return this.ordersDao.insert(orders);
+    }
+
 }

@@ -57,4 +57,7 @@ public interface UsersService {
      */
     boolean deleteById(Integer id);
 
+    //通过用户名查id
+    int queryByname(String name);
+
 }
