@@ -15,7 +15,7 @@ public class MainController {
 
     @RequestMapping("qiantai")
     public String qianTai(Model model){
-        return "/qiantai/index";
+        return "redirect:/menus/qiantai/allMenus";
     }
 
 
