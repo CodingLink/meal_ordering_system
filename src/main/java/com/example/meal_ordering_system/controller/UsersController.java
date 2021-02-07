@@ -84,9 +84,10 @@ public class UsersController {
 
 
     @RequestMapping("update")
-    public String update(@Param("id")Integer id,@Param("name") String name,@Param("pwd") String pwd,@Param("realname") String realname,@Param("sex") String sex,@Param("age") Integer age,@Param("card") String card,@Param("address") String address,@Param("Phone") String phone,@Param("email")String email,@Param("code")String code,@Param("type")Integer type){
+    public String update(HttpSession session,@Param("id")Integer id,@Param("name") String name,@Param("pwd") String pwd,@Param("realname") String realname,@Param("sex") String sex,@Param("age") Integer age,@Param("card") String card,@Param("address") String address,@Param("Phone") String phone,@Param("email")String email,@Param("code")String code,@Param("type")Integer type){
         Users user=new Users(id,name,pwd,realname,sex,age,card,address,phone,email,code,type);
         usersService.update(user);
-        return "qiantai/center";
+        session.removeAttribute("user_session");
+        return "redirect:/users/login";
     }
 }

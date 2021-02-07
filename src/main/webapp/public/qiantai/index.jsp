@@ -296,7 +296,7 @@
 																		<tr>
 																			<td align="center" width="40%"></td>
 																			<td align="center" width="40%"><a
-																				href="/orders/order_addshoppingcartoOrder"><img
+																				href="<c:url value="/orders/order_addshoppingcartoOrder"/>"><img
                                                                                     src="${pageContext.request.contextPath}/public/qiantai/images/canche_submit.gif" border="0" /></a></td>
 																			<td align="center" width="40%"><a
 																				href="/orders/order_addshoppingcartoOrder?remove=1"><img
