@@ -257,7 +257,7 @@
 																		if (shoppingcar!= null) {
 																			for (int i = 0; i < shoppingcar.size(); i++) {
 																				ShoppingCart sc=shoppingcar.get(i);
-																				sum1 = sum1+sc.getPrice();
+																				sum1 = sum1+sc.getPrice()*sc.getSums();
 																				sum2 = sum2 +sc.getSums();
 																	%>
 
@@ -356,7 +356,7 @@
 																</div>
 																<div style="padding: px;">
 																	<div class="dingcanweekmenuinfo" align="left">
-																		<link href="css/newslist_time2.css" rel="stylesheet"
+																		<link href="${pageContext.request.contextPath}/public/qiantai/css/newslist_time2.css" rel="stylesheet"
                                                                               type="text/css" />
 
 
