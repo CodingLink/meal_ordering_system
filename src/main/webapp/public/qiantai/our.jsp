@@ -25,7 +25,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
     <td align="left" valign="top">
   
     
-  <jsp:include flush="fasle" page="top.jsp"/>
+  <jsp:include flush="false" page="top.jsp"/>
     
     </td>
   </tr>
@@ -80,7 +80,7 @@ String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.
   <tr>
     <td height="50" align="center" valign="middle">&nbsp; 
    
-        <jsp:include flush="fasle" page="copyright.jsp"/>
+        <jsp:include flush="false" page="copyright.jsp"/>
     </td>
   </tr>
   

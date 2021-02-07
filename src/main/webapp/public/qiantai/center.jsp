@@ -273,7 +273,7 @@
   <tr>
     <td height="50" align="center" valign="middle">&nbsp; 
    
-        <jsp:include flush="fasle" page="copyright.jsp"/>
+        <jsp:include flush="false" page="copyright.jsp"/>
     </td>
   </tr>
   

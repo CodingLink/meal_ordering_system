@@ -7,6 +7,8 @@
 <%@page import="java.util.List"%>
 <%@page import="com.example.meal_ordering_system.dao.MenusDao"%>
 <%@page import="com.example.meal_ordering_system.entity.Menus"%>
+<%@ page import="com.example.meal_ordering_system.service.MenusService" %>
+<%@ page import="com.example.meal_ordering_system.service.impl.MenusServiceImpl" %>
 <%@page language="java" pageEncoding="utf-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <html>
@@ -70,12 +72,11 @@
 																int currentrow = 0;/*当前行*/
 																int currentrs = 0;/*当前记录数*/
 																int rscount = 0;/*实际记录数*/
+																//menuList=queryALL
+																List<Menus>menuList=(List<Menus>)request.getAttribute("menusList");
 
-																List<Menus> menulist = null;
-																MenusDao md = new MenusDao();
-																menulist = md.select();
-																if (menulist != null) {
-																	rscount = menulist.size();
+																if (menuList != null) {
+																	rscount = menuList.size();
 																	if (rscount % maxrow == 0) {
 																		rowcount = rscount / maxrow;
 																	} else {
@@ -94,7 +95,7 @@
 
 																			for (currentrs = currentrow * maxrow; currentrs < currentrow
 																					* maxrow + currentrowcount; currentrs++) {
-																				Menus menus = menulist.get(currentrs);
+																				Menus menus = menuList.get(currentrs);
 																%>
 																<td style="margin-top: 10px;">
 																	<div>
@@ -120,7 +121,7 @@
 																			</tr>
 																			<tr>
 																				<td><span>菜品类型:</span></td>
-																				<td><span><%=menus.getTypename()%></span></td>
+																				<td><span><%=menus.getTypeid()%></span></td>
 																			</tr>
 																			<tr>
 																				<td colspan="2" style="height: 40px;"><a
@@ -361,8 +362,8 @@
 
 
 																		<%
-																			for (int i = 0; i < menulist.size(); i++) {
-																				Menus menus1 = menulist.get(i);
+																			for (int i = 0; i < menuList.size(); i++) {
+																				Menus menus1 = menuList.get(i);
 																				String str = "";
 																				str = "已销售" + menus1.getSums1() + "次";
 																		%>
@@ -400,7 +401,7 @@
 		</tr>
 		<tr>
 			<td height="50" align="center" valign="middle"><jsp:include
-					flush="fasle" page="copyright.jsp" /></td>
+					flush="false" page="copyright.jsp" /></td>
 		</tr>
 
 	</table>

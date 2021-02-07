@@ -38,7 +38,7 @@
     <td align="left" valign="top">
   
     
- <jsp:include flush="fasle" page="top.jsp"/>
+ <jsp:include flush="false" page="top.jsp"/>
     
     </td>
   </tr>

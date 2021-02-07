@@ -32,6 +32,12 @@ public class MenusServiceImpl implements MenusService {
         return this.menusDao.queryById(id);
     }
 
+
+
+    public List<Menus> queryAll(Menus menus){
+        return  this.menusDao.queryAll(menus);
+    };
+
     /**
      * 查询多条数据
      *
