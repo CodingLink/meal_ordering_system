@@ -1,6 +1,7 @@
 package com.example.meal_ordering_system.interceptor;
 
 import com.example.meal_ordering_system.entity.Admin;
+import com.example.meal_ordering_system.entity.Users;
 import org.springframework.web.servlet.HandlerInterceptor;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -20,6 +21,7 @@ public class AdminLoginInterceptor implements HandlerInterceptor {
         //获取session
         HttpSession session = request.getSession();
         Admin admin = (Admin) session.getAttribute("admin_session");
+        Users user=(Users)session.getAttribute("user_session");
         //判断session中是否有用户数据，如果有，则返回true，继续向下执行
         if (admin != null) {
             return true;

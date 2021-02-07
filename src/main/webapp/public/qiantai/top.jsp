@@ -145,8 +145,8 @@
                  <%
                    
                 
-                   if(session.getAttribute("user") != null ){
-                   Users ur = (Users)session.getAttribute("user");
+                   if(session.getAttribute("user_session") != null ){
+                   Users ur = (Users)session.getAttribute("user_session");
                    String name = "";
                    name=ur.getName();
                    %>

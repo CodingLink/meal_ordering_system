@@ -59,12 +59,20 @@ public class UsersController {
         boolean loginType=usersService.login(user.getName(), user.getPwd());
         HttpSession session=request.getSession();
         if(loginType){
-            session.setAttribute("user",user);
+            session.setAttribute("user_session",user);
             return "redirect:/menus/qiantai/allMenus";
         }else{
             session.setAttribute("message","用户名密码错误");
             return "qiantai/userLoginFail";
         }
+    }
+    //登出,地址/users/logout
+    @RequestMapping("logout")
+    public String logout(HttpSession session){
+        //清除session
+        session.removeAttribute("user_session");
+        //重定向到登录页面的跳转方法
+        return "/admin/index";
     }
 
     @RequestMapping("insert")

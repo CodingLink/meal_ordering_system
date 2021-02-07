@@ -71,7 +71,7 @@ public class AdminController {
     @RequestMapping("logout")
     public String logout(HttpSession session){
         //清除session
-        session.invalidate();
+        session.removeAttribute("admin_session");
         //重定向到登录页面的跳转方法
         return "/admin/index";
     }

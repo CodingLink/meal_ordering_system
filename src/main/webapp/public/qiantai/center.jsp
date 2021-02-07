@@ -109,12 +109,12 @@
   <tr>
     <td align="center" valign="center" height="450">
 
-		<input type="text" value="${user}">
+		<input type="text" value="${user_session}">
     
  <form action="../UserModifyServlet" name="form1" method="post" onSubmit="return check11()">
   
 <%
-  	Users user = (Users)session.getAttribute("user");
+  	Users user = (Users)session.getAttribute("user_session");
 %>
 
 
