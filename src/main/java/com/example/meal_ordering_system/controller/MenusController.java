@@ -1,8 +1,10 @@
 package com.example.meal_ordering_system.controller;
 
 import com.example.meal_ordering_system.entity.Menus;
+import com.example.meal_ordering_system.entity.Notice;
 import com.example.meal_ordering_system.entity.Types;
 import com.example.meal_ordering_system.service.MenusService;
+import com.example.meal_ordering_system.service.NoticeService;
 import com.example.meal_ordering_system.service.TypesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -37,6 +39,9 @@ public class MenusController {
     @Qualifier("typesService")
     private TypesService typesService;
 
+    @Autowired
+    @Qualifier("noticeService")
+    private NoticeService noticeService;
     //跳转至新增页面
     @RequestMapping("/toAddPage")
     public ModelAndView toAddPage(){
@@ -62,6 +67,8 @@ public class MenusController {
         model.addAttribute("menusList",list);
         List<Types> typesList=typesService.queryAll();
         model.addAttribute("typesList",typesList);
+        List<Notice> notices=noticeService.queryAll();
+        model.addAttribute("notices",notices);
         return "/qiantai/index";
     }
 //    查询全部菜单,并且返回到菜单信息页面

@@ -59,7 +59,7 @@ public class UsersController {
         boolean loginType=usersService.login(user.getName(), user.getPwd());
         HttpSession session=request.getSession();
         if(loginType){
-            session.setAttribute("user_session",user);
+            session.setAttribute("user_session",usersService.queryById(usersService.queryByname(user.getName())));
             return "redirect:/menus/qiantai/allMenus";
         }else{
             session.setAttribute("message","用户名密码错误");
@@ -83,4 +83,10 @@ public class UsersController {
     }
 
 
+    @RequestMapping("update")
+    public String update(@Param("id")Integer id,@Param("name") String name,@Param("pwd") String pwd,@Param("realname") String realname,@Param("sex") String sex,@Param("age") Integer age,@Param("card") String card,@Param("address") String address,@Param("Phone") String phone,@Param("email")String email,@Param("code")String code,@Param("type")Integer type){
+        Users user=new Users(id,name,pwd,realname,sex,age,card,address,phone,email,code,type);
+        usersService.update(user);
+        return "qiantai/center";
+    }
 }
