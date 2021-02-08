@@ -9,8 +9,8 @@ Maven+Idea+Spring+SpringMVC+MyBatis+JSP实现的点餐系统（前台+后台）
 
 #### 安装教程
 
-1.  xxxx
-2.  xxxx
+1.  数据库文件：apsfc 20150727 2133.sql 导入数据库 
+2.  修改配置
 3.  xxxx
 
 #### 使用说明
