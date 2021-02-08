@@ -6,12 +6,12 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 <meta content="" name=keywords />
 <meta content="" name=description />
-<link href="css/common.css" rel="stylesheet" type="text/css" />
+<link href="${pageContext.request.contextPath}/public/qiantai/css/common.css" rel="stylesheet" type="text/css" />
 
 </head>
 
 
-<script type="text/javascript" src="js/common.js"></script>
+<script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/common.js"></script>
 
    <script language="JavaScript">
    function login11()
@@ -57,7 +57,7 @@
             <div style="float:right;margin-right:10px;display:none"> <a href="-1" style="line-height:25px;color:">更多</a></div>
           </div>
           <div style="padding:0px">
-            <script type="text/javascript" src="js/login.js"></script>
+            <script type="text/javascript" src="${pageContext.request.contextPath}/public/qiantai/js/login.js"></script>
             <link href="../member/templates/css/memberlogin_c.css" rel="stylesheet" type="text/css" />
             <div style="width:600px; height:210px;text-align:left;border:1px #f59d5e solid; background-color:#fdebd5;padding:30px;margin:0px">
               <div style="width:210px;float:left;text-align:left;border:1px #f59d5e solid;padding:20px;background-color:#ffffff;">
@@ -74,8 +74,8 @@
                     </tr>
                     <tr>
                       <td height="40"><input name="act" type="hidden" id="act" value="memberlogin" /></td>
-                      <td height="40" ><input name="imageField" type="image" src="images/denglu.gif" border="0" />
-                        <a href="reg.jsp" style="padding-left:1px"><img src="images/zhuce.gif" alt="" width="40" height="19" border="0" /></a></td>
+                      <td height="40" ><input name="imageField" type="image" src="${pageContext.request.contextPath}/public/qiantai/images/denglu.gif" border="0" />
+                        <a href="reg.jsp" style="padding-left:1px"><img src="${pageContext.request.contextPath}/public/qiantai/images/zhuce.gif" alt="" width="40" height="19" border="0" /></a></td>
                     </tr>
                   </table>
                 </form>

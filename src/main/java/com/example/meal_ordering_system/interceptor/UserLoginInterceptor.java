@@ -13,7 +13,7 @@ public class UserLoginInterceptor implements HandlerInterceptor {
     @Override
     public boolean preHandle(HttpServletRequest request, HttpServletResponse response,Object o) throws Exception{
         String uri=request.getRequestURI();
-        if(!uri.contains("shoppingcar.jsp")){
+        if(!uri.contains("/qiantai")){
             HttpSession session=request.getSession();
             Users user=(Users)session.getAttribute("USER_SESSION");
             if(user!=null)

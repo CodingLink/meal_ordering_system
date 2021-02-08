@@ -37,16 +37,15 @@
             <bean class="cn.lzc.interceptor.CustomInterceptor"></bean>
         </mvc:interceptor>-->
 
-        <!--<mvc:interceptor>-->
-        <!--<mvc:mapping path="/hello" />&lt;!&ndash;配置拦截hello结尾的&ndash;&gt;-->
-        <!--<bean class="cn.lzc.interceptor.CustomInterceptor"/>-->
-        <!--</mvc:interceptor>-->
-
-        <!--登录拦截器-->
-
-<!--        -->
+<!--    前台登录拦截器-->
 <!--        <mvc:interceptor>-->
-<!--            <mvc:mapping path="/**"/>-->
+<!--        <mvc:mapping path="/qiantai/**" />-->
+<!--        <bean class="com.example.meal_ordering_system.interceptor.UserLoginInterceptor"/>-->
+<!--        </mvc:interceptor>-->
+
+<!--        后台登录拦截器-->
+<!--        <mvc:interceptor>-->
+<!--            <mvc:mapping path="/admin/**"/>-->
 <!--            <bean class="com.example.meal_ordering_system.interceptor.AdminLoginInterceptor"/>-->
 <!--        </mvc:interceptor>-->
 <!--    </mvc:interceptors>-->

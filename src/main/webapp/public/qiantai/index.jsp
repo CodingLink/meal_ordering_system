@@ -28,6 +28,7 @@
 
 
 <body style='background: transparent'>
+
 	<table width="900" border="0" align="center" cellpadding="0"
 		cellspacing="0">
 		<tr>
@@ -55,9 +56,9 @@
                 <div style="float:right;margin-right:10px;display:none"> <a href="-1" style="line-height:25px;color:">更多</a> </div>
               </div>-->
 										<div style="padding: 0px">
-											<link href="${pageContext.request.contextPath}/public/qiantaicss/dingcanall.css" rel="stylesheet"
+											<link href="${pageContext.request.contextPath}/public/qiantai/css/dingcanall.css" rel="stylesheet"
                                                   type="text/css" />
-											<script src="${pageContext.request.contextPath}/public/qiantaijs/dingcanall.js" type="text/javascript"></script>
+											<script src="${pageContext.request.contextPath}/public/qiantai/js/dingcanall.js" type="text/javascript"></script>
 
 											<div id="dingcanall2">
 
@@ -184,7 +185,7 @@
 															</div>
 														</div>
 														<div style="margin: 0px 3px; padding: 10px;" align="left">
-															<link href="css/newslist_time2.css" rel="stylesheet"
+															<link href="${pageContext.request.contextPath}/public/qiantai/css/newslist_time2.css" rel="stylesheet"
                                                                   type="text/css" />
 
 															<ul class="newslist_time2">

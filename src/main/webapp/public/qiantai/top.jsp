@@ -13,6 +13,15 @@
 
 </head>
 <body style='background:transparent'>
+<script language="JavaScript">
+  function checkSession(){
+    var session =${session.user_session}
+    if(session==null){
+      return false
+    }
+    check11()
+  }
+</script>
 
 
 <div id='contain' style='width:900px;background:rgb(255,255,255);margin:0px auto;padding:0px'>
@@ -74,7 +83,7 @@
 <li ><a href="${pageContext.request.contextPath}/public/qiantai/shoppingcar.jsp" target="_self">我的餐车</a></li>
 
 <li ><a href="${pageContext.request.contextPath}/public/qiantai/order.jsp" target="_self">我的订单</a></li>
-<li ><a href="${pageContext.request.contextPath}/public/qiantai/center.jsp" target="_self">用户中心</a></li>
+<li ><a href="${pageContext.request.contextPath}/public/qiantai/center.jsp" target="_self" onclick="checkSession()">用户中心</a></li>
 
 <li ><a href="${pageContext.request.contextPath}/public/qiantai/carry.jsp" target="_self">配送说明</a></li>
 
@@ -110,7 +119,10 @@
 
 </div>
 </div>
-<script>showMenu(0);</script>
+<script>showMenu(0);
+
+</script>
+
 
 </div>
 </div>
