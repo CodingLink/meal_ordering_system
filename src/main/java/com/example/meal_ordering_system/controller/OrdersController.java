@@ -328,8 +328,8 @@ public class OrdersController {
     public String order_addshoppingcartoOrder(HttpServletRequest request) {
         HttpSession session=request.getSession();
         List<ShoppingCart> shoppingCarts=(List<ShoppingCart>)session.getAttribute("shoppingcar");
-        if(session.getAttribute("user")!=null) {
-            Users user = (Users) session.getAttribute("user");
+        if(session.getAttribute("user_session")!=null) {
+            Users user = (Users) session.getAttribute("user_session");
             Integer userid = usersService.queryByname(user.getName());
             Integer delivery = 0;
             String remove = request.getParameter("remove");
