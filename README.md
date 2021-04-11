@@ -86,6 +86,8 @@ meal_ordering_system
                      ├─ WEB-INF 
                      │    └─ web.xml  
                      └─ public  
-                            ├─ admin  
-                            │    
+                            ├─ admin   
                             └─ qiantai  
+#### 常见问题：
+1. 启动tomcat时，过滤器无法生效？
+    建议使用tomcat 8.5.65版本。
