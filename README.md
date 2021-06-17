@@ -71,7 +71,7 @@
                   │                         │    ├─ OrdersService.java  
                   │                         │    ├─ TypesService.java  
                   │                         │    ├─ UsersService.java  
-                  │                         │    └─ impl
+                  │                         │    └─ impl  
                   │                         ├─ test  
                   │                         │    └─ testmybatis.java  
                   │                         └─ util  
@@ -89,11 +89,11 @@
                   │    ├─ springMVC.xml  
                   │    └─ sqlMapConfig.xml  
                   └─ webapp  
-                         ├─ WEB-INF 
+                         ├─ WEB-INF   
                          │    └─ web.xml  
                          └─ public  
                                 ├─ admin   
-                                └─ qiantai  
+                                └─ qiantai    
     
     #### 常见问题：
     
