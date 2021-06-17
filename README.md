@@ -61,7 +61,7 @@
                   │                         │    ├─ ShoppingCart.java  
                   │                         │    ├─ Types.java  
                   │                         │    └─ Users.java  
-                  │                         ├─ interceptor
+                  │                         ├─ interceptor  
                   │                         │    ├─ AdminLoginInterceptor.java  
                   │                         │    └─ UserLoginInterceptor.java  
                   │                         ├─ service  
