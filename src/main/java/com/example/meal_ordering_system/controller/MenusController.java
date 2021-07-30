@@ -8,14 +8,23 @@ import com.example.meal_ordering_system.service.NoticeService;
 import com.example.meal_ordering_system.service.TypesService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
+import org.springframework.http.HttpRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestPart;
 import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
 import javax.annotation.Resource;
+import javax.servlet.ServletException;
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
+import java.io.File;
+import java.io.IOException;
 import java.lang.reflect.Method;
 import java.util.List;
 
@@ -82,22 +91,33 @@ public class MenusController {
     }
 // 插入一个菜单信息到数据库
     @RequestMapping("/insert")
-    public String  insert(Menus menus){
+    public String  insert(Menus menus, @RequestPart("img")MultipartFile multipartFile, HttpSession session) throws IOException {
+        String realPath = session.getServletContext().getRealPath("");
+        if (!multipartFile.isEmpty()) {
+            String originalFilename = multipartFile.getOriginalFilename();
+            System.out.println("==================================================");
+            System.out.println(realPath);
+            multipartFile.transferTo(new File(realPath + "public\\img\\" + originalFilename));
+            menus.setImgpath("img//" + originalFilename);
+        }
+        menus.setSums(0);
+        menus.setSums1(0);
         menusService.insert(menus);
         return "/admin/menus_add";
     }
     //菜单信息修改
     @RequestMapping("/update")
-    public String update(Menus menus){
+    public void update(Menus menus,HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
         menusService.update(menus);
-        return "/admin/menus";
+        request.getRequestDispatcher("../menus/allMenus").forward(request,response);
+
     }
 
     //菜单信息删除
     @RequestMapping("/delete")
-    public String delete(Integer id){
+    public void delete(Integer id,HttpServletRequest request,HttpServletResponse response) throws IOException, ServletException {
        menusService.deleteById(id);
-        return "/admin/menus";
+        request.getRequestDispatcher("../menus/allMenus").forward(request,response);
     }
 
 

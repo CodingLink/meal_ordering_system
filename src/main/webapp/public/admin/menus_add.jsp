@@ -17,7 +17,7 @@
 			document.form1.name.focus();
 			return false;
 		}
-		if (document.form1.author.value == "") {
+		if (document.form1.burden.value == "") {
 			alert("原料不能为空!");
 			document.form1.author.focus();
 			return false;
@@ -38,11 +38,11 @@
 			return false;
 		}
 
-		// if (document.form1.img.value == "") {
-		// 	alert("上传图片不能为空!");
-		// 	document.form1.img.focus();
-		// 	return false;
-		// }
+		if (document.form1.img.value == "") {
+			alert("上传图片不能为空!");
+			document.form1.img.focus();
+			return false;
+		}
 	}
 </script>
 </head>

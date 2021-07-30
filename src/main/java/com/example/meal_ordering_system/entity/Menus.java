@@ -21,11 +21,11 @@ public class Menus  {
 
     private String brief;
 
-    private float price;
+    private Float price;
 
     private Integer sums;
 
-    private float price1;
+    private Float price1;
 
     private Integer sums1;
 
