@@ -9,7 +9,7 @@
     <!--加载项目启动监听的路径-->
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>classpath:*applicationContext.xml</param-value>
+        <param-value>classpath:applicationContext.xml</param-value>
     </context-param>
     <!--加载项目启动的监听-->
     <listener>
@@ -22,7 +22,7 @@
 
         <init-param>
             <param-name>contextConfigLocation</param-name>
-            <param-value>classpath:*springMVC.xml</param-value>
+            <param-value>classpath:springMVC.xml</param-value>
         </init-param>
         <load-on-startup>1</load-on-startup>
         <async-supported>true</async-supported>
