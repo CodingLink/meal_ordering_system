@@ -27,7 +27,7 @@
     
     #### 使用说明
     
-    前台：http://localhost:8080/meal_ordering_system/qiantai
+    前台：http://localhost:8080/meal_ordering_system/qiantai  
     后台：http://localhost:8080/meal_ordering_system/admin
     
     
