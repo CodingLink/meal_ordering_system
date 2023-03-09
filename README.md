@@ -29,8 +29,7 @@ Tomcat 9.0.56
 后台：http://localhost:8080/meal_ordering_system/admin  
 
 ## 🤝 贡献
-目前该项目已不再维护  
-如果你对该项目有任何建议或意见，欢迎提出issue或PR。 
+目前该项目已不再维护   
 
 ## 📄 许可证
 本项目基于MIT许可证开源。
