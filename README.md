@@ -10,9 +10,9 @@ Github地址：https://github.com/CodingLink/meal_ordering_system
 Gitee地址：https://gitee.com/CodingPeppa/meal_ordering_system  
 
 ## 🛠️ 软件架构  
-Mysql: 8.0.28
-JDK 1.8
-Tomcat 9.0.56
+Mysql: 8.0.28  
+JDK 1.8  
+Tomcat 9.0.56  
 
 ## 🔧 安装教程
 二进制文件方式  
